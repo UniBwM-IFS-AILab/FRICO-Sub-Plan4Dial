@@ -1,0 +1,437 @@
+{
+    "name": "forward_bot",
+    "context_variables": {
+        "started": {
+            "type": "flag",
+            "config": false
+        },
+        "informed": {
+            "type": "flag",
+            "config": false
+        },
+        "proceed_flag": {
+            "type": "flag",
+            "config": false
+        },
+        "request_emergency_help": {
+            "type": "flag",
+            "config": false
+        },
+        "fire_type": {
+            "type": "enum",
+            "config": [
+                "yellow",
+                "red"
+            ],
+            "known": {
+                "type": "fflag",
+                "init": false
+            }
+        },
+        "reset": {
+            "type": "flag",
+            "config": false
+        },
+        "goal": {
+            "type": "flag",
+            "config": false,
+            "known": {
+                "type": "flag",
+                "init": false
+            }
+        },
+        "force-statement": {
+            "type": "flag",
+            "config": false
+        }
+    },
+    "intents": {
+        "confirm": {
+            "entities": [],
+            "utterances": [
+                "yes",
+                "yeah",
+                "yup",
+                "affirmative",
+                "aye"
+            ],
+            "type": "regular"
+        },
+        "deny": {
+            "entities": [],
+            "utterances": [
+                "no",
+                "nah",
+                "negative",
+                "not at all",
+                "not really"
+            ],
+            "type": "regular"
+        },
+        "share-fire_type": {
+            "entities": [
+                "$fire_type"
+            ],
+            "utterances": [
+                "I have $fire_type",
+                "$fire_type",
+                "I am dealing with $fire_type"
+            ],
+            "type": "regular"
+        },
+        "fallback": {
+            "entities": [],
+            "utterances": [],
+            "type": "fallback"
+        },
+        "utter_msg": {
+            "entities": [],
+            "utterances": [],
+            "type": "regular"
+        }
+    },
+    "actions": {
+        "get-fire_information": {
+            "type": "dialogue",
+            "subtype": "custom",
+            "message_variants": [
+                "What kind of fire is it?"
+            ],
+            "condition": [
+                [
+                    "request_emergency_help",
+                    false
+                ],
+                [
+                    "fire_type",
+                    "Unknown"
+                ],
+                [
+                    "proceed_flag",
+                    false
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "get-fire_information__set-emergency_type",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "proceed_flag": {
+                                "value": true,
+                                "variable": "proceed_flag",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-proceed_flag",
+                        "intent": null,
+                        "assignments": {}
+                    },
+                    {
+                        "updates": {
+                            "request_emergency_help": {
+                                "value": true,
+                                "variable": "request_emergency_help",
+                                "interpretation": "json"
+                            },
+                            "fire_type": {
+                                "variable": "fire_type",
+                                "certainty": "Uncertain",
+                                "value": null,
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "share-fire_type",
+                        "name": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-engine_fire",
+                        "assignments": {
+                            "$fire_type": "maybe-found"
+                        }
+                    },
+                    {
+                        "updates": {
+                            "force-statement": {
+                                "value": true,
+                                "variable": "force-statement",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "fallback",
+                        "name": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-fallback",
+                        "assignments": {}
+                    }
+                ]
+            },
+            "fallback_message_variants": [
+                "Sorry, I couldn't understand that input.",
+                "Sorry, I didn't quite get that."
+            ],
+            "intents": {
+                "share-fire_type": {
+                    "entities": [
+                        "$fire_type"
+                    ],
+                    "utterances": [
+                        "I have $fire_type",
+                        "$fire_type",
+                        "I am dealing with $fire_type"
+                    ],
+                    "type": "regular"
+                },
+                "fallback": {
+                    "entities": [],
+                    "utterances": [],
+                    "type": "fallback"
+                }
+            }
+        },
+        "confirm-fire_information": {
+            "type": "dialogue",
+            "message_variants": [
+                "Can you please confirm that your engine is on fire?"
+            ],
+            "condition": [
+                [
+                    "request_emergency_help",
+                    true
+                ],
+                [
+                    "fire_type",
+                    "Uncertain"
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "confirm-fire_information__set-emergency_type",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "reset": {
+                                "value": true,
+                                "variable": "reset",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "deny",
+                        "name": "confirm-fire_information_DETDUP_confirm-fire_information__set-emergency_type-EQ-update-proceed_flag",
+                        "assignments": {}
+                    },
+                    {
+                        "updates": {
+                            "fire_type": {
+                                "variable": "fire_type",
+                                "certainty": "Known",
+                                "value": null,
+                                "interpretation": "json"
+                            },
+                            "proceed_flag": {
+                                "value": true,
+                                "variable": "proceed_flag",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "confirm",
+                        "name": "confirm-fire_information_DETDUP_confirm-fire_information__set-emergency_type-EQ-update-engine_fire",
+                        "assignments": {
+                            "$fire_type": "found"
+                        }
+                    },
+                    {
+                        "updates": {
+                            "force-statement": {
+                                "value": true,
+                                "variable": "force-statement",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "fallback",
+                        "name": "confirm-fire_information_DETDUP_confirm-fire_information__set-emergency_type-EQ-fallback",
+                        "assignments": {}
+                    }
+                ]
+            },
+            "fallback_message_variants": [
+                "Sorry, I couldn't understand that input.",
+                "Sorry, I didn't quite get that."
+            ],
+            "intents": {
+                "deny": {
+                    "entities": [],
+                    "utterances": [
+                        "no",
+                        "nah",
+                        "negative",
+                        "not at all",
+                        "not really"
+                    ],
+                    "type": "regular"
+                },
+                "confirm": {
+                    "entities": [],
+                    "utterances": [
+                        "yes",
+                        "yeah",
+                        "yup",
+                        "affirmative",
+                        "aye"
+                    ],
+                    "type": "regular"
+                },
+                "fallback": {
+                    "entities": [],
+                    "utterances": [],
+                    "type": "fallback"
+                }
+            }
+        },
+        "reset-convo": {
+            "type": "system",
+            "subtype": "Context dependent determination",
+            "condition": [
+                [
+                    "reset",
+                    true
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "reset-convo__reset-convo",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "proceed_flag": {
+                                "value": false,
+                                "variable": "proceed_flag",
+                                "interpretation": "json"
+                            },
+                            "request_emergency_help": {
+                                "value": false,
+                                "variable": "request_emergency_help",
+                                "interpretation": "json"
+                            },
+                            "fire_type": {
+                                "value": false,
+                                "variable": "fire_type",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "reset-convo_DETDUP_reset-convo__reset-convo-EQ-update-proceed_flag",
+                        "intent": null,
+                        "assignments": {}
+                    }
+                ]
+            }
+        },
+        "set-informed": {
+            "type": "system",
+            "condition": [
+                [
+                    "proceed_flag",
+                    true
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "set-informed__set-informed",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "informed": {
+                                "value": true,
+                                "variable": "informed",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "set-informed_DETDUP_set-informed__set-informed-EQ-update-informed",
+                        "intent": null,
+                        "assignments": {}
+                    }
+                ]
+            }
+        },
+        "complete": {
+            "type": "system",
+            "condition": [
+                [
+                    "informed",
+                    true
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "complete__finish",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "complete_DETDUP_complete__finish-EQ-finish",
+                        "intent": null,
+                        "assignments": {}
+                    }
+                ]
+            }
+        },
+        "dialogue_statement": {
+            "type": "dialogue",
+            "condition": [
+                [
+                    "force-statement",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "dialogue_statement__reset",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "force-statement": {
+                                "value": false,
+                                "variable": "force-statement",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "utter_msg",
+                        "name": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "assignments": {}
+                    }
+                ]
+            },
+            "message_variants": [
+                ""
+            ],
+            "disable-fallback": true,
+            "intents": {
+                "utter_msg": {
+                    "entities": [],
+                    "utterances": [],
+                    "type": "regular"
+                }
+            }
+        }
+    }
+}

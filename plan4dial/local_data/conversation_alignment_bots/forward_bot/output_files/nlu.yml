@@ -1,0 +1,33 @@
+nlu:
+- examples: '- yes
+
+    - yeah
+
+    - yup
+
+    - affirmative
+
+    - aye'
+  intent: confirm
+- examples: '- no
+
+    - nah
+
+    - negative
+
+    - not at all
+
+    - not really'
+  intent: deny
+- examples: '- [yellow]{"entity": "fire_type", "value": "yellow"}
+
+    - I am dealing with [yellow]{"entity": "fire_type", "value": "yellow"}
+
+    - I have [red]{"entity": "fire_type", "value": "red"}
+
+    - I am dealing with [red]{"entity": "fire_type", "value": "red"}
+
+    - [red]{"entity": "fire_type", "value": "red"}
+
+    - I have [yellow]{"entity": "fire_type", "value": "yellow"}'
+  intent: share-fire_type
