@@ -19,15 +19,15 @@ nlu:
 
     - not really'
   intent: deny
-- examples: '- I have [red]{"entity": "fire_type", "value": "red"}
+- examples: '- I have [yellow]{"entity": "fire_type", "value": "yellow"}
 
-    - I am dealing with [red]{"entity": "fire_type", "value": "red"}
-
-    - [yellow]{"entity": "fire_type", "value": "yellow"}
-
-    - I have [yellow]{"entity": "fire_type", "value": "yellow"}
+    - [red]{"entity": "fire_type", "value": "red"}
 
     - I am dealing with [yellow]{"entity": "fire_type", "value": "yellow"}
 
-    - [red]{"entity": "fire_type", "value": "red"}'
+    - I have [red]{"entity": "fire_type", "value": "red"}
+
+    - [yellow]{"entity": "fire_type", "value": "yellow"}
+
+    - I am dealing with [red]{"entity": "fire_type", "value": "red"}'
   intent: share-fire_type

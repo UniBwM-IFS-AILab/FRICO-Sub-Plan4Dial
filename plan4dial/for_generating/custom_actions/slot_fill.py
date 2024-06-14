@@ -10,7 +10,7 @@ from typing import List, Dict, Tuple
 import itertools
 from .utils import map_assignment_update, make_additional_updates
 from ..parsers.json_config_parser import configure_assignments
-
+import copy 
 
 def slot_fill(
     loaded_yaml: Dict,
@@ -105,9 +105,18 @@ def slot_fill(
     action.
     """
     updates_filtered = {}
+    
+    non_entities_updates = {}
+    
+    additional_updates_copy = copy.deepcopy(additional_updates)
+    
+        
+    
+    
     if additional_updates:
         # iterate through all additional updates
         for i in range(len(additional_updates)):
+           
             # iterate through each context variable detailed in the outcome
             for var in additional_updates[i]["outcome"]:
                 # convert to an assignment setting so we can more easily identify what
@@ -115,6 +124,10 @@ def slot_fill(
                 additional_updates[i]["outcome"][var] = configure_assignments(
                     additional_updates[i]["outcome"][var]["known"]
                 )
+                
+                if list(additional_updates[i]["outcome"].keys())[0] not in config_entities.keys(): 
+                
+                    non_entities_updates.update(additional_updates_copy[i]) # this is ugly but it should work 
             # we don't want to consider when entities are NOT found because 1) it's a
             # lot more ambiguous and 2) when extracting entities, we only have
             # knowledge of what we DID extract and not what we DIDN'T. (yes, we could
@@ -161,6 +174,9 @@ def slot_fill(
         action["fallback_message_variants"] = fallback_message_variants
     # condition: none of the entities can be found
     action["condition"] = {}
+    condi= loaded_yaml["actions"][action_name]["condition"]
+    action["condition"].update(condi)
+    print("condition" , loaded_yaml["actions"][action_name]["condition"])
     for entity in entities:
         action["condition"].update(map_assignment_update(entity, "didnt-find"))
     if additional_conditions:
@@ -209,6 +225,10 @@ def slot_fill(
                 # additional updates; if so, add the appropriate updates
                 if key in updates_filtered:
                     make_additional_updates(next_out, updates_filtered[key])
+            if non_entities_updates: 
+                for k, v in non_entities_updates.items(): 
+                    next_out['updates'].update(v)
+
         action["effect"]["validate-slot-fill"]["oneof"]["outcomes"][
             outcome_name
         ] = next_out
@@ -297,6 +317,7 @@ def _single_slot(
     config_entity: Dict,
     known_is_fflag: bool,
     additional_updates: Dict = None,
+    non_entities_updates: Dict = None
 ) -> None:
     """Generates a 'single slot' action for the entity provided. These are only
     necessary when multiple entities were specified, to handle the case where the bot
@@ -335,6 +356,9 @@ def _single_slot(
         key = frozenset({entity: "found"}.items())
         if key in additional_updates:
             make_additional_updates(fill_slot, additional_updates[key])
+    if non_entities_updates: 
+        for k,v in non_entities_updates["outcome"].items(): 
+            fill_slot["updates"].update({k:v})
     # add message variants if they exist
     message_variants = (
         config_entity["single_slot_message_variants"]
@@ -386,6 +410,7 @@ def _create_clarifications_single_slots(
     config_entities: Dict,
     context_variables: Dict,
     additional_updates: Dict = None,
+    non_entities_updates: Dict = None, 
 ) -> Tuple[Dict, Dict]:
     """Used by the :py:func:`slot_fill
     <plan4dial.for_generating.custom_actions.slot_fill.slot_fill>` action to generate
@@ -439,6 +464,7 @@ def _create_clarifications_single_slots(
                                         context_variables[entity]["known"]["type"]
                                         == "fflag",
                                         additional_updates,
+                                        non_entities_updates
                                     )
                                 )
         new_actions[original_act_name] = original_act_config

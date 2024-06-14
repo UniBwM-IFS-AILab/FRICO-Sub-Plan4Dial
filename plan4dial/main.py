@@ -78,7 +78,7 @@ def generate_files(yaml_filename: str, output_folder: str, rbp_path: str):
     print(f"with problem string path: {problem_str}")
 
     # generate PDDL files; convert policy.out to a prp.json file; wait until complete
-    subprocess.run([rbp_path, domain_str, problem_str, "--output-format", "3"])
+    subprocess.run([rbp_path, domain_str, problem_str,"--search","prpsearch()", "--output-format", "3","--internal-plan-file", "sas_plan"])
     print("Ran the subprocess to generate pddl files.")
     try:
         with open("policy.out") as file:
@@ -88,7 +88,7 @@ def generate_files(yaml_filename: str, output_folder: str, rbp_path: str):
     with open(f"{output_folder}/data.prp.json", "w") as file:
         json.dump(plan_data, file, indent=4)
     # delete extra output files
-    os.remove("./output.sas")
+    #os.remove("./output.sas")
     # generate configuration for rollout
     rollout_data = rollout_config(converted_json)
     with open(f"{output_folder}/rollout_config.json", "w") as f:

@@ -28,6 +28,10 @@ context_variables:
   reset:
     type: flag
     init: false
+  
+  finish:
+    type: flag
+    init: false
 
   goal:
     type: flag
@@ -131,6 +135,27 @@ actions:
                 proceed_flag:
                   value: true
               intent: confirm
+
+
+  get-fire_information: 
+    type: dialogue
+    subtype: custom
+    message_variants:
+      - Do you want to end some good soup?  
+    condition:
+      proceed_flag:
+        value: true 
+
+    effect: 
+      set-emergency_type:
+        oneof:
+          outcomes: 
+            update-engine_fire: 
+              updates: 
+                informed:
+                  value: true
+              intent: confirm
+
               #   request_emergency_help:
               #     value: true
               #   fire_type:
@@ -194,7 +219,7 @@ actions:
     message_variants:
       - This means, you will proceed. Are you sure? 
     condition:
-      proceed_flag:
+      informed:
         value: true 
     effect:
       set-informed:
@@ -202,7 +227,7 @@ actions:
           outcomes:
             update-informed:
               updates:
-                informed:
+                finish:
                   value: true
               intent: confirm 
 

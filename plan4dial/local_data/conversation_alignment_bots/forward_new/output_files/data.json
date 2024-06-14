@@ -32,6 +32,10 @@
             "type": "flag",
             "config": false
         },
+        "finish": {
+            "type": "flag",
+            "config": false
+        },
         "goal": {
             "type": "flag",
             "config": false,
@@ -176,20 +180,12 @@
             "type": "dialogue",
             "subtype": "custom",
             "message_variants": [
-                "Do you want to end the program?"
+                "Do you want to end some good soup?"
             ],
             "condition": [
                 [
-                    "request_emergency_help",
-                    false
-                ],
-                [
-                    "fire_type",
-                    "Unknown"
-                ],
-                [
                     "proceed_flag",
-                    false
+                    true
                 ],
                 [
                     "force-statement",
@@ -202,21 +198,9 @@
                 "outcomes": [
                     {
                         "updates": {
-                            "proceed_flag": {
+                            "informed": {
                                 "value": true,
-                                "variable": "proceed_flag",
-                                "interpretation": "json"
-                            }
-                        },
-                        "name": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-proceed_flag",
-                        "intent": null,
-                        "assignments": {}
-                    },
-                    {
-                        "updates": {
-                            "proceed_flag": {
-                                "value": true,
-                                "variable": "proceed_flag",
+                                "variable": "informed",
                                 "interpretation": "json"
                             }
                         },
@@ -310,7 +294,7 @@
             ],
             "condition": [
                 [
-                    "proceed_flag",
+                    "informed",
                     true
                 ],
                 [
@@ -324,9 +308,9 @@
                 "outcomes": [
                     {
                         "updates": {
-                            "informed": {
+                            "finish": {
                                 "value": true,
-                                "variable": "informed",
+                                "variable": "finish",
                                 "interpretation": "json"
                             }
                         },

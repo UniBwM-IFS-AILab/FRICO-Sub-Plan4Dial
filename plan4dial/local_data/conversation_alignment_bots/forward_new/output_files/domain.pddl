@@ -11,6 +11,7 @@
         (know__fire_type)
         (maybe-know__fire_type)
         (reset)
+        (finish)
         (know__goal)
         (goal)
         (force-statement)
@@ -19,9 +20,9 @@
         :parameters()
         :precondition
             (and
-                (not (force-statement))
                 (not (maybe-know__fire_type))
                 (not (know__fire_type))
+                (not (force-statement))
             )
         :effect
             (labeled-oneof get-fire_information-one__set-emergency_type
@@ -46,22 +47,14 @@
         :parameters()
         :precondition
             (and
+                (proceed_flag)
                 (not (force-statement))
-                (not (proceed_flag))
-                (not (request_emergency_help))
-                (not (maybe-know__fire_type))
-                (not (know__fire_type))
             )
         :effect
             (labeled-oneof get-fire_information__set-emergency_type
-                (outcome update-proceed_flag
-                    (and
-                        (proceed_flag)
-                    )
-                )
                 (outcome update-engine_fire
                     (and
-                        (proceed_flag)
+                        (informed)
                     )
                 )
                 (outcome fallback
@@ -75,8 +68,8 @@
         :parameters()
         :precondition
             (and
-                (not (force-statement))
                 (reset)
+                (not (force-statement))
             )
         :effect
             (labeled-oneof reset-convo__reset-convo
@@ -92,14 +85,14 @@
         :parameters()
         :precondition
             (and
+                (informed)
                 (not (force-statement))
-                (proceed_flag)
             )
         :effect
             (labeled-oneof set-informed__set-informed
                 (outcome update-informed
                     (and
-                        (informed)
+                        (finish)
                     )
                 )
                 (outcome fallback
@@ -113,8 +106,8 @@
         :parameters()
         :precondition
             (and
-                (not (force-statement))
                 (informed)
+                (not (force-statement))
             )
         :effect
             (labeled-oneof complete__finish

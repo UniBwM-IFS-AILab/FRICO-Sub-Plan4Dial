@@ -1,0 +1,154 @@
+---
+name: frico_fire
+context_variables:
+
+  request_emergency_help: 
+    type: flag 
+    init: false
+    known:
+      type: fflag
+      init: false
+
+
+  request_electric_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+
+
+  request_engine_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+
+
+  request_wing_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+
+  informed: 
+    type: flag
+    init: false
+
+  goal:
+    type: flag
+    init: false
+    known:
+      type: flag
+      init: false
+
+
+intents: 
+  confirm:
+    utterances:
+      - "yes" 
+      - yeah 
+      - yup
+      - affirmative
+      - aye
+  
+  deny: 
+    utterances:
+      - "no"
+      - nah 
+      - negative 
+      - not at all 
+      - not really 
+  
+  share-call_for_help:
+    utterances:
+      - I have a problem 
+      - I need help 
+      - Can you help me?  
+
+
+
+  share-engine_fire_emergency:
+    utterances:
+      - I see smokes coming out of my engine
+      - My engine is burning
+      - I see fire coming from my engine
+      - I think my engine has caught fire
+      - My engine is on fire
+
+
+actions: 
+  
+
+  get-initial_help_request: 
+    type: dialogue
+    message_variants:
+      - What can I help you with today?
+
+    # fallback_message_variants:
+    #   - Can you please repeat that? 
+
+    condition:
+      request_emergency_help:
+        known: false
+        value: false 
+    effect: 
+      set-emergency_help_type: 
+        oneof:
+          outcomes: 
+            
+            update-generic_fire_emergency: 
+              updates: 
+                request_emergency_help:
+                  known: true 
+                  value: true
+              intent: share-call_for_help
+              # response_variants:
+              #   - I am here to assist you. Please provide me with further information
+
+  get-fire_type: 
+    type: dialogue
+    message_variants:
+      - I am here to assist you. Please provide me with further information. 
+
+    # fallback_message_variants:
+    #   - Can you please repeat that? 
+
+    condition:
+      request_emergency_help:
+        known: true
+        value: true 
+    effect: 
+      set-engine_fire_emergency: 
+        oneof:
+          outcomes: 
+            
+            update-engine_fire_emergency: 
+              updates: 
+                request_engine_fire_help:
+                  known: true 
+                  value: true
+              intent: share-engine_fire_emergency
+              response_variants:
+                - Okay, here are the instructions. 
+  
+  complete:
+    type: system 
+    condition: 
+      request_engine_fire_help:
+        known: true 
+        value: true
+    effect:
+      finish:
+        oneof:
+          outcomes:
+            finish:
+              updates:
+                goal:
+                  value: true
+
+
+
+

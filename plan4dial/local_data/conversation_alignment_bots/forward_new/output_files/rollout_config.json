@@ -2,9 +2,9 @@
     "actions": {
         "get-fire_information-one": {
             "condition": [
-                "(not (force-statement))",
                 "(not (maybe-know__fire_type))",
-                "(not (know__fire_type))"
+                "(not (know__fire_type))",
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-fire_information-one_DETDUP_get-fire_information-one__set-emergency_type-EQ-update-proceed_flag": [
@@ -20,18 +20,12 @@
         },
         "get-fire_information": {
             "condition": [
-                "(not (force-statement))",
-                "(not (proceed_flag))",
-                "(not (request_emergency_help))",
-                "(not (maybe-know__fire_type))",
-                "(not (know__fire_type))"
+                "(proceed_flag)",
+                "(not (force-statement))"
             ],
             "effect": {
-                "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-proceed_flag": [
-                    "(proceed_flag)"
-                ],
                 "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-engine_fire": [
-                    "(proceed_flag)"
+                    "(informed)"
                 ],
                 "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-fallback": [
                     "(force-statement)"
@@ -40,8 +34,8 @@
         },
         "reset-convo": {
             "condition": [
-                "(not (force-statement))",
-                "(reset)"
+                "(reset)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "reset-convo_DETDUP_reset-convo__reset-convo-EQ-update-proceed_flag": [
@@ -52,12 +46,12 @@
         },
         "set-informed": {
             "condition": [
-                "(not (force-statement))",
-                "(proceed_flag)"
+                "(informed)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "set-informed_DETDUP_set-informed__set-informed-EQ-update-informed": [
-                    "(informed)"
+                    "(finish)"
                 ],
                 "set-informed_DETDUP_set-informed__set-informed-EQ-fallback": [
                     "(force-statement)"
@@ -66,8 +60,8 @@
         },
         "complete": {
             "condition": [
-                "(not (force-statement))",
-                "(informed)"
+                "(informed)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "complete_DETDUP_complete__finish-EQ-finish": [
@@ -87,16 +81,17 @@
         }
     },
     "initial_state": [
-        "(not (know__goal))",
-        "(not (force-statement))",
-        "(not (started))",
-        "(not (proceed_flag))",
-        "(not (request_emergency_help))",
-        "(not (maybe-know__fire_type))",
         "(not (reset))",
+        "(not (started))",
+        "(not (goal))",
+        "(not (know__goal))",
+        "(not (proceed_flag))",
         "(not (informed))",
+        "(not (finish))",
+        "(not (force-statement))",
+        "(not (request_emergency_help))",
         "(not (know__fire_type))",
-        "(not (goal))"
+        "(not (maybe-know__fire_type))"
     ],
     "partial": {
         "get-fire_information-one": [],

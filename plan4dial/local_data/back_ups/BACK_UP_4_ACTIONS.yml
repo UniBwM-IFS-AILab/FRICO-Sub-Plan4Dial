@@ -1,0 +1,720 @@
+name: extended_ijcai
+context_variables:
+
+  
+  mental_state: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - normal 
+      - overloaded 
+      - incapacitated
+      
+  body_part: 
+    type: enum 
+    known:
+      type: falg 
+      init: false
+    options: 
+      - eyes 
+      - head 
+      - stomach  
+
+  fire_context: 
+    type: flag 
+    init: false
+    known: 
+      type: flag 
+      init: false
+  
+  health_context: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false
+
+
+  need_further_help: 
+    type: flag 
+    init: false
+
+
+  fire_color: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - red 
+      - orange 
+  
+  instrument: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - screen 
+      - wiring 
+
+  fire_type: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - engine 
+      - electric
+      - none
+
+  smoke_type: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options: 
+      - thick black 
+      - black 
+      - white 
+
+  fire_smell:
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options: 
+      - burning 
+      - sulpher
+
+
+
+  location:
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - cowling area
+      - windscreen
+      - instrument
+  
+
+  instructions_type: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options: 
+      - electric 
+      - engine 
+  
+
+
+
+  dummy_code:
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - 300
+      - 400
+      - 500
+
+  ctx_two: 
+    type: flag 
+    init: false
+  
+  ctx_three: 
+    type: flag 
+    init: false
+    known: 
+      type: flag 
+      init: false
+
+  ctx_four: 
+    type: flag 
+    init: false
+    known: 
+      type: flag 
+      init: false
+
+  server_error: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag
+      init: false
+  
+  goal:
+    type: flag
+    init: false
+    known:
+      type: flag
+      init: false
+
+  emergency_type: 
+    type: enum
+    known:
+      type: flag 
+      init: false
+    options:
+      - 100
+      - 200
+      - 300
+      - 400 
+      - 500 
+      - 600
+  
+  landing_gear_specifier: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - left 
+      - right 
+      - whole
+  
+  health_type_emergency: 
+    type: enum
+    init: false
+    known:
+      type: flag
+      init: false
+    options: 
+      - 100 
+      - 200
+
+intents: 
+  confirm:
+    utterances:
+      - "yes" 
+      - yeah 
+      - yup
+      - affirmative
+      - aye
+  
+  deny: 
+    utterances:
+      - "no"
+      - nah 
+      - negative 
+      - not at all 
+      - not really 
+  
+  share-call_for_help:
+    utterances:
+      - I have a problem 
+      - I need help 
+      - Can you help me?  
+
+
+
+  share-fire_emergency_with_location_and_color:
+    entities:
+      - fire_color
+      - location
+
+    utterances:
+      - I see $fire_color coming out of my $location. 
+      - My $location is burning. I see $fire_color fire
+
+
+  share-location: 
+    entities:
+      - location
+    utterances:
+      - $location!
+      - My guess is $location. 
+      - I think its from  $location. 
+      - $location!, I guess. 
+
+  share-fire_color: 
+    entities:
+      - fire_color
+    utterances:
+      - The hue I perceive matches $fire_color.
+      - My sight captures the shade represented by $fire_color.
+      - The tint I observe resembles $fire_color.
+      - What meets my eyes mirrors $fire_color.
+      - The pigment evident to me reflects $fire_color.
+      - I discern a hue akin to $fire_color.
+      - The color evident in my vision aligns with $fire_color.
+      - What I perceive resembles the hue $fire_color.
+      - My observation identifies the color as $fire_color.
+      - The tone apparent to me resonates with $fire_color.
+
+
+  share-fire_emergency_smell_and_location:
+    entities:
+      - fire_smell
+      - location
+    utterances:
+      - Detecting $fire_smell in $location.
+      - Distinct odor of $fire_smell coming from $location.
+      - Whiff of $fire_smell in the air. I think its coming from $location. 
+      - Pungent aroma signaling $fire_smell. Probably coming from $location
+      - Unmistakable scent of $fire_smell in the air. My guess is its from $location.
+
+  share-fire_smell: 
+    entities:
+      - fire_smell
+    utterances:
+      - I smell $fire_smell
+      - I sense $fire_smell
+      - $fire_smell
+      - Whiff of $fire_smell in the air
+
+  share-landing_gear_malfunction: 
+    entities:
+      - landing_gear_specifier
+    utterances:
+      - My $landing_gear_specifier landing gear is stuck 
+      - $landing_gear_specifier landing gear stuck 
+      - landing gear stuck 
+
+  share-instrument: 
+    entities:
+      - instrument
+    utterances:
+      - My suspicion leans towards the $instrument.
+      - I believe the $instrument is the culprit.
+      - I reckon it's the $instrument at fault.
+      - My intuition points towards the $instrument.
+      - I suspect the $instrument is involved.
+      - I have a feeling that the $instrument is to blame.
+      - It seems likely that the $instrument is responsible.
+      - The $instrument appears to be the source.
+      - Signs suggest that the $instrument is involved.
+      - It looks like the $instrument is causing the issue
+  
+  share-physical_health_status: 
+    entities:
+      - body_part
+    utterances:
+      - My $body_part hurts
+      - I have a $body_part ache
+
+
+  share-mental_health_status_with_takeover_request: 
+    entities:
+      - mental_state 
+    utterances:
+      - I feel $mental_state. Take over the controls 
+      - Take over the controls. I am mentally $mental_state. 
+  
+  # share-take_over_request: 
+  #     - Take over the controls. I cannot continue anymore 
+
+
+actions:
+
+
+  get-initial_help_request: 
+    type: custom
+    subtype: slot_fill_more
+
+    parameters:
+      message_variants:
+        - What can I help you with today?
+      condition:
+        fire_color:
+          known: false
+        location:
+          known: false
+        fire_smell:
+          known: false
+        smoke_type: 
+          known: false
+        mental_state:
+          known: false
+        body_part:
+          known: false
+        landing_gear_specifier:
+          known: false
+        # health_type_emergency:
+        #   known: false
+      
+      effect:
+        determine_emergency_type: 
+          oneof:
+            outcomes:
+             
+              update-fire_emergency_location_color_driven:
+                entities:
+                  - fire_color
+                  - location
+                overall_intent: share-fire_emergency_with_location_and_color 
+                config_entities:
+                  fire_color:
+                    fallback_message_variants:
+                      - Sorry I did not catch the fire color. Can you repeat it? 
+                    single_slot_message_variants:
+                      - What color is the fire?  
+                    single_slot_intent: share-fire_color
+                  
+                  location: 
+                    fallback_message_variants:
+                      - I did not catch the fire location. Can you repeat it? 
+                    single_slot_message_variants:
+                      - Where is the fire? 
+                    single_slot_intent: share-location
+                    clarify_message_variants:
+                      - Is the fire in $location ? 
+                additional_updates:
+                  - outcome:
+                      fire_color:
+                        known: true 
+                    response_variants:
+                      - ok, noted 
+                  - outcome:
+                      location:
+                        known: true
+                    response_variants:
+                      - Ok, ok   
+
+              update-fire_emergency_smell_driven:
+                entities:
+                  - fire_smell
+                  # - location
+                
+                overall_intent: share-fire_smell
+
+                config_entities:
+                  fire_smell: 
+                    fallback_message_variants:
+                      - Sorry, I did not understand the fire smell. Can you repeat it? 
+                    single_slot_message_variants: 
+                      - What does the fire smell like? 
+                   # single_slot_intent: share-fire_smell
+                  
+                  # location:
+                  #   fallback_message_variants:  
+                  #     - Sorry, I did not catch the location. Can you reapeat it? 
+                  #   single_slot_message_variants: 
+                  #     - Where is the smell coming from? 
+                  #   single_slot_intent: share-fire_smell
+                  #   clarify_message_variants:
+                  #     - Is the smell coming from $location ? 
+                additional_updates:
+                  - outcome:
+                      fire_smell: 
+                        known: true 
+                    response_variants:
+                      - fire smell known
+                  # - outcome:
+                  #     location: 
+                  #       known: true
+                  #   response_variants:
+                  #     - location known
+                    
+                    
+
+              update-fire_emergency_smoke_driven:
+                entities:
+                  - smoke_type
+                  #- location
+                overall_intent: share-fire_emergency_smoke_and_location
+
+                config_entities:
+                  smoke_type: 
+                    fallback_message_variants:
+                      - Sorry I did no understand the type of smoke. Can you repeat it? 
+                    
+                    single_slot_message_variants:
+                      - What kind of smoke do you see? 
+                    single_slot_intent: share-smoke_type
+                    clarify_message_variants:
+                      - So do you see $smoke_type smoke? 
+                  
+                  location: 
+                    fallback_message_variants:
+                      - I did not catch the fire location. Can you repeat it? 
+                    single_slot_message_variants:
+                      - Where is the fire? 
+                    single_slot_intent: share-location
+                    clarify_message_variants:
+                      - Is the fire in $location ?
+                additional_updates:
+                  - outcome:
+                      smoke_type:
+                        known: true 
+                    response_variants:
+                      - smoke type known 
+                  - outcome:
+                      location: 
+                        known: true 
+                    response_variants:
+                      - location known
+
+              update-landing_gear_malfunction: 
+                entities:
+                  - landing_gear_specifier 
+                overall_intent: share-landing_gear_malfunction
+
+                config_entities:
+                  landing_gear_specifier: 
+                    clarify_message_variants:
+                      - Did you mean $landing_gear_specifier?
+                  additional_updates:
+                    - outcome:
+                        landing_gear_specifier:
+                          known: true 
+                      response_variants:
+                        - landing gear specifier known
+              
+
+              update-physical_health_emergency: 
+                entities:
+                  - body_part
+                overall_intent: share-physical_health_status
+                config_entities:
+                  body_part: 
+                    clarify_message_variants:
+                      - Did you mean your $body_part? 
+                additional_updates:
+                  - outcome:
+                      body_part: 
+                        known: true 
+                    response_variants:
+                      - body part known
+
+
+              update-mental_health_emergency: 
+                entities:
+                  - mental_state
+                overall_intent: share-mental_health_status_with_takeover_request
+                config_entities:
+                  mental_state: 
+                    clarify_message_variants: 
+                      - Did you mean, you feel $mental_state? 
+                additional_updates:
+                  - outcome:
+                      mental_state:
+                        known: true 
+                    response_variants:
+                      - mental state known
+
+
+
+  update-after_slot_fill_fire_emergency_location_color_driven: 
+    type: system 
+    condition:
+      location: 
+        known: true 
+      fire_color: 
+        known: true 
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                emergency_type:
+                  value: 100
+                  known: true
+
+  update-after_slot_fill_fire_emergency_smell_driven: 
+    type: system 
+    condition:
+      fire_smell: 
+        known: true
+      # location: 
+      #   known: true
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                emergency_type:
+                  value: 200
+                  known: true
+
+  update-after_slot_fill_fire_emergency_smoke_driven: 
+    type: system 
+    condition:
+      smoke_type: 
+        known: true 
+      # location: 
+      #   known: true 
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                emergency_type:
+                  value: 300
+                  known: true
+
+  update-after_slot_fill_landing_gear_malfunction: 
+    type: system 
+    condition:
+      landing_gear_specifier: 
+        known: true 
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                emergency_type:
+                  value: 400
+                  known: true
+
+  update-after_slot_fill_physical_health_emergency:  
+    type: system 
+    condition:
+      body_part: 
+        known: true 
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                health_type_emergency:
+                  value: 100
+                  known: true
+                
+  update-after_slot_fill_mental_health_emergency: 
+    type: system 
+    condition:
+      mental_state: 
+        known: true 
+    effect:
+      update: 
+        oneof:
+          outcomes: 
+            update: 
+              updates: 
+                health_type_emergency:
+                  value: 200
+                  known: true
+
+
+
+  context-health_emergency: 
+    type: system 
+    subtype: Context dependent determination
+
+    condition: 
+      health_type_emergency:
+        known: true 
+    effect: 
+      set-complete: 
+        oneof:
+          outcomes:
+            update-him: 
+              updates:
+                health_context:
+                  known: true 
+              context: 
+                health_type_emergency:
+                  value: 200
+            update-him1:  
+              updates:
+                health_context:
+                  known: true 
+              context: 
+                health_type_emergency:
+                  value: 100
+
+
+
+  context-emergency_type: 
+    type: system
+    subtype: Context dependent determination
+    condition:
+      emergency_type:
+        known: true
+    effect:
+      set-complete: 
+        oneof:
+          outcomes:
+            update-im: 
+              updates: 
+                fire_context:
+                  known: true 
+              context:
+                emergency_type:
+                  value: 100
+            update-im2: 
+              updates: 
+                fire_context:
+                  known: true 
+              context:
+                emergency_type:
+                  value: 200
+            update-im3: 
+              updates: 
+                fire_context: 
+                  known: true
+              context:
+                emergency_type:
+                  value: 300
+              
+
+
+
+
+
+  get-need_further_help: 
+    type: dialogue
+    message_variants:
+      - Do you need any further help?
+    condition:
+      # instrument:
+      #   known: true
+      fire_context:
+        known: true
+    effect:
+      set-complete: 
+        oneof:
+          outcomes:
+            update-need_further_help: 
+              updates:
+                need_further_help:
+                  value: true
+              intent: deny 
+
+
+
+  get-need_further_help_mental: 
+    type: dialogue
+    message_variants:
+      - Do you need any further help?
+    condition:
+      # instrument:
+      #   known: true
+      health_context:
+        known: true
+    effect:
+      set-complete: 
+        oneof:
+          outcomes:
+            update-need_further_help: 
+              updates:
+                need_further_help:
+                  value: true
+              intent: deny 
+
+  complete:
+    type: system 
+    condition: 
+      need_further_help:
+        value: true
+    effect:
+      finish:
+        oneof:
+          outcomes:
+            finish:
+              updates:
+                goal:
+                  value: true
+ 

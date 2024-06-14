@@ -314,12 +314,19 @@ def _instantiate_custom_actions(loaded_yaml: Dict) -> None:
                 import_module(f"for_generating.custom_actions.{custom_act_name}"),
                 isfunction,
             ):
-                act_name, act_function = custom_act[0], custom_act[1]
-                if act_name == custom_act_name:
-                    act_function(processed, **act_config["parameters"])
-                    break
+                if custom_act_name != "slot_fill_more": 
+                    act_name, act_function = custom_act[0], custom_act[1]
+                    if act_name == custom_act_name:
+                        act_function(processed, **act_config["parameters"])
+                        break
+                else: 
+                    act_name, act_function = custom_act[0], custom_act[1]
+                    if act_name == custom_act_name:
+                        act_function(processed, **act_config["parameters"])
+                    #print(f"Action {1} is of type slot_fill")
             # delete the custom action instantiation outline
             del processed["actions"][act]
+            
     for key in processed:
         loaded_yaml[key] = processed[key]
 
@@ -354,9 +361,11 @@ def _add_fallbacks(loaded_yaml: Dict) -> None:
                         "Sorry, I didn't quite get that.",
                     ]
         # if this action has fallbacks enabled, add fallback outcomes as necessary
+        print(act)
         for eff, eff_config in loaded_yaml["actions"][act]["effect"].items():
             if fallback:
                 for option in eff_config:
+                  #  print(processed[act])
                     processed[act]["effect"][eff][option]["outcomes"][
                         "fallback"
                     ] = _configure_fallback()
@@ -531,6 +540,7 @@ def _add_value_setters(loaded_yaml: Dict) -> None:
     processed = deepcopy(loaded_yaml)
     for act, act_cfg in loaded_yaml["actions"].items():
         for cond, cond_cfg in act_cfg["condition"].items():
+            print(cond)
             if "value" in cond_cfg:
                 option = cond_cfg["value"]
                 if type(option) is str:
@@ -574,6 +584,7 @@ def _convert_ctx_var(loaded_yaml: Dict) -> None:
     processed = {var: {} for var in loaded_yaml["context_variables"]}
     for ctx_var, cfg in loaded_yaml["context_variables"].items():
         json_ctx_var = {}
+        print(ctx_var)
         json_ctx_var["type"] = cfg["type"]
         if cfg["type"] == "enum":
             # don't include variations in the config
@@ -648,6 +659,7 @@ def _convert_actions(loaded_yaml: Dict) -> None:
                 converted_eff["type"] = option
                 outcomes_list = []
                 for out, out_config in eff_config[option]["outcomes"].items():
+                    print(out)
                     next_outcome = deepcopy(out_config)
                     # reformat name
                     next_outcome["name"] = f"{act}_DETDUP_{act}__{eff}-EQ-{out}"

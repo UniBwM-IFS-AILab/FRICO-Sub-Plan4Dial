@@ -27,43 +27,43 @@
         :parameters()
         :precondition
             (and
-                (not (know__request_emergency_help))
                 (not (maybe-know__request_emergency_help))
-                (not (force-statement))
                 (not (request_emergency_help))
+                (not (force-statement))
+                (not (know__request_emergency_help))
             )
         :effect
             (labeled-oneof get-initial_help_request__set-emergency_help_type
                 (outcome update-generic_fire_emergency
                     (and
+                        (force-statement)
                         (maybe-know__request_emergency_help)
                         (request_emergency_help)
-                        (force-statement)
                     )
                 )
                 (outcome update-engine_fire_emergency
                     (and
                         (request_engine_fire_help)
-                        (know__request_engine_fire_help)
-                        (informed)
                         (know__request_emergency_help)
                         (force-statement)
+                        (informed)
+                        (know__request_engine_fire_help)
                     )
                 )
                 (outcome update-electric_fire_emergency
                     (and
                         (know__request_electric_fire_help)
-                        (request_electric_fire_help)
-                        (informed)
                         (know__request_emergency_help)
+                        (request_electric_fire_help)
                         (force-statement)
+                        (informed)
                     )
                 )
                 (outcome update-no_its_good
                     (and
+                        (force-statement)
                         (informed)
                         (know__request_emergency_help)
-                        (force-statement)
                     )
                 )
                 (outcome fallback
@@ -77,19 +77,19 @@
         :parameters()
         :precondition
             (and
-                (request_emergency_help)
-                (not (know__fire_type))
-                (not (maybe-know__fire_type))
-                (not (know__request_emergency_help))
                 (not (force-statement))
                 (maybe-know__request_emergency_help)
+                (not (know__request_emergency_help))
+                (not (know__fire_type))
+                (not (maybe-know__fire_type))
+                (request_emergency_help)
             )
         :effect
             (labeled-oneof get-fire_information__set-emergency_type
                 (outcome update-engine_fire
                     (and
-                        (know__fire_type)
                         (not (maybe-know__request_emergency_help))
+                        (know__fire_type)
                         (know__request_emergency_help)
                     )
                 )
@@ -104,20 +104,20 @@
         :parameters()
         :precondition
             (and
-                (request_emergency_help)
-                (know__fire_type)
-                (not (maybe-know__fire_type))
-                (not (maybe-know__request_emergency_help))
-                (know__request_emergency_help)
                 (not (force-statement))
+                (know__request_emergency_help)
+                (know__fire_type)
+                (not (maybe-know__request_emergency_help))
+                (not (maybe-know__fire_type))
+                (request_emergency_help)
             )
         :effect
             (labeled-oneof get-fire_color_information__set-fire_color
                 (outcome update-fire_color
                     (and
+                        (force-statement)
                         (informed)
                         (know__fire_color)
-                        (force-statement)
                     )
                 )
                 (outcome fallback
@@ -131,8 +131,8 @@
         :parameters()
         :precondition
             (and
-                (informed)
                 (not (force-statement))
+                (informed)
             )
         :effect
             (labeled-oneof complete__finish

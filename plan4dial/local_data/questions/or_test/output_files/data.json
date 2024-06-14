@@ -1,0 +1,609 @@
+{
+    "name": "or_test",
+    "context_variables": {
+        "cuisine": {
+            "type": "enum",
+            "config": [
+                "mexican",
+                "italian",
+                "chinese",
+                "dessert",
+                "bar food"
+            ],
+            "known": {
+                "type": "flag",
+                "init": false
+            }
+        },
+        "restaurant": {
+            "type": "enum",
+            "config": [
+                "Guac Grill",
+                "Alfredo's Pizza Cafe",
+                "Mandarin",
+                "Geneva Crepes"
+            ],
+            "known": {
+                "type": "flag",
+                "init": false
+            }
+        },
+        "test": {
+            "type": "flag",
+            "config": false
+        },
+        "goal": {
+            "type": "flag",
+            "config": false,
+            "known": {
+                "type": "flag",
+                "init": false
+            }
+        },
+        "force-statement": {
+            "type": "flag",
+            "config": false
+        },
+        "cuisine-value-mexican": {
+            "type": "flag",
+            "config": false
+        },
+        "cuisine-value-italian": {
+            "type": "flag",
+            "config": false
+        },
+        "cuisine-value-chinese": {
+            "type": "flag",
+            "config": false
+        },
+        "cuisine-value-dessert": {
+            "type": "flag",
+            "config": false
+        },
+        "cuisine-value-bar_food": {
+            "type": "flag",
+            "config": false
+        }
+    },
+    "intents": {
+        "confirm": {
+            "entities": [],
+            "utterances": [
+                "yes",
+                "yeah",
+                "that's it",
+                "Y",
+                "mhm",
+                "confirm",
+                "yes please"
+            ],
+            "type": "regular"
+        },
+        "deny": {
+            "entities": [],
+            "utterances": [
+                "no",
+                "not at all",
+                "that's not what i meant",
+                "absolutely not",
+                "i don't want that",
+                "nah",
+                "no thanks",
+                "no thank you"
+            ],
+            "type": "regular"
+        },
+        "share_cuisine": {
+            "entities": [],
+            "utterances": [
+                "I want to eat $cuisine.",
+                "Do you have restaurants of type $cuisine?",
+                "Are there any $cuisine restaurants in the area?"
+            ],
+            "type": "regular"
+        },
+        "fallback": {
+            "entities": [],
+            "utterances": [],
+            "type": "fallback"
+        },
+        "utter_msg": {
+            "entities": [],
+            "utterances": [],
+            "type": "regular"
+        }
+    },
+    "actions": {
+        "get-cuisine": {
+            "type": "dialogue",
+            "subtype": "dialogue disambiguation",
+            "message_variants": [
+                "What is your cuisine of choice? Mexican, Italian, Chinese, and dessert restaurants are in the area."
+            ],
+            "fallback_message_variants": [
+                "Sorry, that isn't a valid cuisine."
+            ],
+            "condition": [
+                [
+                    "cuisine",
+                    "Unknown"
+                ],
+                [
+                    "force-statement",
+                    false
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "get-cuisine__set-cuisine",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "$cuisine",
+                                "variable": "cuisine",
+                                "certainty": "Known",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "share_cuisine",
+                        "name": "get-cuisine_DETDUP_get-cuisine__set-cuisine-EQ-valid",
+                        "assignments": {
+                            "$cuisine": "found"
+                        }
+                    },
+                    {
+                        "updates": {
+                            "force-statement": {
+                                "value": true,
+                                "variable": "force-statement",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "fallback",
+                        "name": "get-cuisine_DETDUP_get-cuisine__set-cuisine-EQ-fallback",
+                        "assignments": {}
+                    }
+                ]
+            },
+            "intents": {
+                "share_cuisine": {
+                    "entities": [],
+                    "utterances": [
+                        "I want to eat $cuisine.",
+                        "Do you have restaurants of type $cuisine?",
+                        "Are there any $cuisine restaurants in the area?"
+                    ],
+                    "type": "regular"
+                },
+                "fallback": {
+                    "entities": [],
+                    "utterances": [],
+                    "type": "fallback"
+                }
+            }
+        },
+        "test_and": {
+            "type": "system",
+            "condition": [
+                [
+                    "cuisine",
+                    "Known"
+                ],
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "cuisine-value-dessert",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_and__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "test": {
+                                "value": true,
+                                "variable": "test",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_and_DETDUP_test_and__done-EQ-done",
+                        "intent": null,
+                        "assignments": {}
+                    }
+                ]
+            }
+        },
+        "dialogue_statement": {
+            "type": "dialogue",
+            "condition": [
+                [
+                    "force-statement",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "dialogue_statement__reset",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "force-statement": {
+                                "value": false,
+                                "variable": "force-statement",
+                                "interpretation": "json"
+                            }
+                        },
+                        "intent": "utter_msg",
+                        "name": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "assignments": {}
+                    }
+                ]
+            },
+            "message_variants": [
+                ""
+            ],
+            "disable-fallback": true,
+            "intents": {
+                "utter_msg": {
+                    "entities": [],
+                    "utterances": [],
+                    "type": "regular"
+                }
+            }
+        },
+        "test_or-or-1": {
+            "type": "system",
+            "condition": [
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "cuisine-value-italian",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_or-or-1__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "bar food",
+                                "variable": "cuisine",
+                                "certainty": "Unknown",
+                                "interpretation": "json"
+                            },
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_or-or-1_DETDUP_test_or-or-1__done-EQ-done",
+                        "intent": null,
+                        "assignments": {
+                            "$cuisine": "didnt-find"
+                        }
+                    }
+                ]
+            }
+        },
+        "test_or-or-2": {
+            "type": "system",
+            "condition": [
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "cuisine-value-mexican",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_or-or-2__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "bar food",
+                                "variable": "cuisine",
+                                "certainty": "Unknown",
+                                "interpretation": "json"
+                            },
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_or-or-2_DETDUP_test_or-or-2__done-EQ-done",
+                        "intent": null,
+                        "assignments": {
+                            "$cuisine": "didnt-find"
+                        }
+                    }
+                ]
+            }
+        },
+        "test_or-or-3": {
+            "type": "system",
+            "condition": [
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "cuisine-value-chinese",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_or-or-3__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "bar food",
+                                "variable": "cuisine",
+                                "certainty": "Unknown",
+                                "interpretation": "json"
+                            },
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_or-or-3_DETDUP_test_or-or-3__done-EQ-done",
+                        "intent": null,
+                        "assignments": {
+                            "$cuisine": "didnt-find"
+                        }
+                    }
+                ]
+            }
+        },
+        "test_or-or-4": {
+            "type": "system",
+            "condition": [
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "test",
+                    true
+                ],
+                [
+                    "cuisine-value-dessert",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_or-or-4__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "bar food",
+                                "variable": "cuisine",
+                                "certainty": "Unknown",
+                                "interpretation": "json"
+                            },
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_or-or-4_DETDUP_test_or-or-4__done-EQ-done",
+                        "intent": null,
+                        "assignments": {
+                            "$cuisine": "didnt-find"
+                        }
+                    }
+                ]
+            }
+        },
+        "test_or-or-5": {
+            "type": "system",
+            "condition": [
+                [
+                    "force-statement",
+                    false
+                ],
+                [
+                    "cuisine-value-bar_food",
+                    true
+                ]
+            ],
+            "effect": {
+                "global-outcome-name": "test_or-or-5__done",
+                "type": "oneof",
+                "outcomes": [
+                    {
+                        "updates": {
+                            "cuisine": {
+                                "value": "bar food",
+                                "variable": "cuisine",
+                                "certainty": "Unknown",
+                                "interpretation": "json"
+                            },
+                            "goal": {
+                                "value": true,
+                                "variable": "goal",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-mexican": {
+                                "value": false,
+                                "variable": "cuisine-value-mexican",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-italian": {
+                                "value": false,
+                                "variable": "cuisine-value-italian",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-chinese": {
+                                "value": false,
+                                "variable": "cuisine-value-chinese",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-dessert": {
+                                "value": false,
+                                "variable": "cuisine-value-dessert",
+                                "interpretation": "json"
+                            },
+                            "cuisine-value-bar_food": {
+                                "value": false,
+                                "variable": "cuisine-value-bar_food",
+                                "interpretation": "json"
+                            }
+                        },
+                        "name": "test_or-or-5_DETDUP_test_or-or-5__done-EQ-done",
+                        "intent": null,
+                        "assignments": {
+                            "$cuisine": "didnt-find"
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,193 @@
+{
+    "plan": {
+        "init": "4",
+        "goal": "0",
+        "nodes": {
+            "0": {
+                "expected_successor": false,
+                "action": "---",
+                "state": "0x10c91b0",
+                "distance": 0,
+                "is_relevant": 1,
+                "is_goal": 1,
+                "is_sc": 1,
+                "successors": []
+            },
+            "1": {
+                "expected_successor": "0",
+                "action": "complete",
+                "state": "0x10d0b00",
+                "distance": 1,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "complete_DETDUP_complete__finish-EQ-finish",
+                        "successor_id": "0"
+                    }
+                ]
+            },
+            "2": {
+                "expected_successor": "1",
+                "action": "dialogue_statement",
+                "state": "0x10ccf80",
+                "distance": 2,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "successor_id": "1"
+                    }
+                ]
+            },
+            "3": {
+                "expected_successor": "2",
+                "action": "get-fire_type",
+                "state": "0x10ced10",
+                "distance": 3,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-fallback",
+                        "successor_id": "5"
+                    },
+                    {
+                        "outcome_label": "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-update-engine_fire_emergency",
+                        "successor_id": "2"
+                    }
+                ]
+            },
+            "4": {
+                "expected_successor": "3",
+                "action": "get-initial_help_request",
+                "state": "0x10cee20",
+                "distance": 4,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "get-initial_help_request_DETDUP_get-initial_help_request__set-emergency_help_type-EQ-fallback",
+                        "successor_id": "6"
+                    },
+                    {
+                        "outcome_label": "get-initial_help_request_DETDUP_get-initial_help_request__set-emergency_help_type-EQ-update-generic_fire_emergency",
+                        "successor_id": "3"
+                    }
+                ]
+            },
+            "6": {
+                "expected_successor": "4",
+                "action": "dialogue_statement",
+                "state": "0x10d1030",
+                "distance": 5,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "successor_id": "4"
+                    }
+                ]
+            },
+            "5": {
+                "expected_successor": "3",
+                "action": "dialogue_statement",
+                "state": "0x10d01a0",
+                "distance": 4,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "successor_id": "3"
+                    }
+                ]
+            }
+        },
+        "edges": [
+            [
+                "1",
+                ">",
+                "0"
+            ],
+            [
+                "2",
+                ">",
+                "1"
+            ],
+            [
+                "3",
+                ">",
+                "5"
+            ],
+            [
+                "3",
+                ">",
+                "2"
+            ],
+            [
+                "4",
+                ">",
+                "6"
+            ],
+            [
+                "4",
+                ">",
+                "3"
+            ],
+            [
+                "6",
+                ">",
+                "4"
+            ],
+            [
+                "5",
+                ">",
+                "3"
+            ]
+        ],
+        "states": {
+            "0x10c91b0": [
+                "Atom goal()"
+            ],
+            "0x10d0b00": [
+                "NegatedAtom force-statement()",
+                "Atom request_engine_fire_help()",
+                "Atom know__request_engine_fire_help()"
+            ],
+            "0x10ccf80": [
+                "Atom force-statement()",
+                "Atom request_engine_fire_help()",
+                "Atom know__request_engine_fire_help()"
+            ],
+            "0x10ced10": [
+                "Atom know__request_emergency_help()",
+                "Atom request_emergency_help()",
+                "NegatedAtom force-statement()"
+            ],
+            "0x10cee20": [
+                "NegatedAtom know__request_emergency_help()",
+                "NegatedAtom request_emergency_help()",
+                "NegatedAtom force-statement()"
+            ],
+            "0x10d1030": [
+                "NegatedAtom know__request_emergency_help()",
+                "NegatedAtom request_emergency_help()",
+                "Atom force-statement()"
+            ],
+            "0x10d01a0": [
+                "Atom know__request_emergency_help()",
+                "Atom request_emergency_help()",
+                "Atom force-statement()"
+            ]
+        }
+    }
+}

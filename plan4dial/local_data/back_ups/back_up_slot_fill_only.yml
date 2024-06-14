@@ -1,0 +1,593 @@
+name: extended_ijcai
+context_variables:
+
+  request_emergency_help: 
+    type: flag 
+    init: false
+    known:
+      type: fflag
+      init: false
+
+
+  request_electric_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+  request_engine_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+  request_wing_fire_help: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag 
+      init: false 
+
+  got_instruction: 
+    type: flag 
+    init: false 
+  
+
+  got_status: 
+    type: flag 
+    init: false 
+  got_instruction_engine_fire: 
+    type: flag 
+    init: false 
+
+  got_instruction_electric_fire: 
+    type: flag 
+    init: false 
+  informed: 
+    type: flag
+    init: false
+  
+  need_further_help: 
+    type: flag 
+    init: false
+
+  not_feeling_well: 
+    type: flag 
+    init: false
+  
+  got_from_server: 
+    type: flag 
+    init: false
+  server_status: 
+    type: flag
+    init: false 
+    known:
+      type: flag 
+      init: false  
+  
+  sub_dialog_reset: 
+    type: flag 
+    init: false
+  
+  second_flag: 
+    type: flag 
+    init: false 
+  
+  fire_color: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - red 
+      - orange 
+  
+  instrument: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - screen 
+      - wiring 
+
+  fire_type: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - engine 
+      - electric
+      - none
+
+  fire_smell:
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options: 
+      - foul 
+      - sulpher
+
+
+
+  fire_location:
+    type: enum 
+    known: 
+      type: flag 
+      init: false
+    options: 
+      - cowling 
+      - windscreen
+  
+
+  instructions_type: 
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options: 
+      - electric 
+      - engine 
+  
+  dummy_code:
+    type: enum 
+    known: 
+      type: flag 
+      init: false 
+    options:
+      - 300
+      - 400
+      - 500
+
+  ctx_two: 
+    type: flag 
+    init: false
+  
+  ctx_three: 
+    type: flag 
+    init: false
+    known: 
+      type: flag 
+      init: false
+
+  ctx_four: 
+    type: flag 
+    init: false
+    known: 
+      type: flag 
+      init: false
+
+  server_error: 
+    type: flag 
+    init: false 
+    known: 
+      type: flag
+      init: false
+  
+  goal:
+    type: flag
+    init: false
+    known:
+      type: flag
+      init: false
+
+  emergency_type: 
+    type: enum
+    known:
+      type: flag 
+      init: false
+    options:
+      - 100
+      - 200 
+
+
+intents: 
+  confirm:
+    utterances:
+      - "yes" 
+      - yeah 
+      - yup
+      - affirmative
+      - aye
+  
+  deny: 
+    utterances:
+      - "no"
+      - nah 
+      - negative 
+      - not at all 
+      - not really 
+  
+  share-call_for_help:
+    utterances:
+      - I have a problem 
+      - I need help 
+      - Can you help me?  
+
+
+
+  share-fire_emergency_with_location_and_color:
+    entities:
+      - fire_color
+      - fire_location
+
+    utterances:
+      - I see $fire_color coming out of my $fire_location. 
+      - My $fire_location is burning. I see $fire_color fire
+
+
+  share-fire_location: 
+    entities:
+      - fire_location
+    utterances:
+      - Fire detected in $fire_location!
+      - $fire_location is on fire, take immediate action!
+      - Alert Fire in $fire_location, evacuate now!
+      - Mayday! Fire reported in $fire_location!
+      - Emergency Fire sighted at $fire_location, respond swiftly!
+
+  share-fire_color: 
+    entities:
+      - fire_color
+    utterances:
+      - The hue I perceive matches $fire_color.
+      - My sight captures the shade represented by $fire_color.
+      - The tint I observe resembles $fire_color.
+      - What meets my eyes mirrors $fire_color.
+      - The pigment evident to me reflects $fire_color.
+      - I discern a hue akin to $fire_color.
+      - The color evident in my vision aligns with $fire_color.
+      - What I perceive resembles the hue $fire_color.
+      - My observation identifies the color as $fire_color.
+      - The tone apparent to me resonates with $fire_color.
+
+
+  
+  # share-electric_fire_emergency:
+  #   utterances:
+  #     - I detect the scent of an electrical fire nearby.
+  #     - There's a distinct odor of electrical fire in the air.
+  #     - My nostrils catch the whiff of an electric fire.
+  #     - There's a pungent aroma signaling an electric fire.
+  #     - The air carries the unmistakable scent of an electrical fire.
+  #     - I'm picking up on the scent of something akin to an electric fire.
+  #     - There's a lingering smell suggesting the presence of an electrical fire.
+  #     - The olfactory sensation hints at the onset of an electric fire.
+  #     - I'm sensing the distinct odor of electrical components burning.
+  #     - The scent in the room bears a resemblance to that of an electric fire.
+
+  share-fire_smell_emergency:
+    entities:
+      - fire_smell
+    utterances:
+      - Detecting $fire_smell nearby.
+      - Distinct odor of $fire_smell in the air.
+      - Whiff of $fire_smell in the air.
+      - Pungent aroma signaling $fire_smell.
+      - Unmistakable scent of $fire_smell in the air.
+
+
+
+
+  share-instrument: 
+    entities:
+      - instrument
+    utterances:
+      - My suspicion leans towards the $instrument.
+      - I believe the $instrument is the culprit.
+      - I reckon it's the $instrument at fault.
+      - My intuition points towards the $instrument.
+      - I suspect the $instrument is involved.
+      - I have a feeling that the $instrument is to blame.
+      - It seems likely that the $instrument is responsible.
+      - The $instrument appears to be the source.
+      - Signs suggest that the $instrument is involved.
+      - It looks like the $instrument is causing the issue
+
+
+actions:
+
+
+  # get-initial_help_request: 
+  #   type: dialogue
+  #   subtype: resetable
+  #   message_variants:
+  #     - What can I help you with today?
+
+  #   # fallback_message_variants:
+  #   #   - Can you please repeat that? 
+
+  #   condition:
+  #     request_emergency_help:
+  #       known: false
+  #       value: false 
+  #   effect: 
+  #     set-emergency_help_type: 
+  #       oneof:
+  #         outcomes: 
+            
+  #           update-generic_fire_emergency: 
+  #             updates: 
+  #               request_emergency_help:
+  #                 known: true 
+  #                 value: true
+  #             intent: share-call_for_help
+
+                
+
+  # get-instrument_on_fire: 
+  #       type: custom
+  #       subtype: slot_fill
+
+  #       parameters: 
+  #         action_name: get-instrument_on_fire 
+  #         overall_intent: share-instrument
+  #         entities: 
+  #           - instrument
+  #         message_variants:
+  #         - Which instrument is burning? 
+
+  #         config_entities:
+  #           instrument: 
+  #             clarify_message_variants:
+  #               - I did not catch that. Did you mean $instrument
+  #         additional_conditions: 
+  #           request_electric_fire_help:
+  #             value: false
+  #         additional_updates:
+  #           - outcome:
+  #               instrument:
+  #                 known: true
+  #             response_variants:
+  #               - Generating instructions for the case when is $fire_color colored burning.
+  #           - outcome:
+  #               ctx_three:
+  #                 value: true 
+  #                 known: true
+
+
+  update-engine_fire_emergency: 
+    type: custom 
+    subtype: slot_fill
+    parameters:
+      action_name: update-engine_fire_emergency
+      entities:
+        - fire_color
+        - fire_location
+      overall_intent: share-engine_fire_emergency 
+      message_variants:
+        - Just off me already 
+      fallback_message_variants:
+        - Nothing seems to work
+
+      config_entities:
+        fire_color:
+          fallback_message_variants:
+            - Sorry I did not catch the fire type. Can you be precise? 
+          single_slot_message_variants:
+            - What color is the fire?  
+          single_slot_intent: share-fire_color
+        
+        fire_location: 
+          fallback_message_variants:
+            - I did not catch the fire location. Can you repeat that? 
+          single_slot_message_variants:
+            - Where is the fire? 
+          single_slot_intent: share-fire_location
+      
+      additional_updates:
+        - outcome:
+            fire_color:
+              known: true 
+          response_variants:
+            - ok, noted 
+        - outcome:
+            fire_location:
+              known: true
+          response_variants:
+            - Ok, ok   
+        # - outcome:
+        #     request_engine_fire_help:
+        #       known: true
+        #       value: true 
+
+
+
+  complete:
+    type: system 
+    condition: 
+      fire_color:
+        known: true
+      fire_location:
+        known: true
+    effect:
+      finish:
+        oneof:
+          outcomes:
+            finish:
+              updates:
+                goal:
+                  value: true
+ 
+
+
+  # get-initial_help_request: 
+  #   type: custom
+  #   subtype: slot_fill_more
+
+  #   parameters:
+  #     message_variants:
+  #       - What can I help you with today?
+  #     condition:
+  #       request_emergency_help:
+  #         known: false
+  #         value: false 
+      
+  #     effect:
+  #       determine_emergency_type: 
+  #         oneof:
+  #           outcomes:
+             
+  #             update-engine_fire_emergency: 
+  #               entities:
+  #                 - fire_color
+  #                 - fire_location
+  #               overall_intent: share-engine_fire_emergency 
+  #               config_entities:
+  #                 fire_color:
+  #                   fallback_message_variants:
+  #                     - Sorry I did not catch the fire type. Can you be precise? 
+  #                   single_slot_message_variants:
+  #                     - What color is the fire?  
+  #                   single_slot_intent: share-fire_color
+                  
+  #                 fire_location: 
+  #                   fallback_message_variants:
+  #                     - I did not catch the fire location. Can you repeat that? 
+  #                   single_slot_message_variants:
+  #                     - Where is the fire? 
+  #                   single_slot_intent: share-fire_location
+                
+  #               additional_updates:
+  #                 - outcome:
+  #                     fire_color:
+  #                       known: true 
+  #                   response_variants:
+  #                     - ok, noted 
+  #                 - outcome:
+  #                     fire_location:
+  #                       known: true
+  #                   response_variants:
+  #                     - Ok, ok   
+  #                 - outcome:
+  #                     request_engine_fire_help:
+  #                       known: true
+  #                       value: true 
+  #                     request_emergency_help:
+  #                       known: true
+  #                       value: true
+
+  #             update-electric_fire_emergency:
+  #               entities:
+  #                 -  
+                
+  #               overall_intent: share-fire_smell_emergency
+  #               config_entities:
+  #                 fire_smell: 
+  #                   fallback_message_variants:
+  #                     - Sorry I did not catch that. Please repeat it. 
+  #                   single_slot_message_variants:
+  #                     - What does the fire smell like? 
+  #                   single_slot_intent: share-fire_smell
+  #               additional_updates:
+  #                 - outcome:
+  #                     fire_smell: 
+  #                       known: true 
+  #                   response_variants:
+  #                     - Si
+  #                 - outcome: 
+  #                     request_electric_fire_help:
+  #                       known: true
+  #                       value: true
+  #                     request_emergency_help:
+  #                       known: true
+  #                       value: true
+
+  # update-after_slot_fill_engine_fire: 
+  #   type: system 
+  #   condition:
+  #     request_engine_fire_help: 
+  #       known: true
+  #       value: true
+  #   effect:
+  #     update: 
+  #       oneof:
+  #         outcomes: 
+  #           update: 
+  #             updates: 
+  #               emergency_type:
+  #                 value: 100
+  #                 known: true
+
+  # update-after_slot_fill_electric_fire: 
+  #   type: system 
+  #   condition:
+  #     request_electric_fire_help: 
+  #       known: true
+  #       value: true
+  #   effect:
+  #     update: 
+  #       oneof:
+  #         outcomes: 
+  #           update: 
+  #             updates: 
+  #               emergency_type:
+  #                 value: 200
+  #                 known: true
+
+
+  # context-fire_type: 
+  #   type: system
+  #   subtype: Context dependent determination
+  #   condition:
+  #     emergency_type:
+  #       known: true
+  #   effect:
+  #     set-complete: 
+  #       oneof:
+  #         outcomes:
+  #           update-im: 
+  #             updates: 
+  #               emergency_type:
+  #                 known: true 
+  #             context:
+  #               emergency_type:
+  #                 value: 100
+  #           update-im2: 
+  #             updates: 
+  #               emergency_type:
+  #                 known: true 
+  #             context:
+  #               emergency_type:
+  #                 value: 200
+              
+
+
+
+
+
+  # get-need_further_help: 
+  #   type: dialogue
+  #   message_variants:
+  #     - Do you need any further help?
+  #   condition:
+  #     # instrument:
+  #     #   known: true
+  #     emergency_type:
+  #       known: true
+  #   effect:
+  #     set-complete: 
+  #       oneof:
+  #         outcomes:
+  #           update-need_further_help: 
+  #             updates:
+  #               need_further_help:
+  #                 value: true
+  #             intent: deny 
+
+  # complete:
+  #   type: system 
+  #   condition: 
+  #     need_further_help:
+  #       value: true
+  #   effect:
+  #     finish:
+  #       oneof:
+  #         outcomes:
+  #           finish:
+  #             updates:
+  #               goal:
+  #                 value: true
+ 

@@ -88,7 +88,10 @@
             "entities": [],
             "utterances": [
                 "yes",
-                "yeah"
+                "yeah",
+                "yup",
+                "affirmative",
+                "aye"
             ],
             "type": "regular"
         },
@@ -96,25 +99,32 @@
             "entities": [],
             "utterances": [
                 "no",
-                "nah"
+                "nah",
+                "negative",
+                "not at all",
+                "not really"
             ],
             "type": "regular"
         },
         "share-generic_fire_emergency": {
             "entities": [],
             "utterances": [
-                "The plane is on fire.",
+                "The plane is on fire",
                 "I see smoke",
-                "I can smell smoke"
+                "I can smell smoke",
+                "It looks like there is fire",
+                "It seems the plane has caught fire"
             ],
             "type": "regular"
         },
         "share-engine_fire_emergency": {
             "entities": [],
             "utterances": [
-                "I see smokes coming out of my engine.",
-                "My engine is burning.",
-                "I see fire coming from my engine."
+                "I see smokes coming out of my engine",
+                "My engine is burning",
+                "I see fire coming from my engine",
+                "I think my engine has caught fire",
+                "My engine is on fire"
             ],
             "type": "regular"
         },
@@ -123,8 +133,9 @@
                 "$instrument_fire_enum"
             ],
             "utterances": [
-                "My $instrument is catching electric fire",
-                "Help me god, my $instrument is burning"
+                "My $instrument_fire_enum is catching electric fire",
+                "Help me god, my $instrument_fire_enum is burning",
+                "My $instrument_fire_enum is burning"
             ],
             "type": "regular"
         },
@@ -144,7 +155,8 @@
             ],
             "utterances": [
                 "I have $fire_type",
-                "$fire_type"
+                "$fire_type",
+                "I am dealing with $fire_type"
             ],
             "type": "regular"
         },
@@ -152,8 +164,10 @@
             "entities": [],
             "utterances": [
                 "Nah its all good",
-                "Not today Satan",
-                "Nein"
+                "all good in the hood",
+                "Everything is alright",
+                "Theres no problem",
+                "It looks clean"
             ],
             "type": "regular"
         },
@@ -334,18 +348,22 @@
                 "share-generic_fire_emergency": {
                     "entities": [],
                     "utterances": [
-                        "The plane is on fire.",
+                        "The plane is on fire",
                         "I see smoke",
-                        "I can smell smoke"
+                        "I can smell smoke",
+                        "It looks like there is fire",
+                        "It seems the plane has caught fire"
                     ],
                     "type": "regular"
                 },
                 "share-engine_fire_emergency": {
                     "entities": [],
                     "utterances": [
-                        "I see smokes coming out of my engine.",
-                        "My engine is burning.",
-                        "I see fire coming from my engine."
+                        "I see smokes coming out of my engine",
+                        "My engine is burning",
+                        "I see fire coming from my engine",
+                        "I think my engine has caught fire",
+                        "My engine is on fire"
                     ],
                     "type": "regular"
                 },
@@ -354,8 +372,9 @@
                         "$instrument_fire_enum"
                     ],
                     "utterances": [
-                        "My $instrument is catching electric fire",
-                        "Help me god, my $instrument is burning"
+                        "My $instrument_fire_enum is catching electric fire",
+                        "Help me god, my $instrument_fire_enum is burning",
+                        "My $instrument_fire_enum is burning"
                     ],
                     "type": "regular"
                 },
@@ -363,7 +382,10 @@
                     "entities": [],
                     "utterances": [
                         "no",
-                        "nah"
+                        "nah",
+                        "negative",
+                        "not at all",
+                        "not really"
                     ],
                     "type": "regular"
                 },
@@ -448,7 +470,8 @@
                     ],
                     "utterances": [
                         "I have $fire_type",
-                        "$fire_type"
+                        "$fire_type",
+                        "I am dealing with $fire_type"
                     ],
                     "type": "regular"
                 },

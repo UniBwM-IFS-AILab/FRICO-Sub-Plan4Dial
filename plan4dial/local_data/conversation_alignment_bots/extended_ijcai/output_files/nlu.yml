@@ -1,0 +1,156 @@
+nlu:
+- examples: '- yes
+
+    - yeah
+
+    - yup
+
+    - affirmative
+
+    - aye'
+  intent: confirm
+- examples: '- no
+
+    - nah
+
+    - negative
+
+    - not at all
+
+    - not really'
+  intent: deny
+- examples: '- I have a problem
+
+    - I need help
+
+    - Can you help me?'
+  intent: share-call_for_help
+- examples: '- I see smokes coming out of my engine
+
+    - My engine is burning
+
+    - I see fire coming from my engine
+
+    - I think my engine has caught fire
+
+    - My engine is on fire'
+  intent: share-engine_fire_emergency
+- examples: '- I detect the scent of an electrical fire nearby.
+
+    - There''s a distinct odor of electrical fire in the air.
+
+    - My nostrils catch the whiff of an electric fire.
+
+    - There''s a pungent aroma signaling an electric fire.
+
+    - The air carries the unmistakable scent of an electrical fire.
+
+    - I''m picking up on the scent of something akin to an electric fire.
+
+    - There''s a lingering smell suggesting the presence of an electrical fire.
+
+    - The olfactory sensation hints at the onset of an electric fire.
+
+    - I''m sensing the distinct odor of electrical components burning.
+
+    - The scent in the room bears a resemblance to that of an electric fire.'
+  intent: share-electric_fire_emergency
+- examples: '- The tint I observe resembles [red]{"entity": "fire_color", "value":
+    "red"}.
+
+    - What I perceive resembles the hue [red]{"entity": "fire_color", "value": "red"}.
+
+    - My sight captures the shade represented by [orange]{"entity": "fire_color",
+    "value": "orange"}.
+
+    - I discern a hue akin to [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - I discern a hue akin to [red]{"entity": "fire_color", "value": "red"}.
+
+    - The color evident in my vision aligns with [red]{"entity": "fire_color", "value":
+    "red"}.
+
+    - The tone apparent to me resonates with [orange]{"entity": "fire_color", "value":
+    "orange"}.
+
+    - The hue I perceive matches [red]{"entity": "fire_color", "value": "red"}.
+
+    - What I perceive resembles the hue [orange]{"entity": "fire_color", "value":
+    "orange"}.
+
+    - What meets my eyes mirrors [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - My observation identifies the color as [red]{"entity": "fire_color", "value":
+    "red"}.
+
+    - The hue I perceive matches [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The pigment evident to me reflects [orange]{"entity": "fire_color", "value":
+    "orange"}.
+
+    - My observation identifies the color as [orange]{"entity": "fire_color", "value":
+    "orange"}.
+
+    - The tint I observe resembles [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - My sight captures the shade represented by [red]{"entity": "fire_color", "value":
+    "red"}.
+
+    - What meets my eyes mirrors [red]{"entity": "fire_color", "value": "red"}.
+
+    - The color evident in my vision aligns with [orange]{"entity": "fire_color",
+    "value": "orange"}.
+
+    - The pigment evident to me reflects [red]{"entity": "fire_color", "value": "red"}.
+
+    - The tone apparent to me resonates with [red]{"entity": "fire_color", "value":
+    "red"}.'
+  intent: share-fire_color
+- examples: '- It seems likely that the [screen]{"entity": "instrument", "value":
+    "screen"} is responsible.
+
+    - It looks like the [screen]{"entity": "instrument", "value": "screen"} is causing
+    the issue
+
+    - My intuition points towards the [wiring]{"entity": "instrument", "value": "wiring"}.
+
+    - I suspect the [wiring]{"entity": "instrument", "value": "wiring"} is involved.
+
+    - Signs suggest that the [wiring]{"entity": "instrument", "value": "wiring"} is
+    involved.
+
+    - I reckon it''s the [wiring]{"entity": "instrument", "value": "wiring"} at fault.
+
+    - My suspicion leans towards the [screen]{"entity": "instrument", "value": "screen"}.
+
+    - It looks like the [wiring]{"entity": "instrument", "value": "wiring"} is causing
+    the issue
+
+    - I have a feeling that the [screen]{"entity": "instrument", "value": "screen"}
+    is to blame.
+
+    - I believe the [screen]{"entity": "instrument", "value": "screen"} is the culprit.
+
+    - I have a feeling that the [wiring]{"entity": "instrument", "value": "wiring"}
+    is to blame.
+
+    - I reckon it''s the [screen]{"entity": "instrument", "value": "screen"} at fault.
+
+    - I believe the [wiring]{"entity": "instrument", "value": "wiring"} is the culprit.
+
+    - I suspect the [screen]{"entity": "instrument", "value": "screen"} is involved.
+
+    - The [screen]{"entity": "instrument", "value": "screen"} appears to be the source.
+
+    - My suspicion leans towards the [wiring]{"entity": "instrument", "value": "wiring"}.
+
+    - The [wiring]{"entity": "instrument", "value": "wiring"} appears to be the source.
+
+    - It seems likely that the [wiring]{"entity": "instrument", "value": "wiring"}
+    is responsible.
+
+    - My intuition points towards the [screen]{"entity": "instrument", "value": "screen"}.
+
+    - Signs suggest that the [screen]{"entity": "instrument", "value": "screen"} is
+    involved.'
+  intent: share-instrument

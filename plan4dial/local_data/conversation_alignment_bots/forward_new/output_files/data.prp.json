@@ -6,7 +6,7 @@
             "0": {
                 "expected_successor": false,
                 "action": "---",
-                "state": "0x1929180",
+                "state": "0x2093f50",
                 "distance": 0,
                 "is_relevant": 1,
                 "is_goal": 1,
@@ -16,7 +16,7 @@
             "1": {
                 "expected_successor": "0",
                 "action": "complete",
-                "state": "0x192e3c0",
+                "state": "0x2099b90",
                 "distance": 1,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -30,19 +30,19 @@
             },
             "2": {
                 "expected_successor": "1",
-                "action": "set-informed",
-                "state": "0x192d700",
+                "action": "get-fire_information",
+                "state": "0x2099dd0",
                 "distance": 2,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "set-informed_DETDUP_set-informed__set-informed-EQ-fallback",
+                        "outcome_label": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-fallback",
                         "successor_id": "4"
                     },
                     {
-                        "outcome_label": "set-informed_DETDUP_set-informed__set-informed-EQ-update-informed",
+                        "outcome_label": "get-fire_information_DETDUP_get-fire_information__set-emergency_type-EQ-update-engine_fire",
                         "successor_id": "1"
                     }
                 ]
@@ -50,7 +50,7 @@
             "3": {
                 "expected_successor": "2",
                 "action": "get-fire_information-one",
-                "state": "0x192dca0",
+                "state": "0x2098b40",
                 "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -73,7 +73,7 @@
             "4": {
                 "expected_successor": "2",
                 "action": "dialogue_statement",
-                "state": "0x1930780",
+                "state": "0x209cbf0",
                 "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -88,7 +88,7 @@
             "5": {
                 "expected_successor": "3",
                 "action": "dialogue_statement",
-                "state": "0x19314c0",
+                "state": "0x209d8d0",
                 "distance": 4,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -144,25 +144,25 @@
             ]
         ],
         "states": {
-            "0x1929180": [
+            "0x2093f50": [
                 "Atom goal()"
             ],
-            "0x192e3c0": [
+            "0x2099b90": [
                 "NegatedAtom force-statement()",
                 "Atom informed()"
             ],
-            "0x192d700": [
+            "0x2099dd0": [
                 "NegatedAtom force-statement()",
                 "Atom proceed_flag()"
             ],
-            "0x192dca0": [
+            "0x2098b40": [
                 "NegatedAtom force-statement()"
             ],
-            "0x1930780": [
+            "0x209cbf0": [
                 "Atom force-statement()",
                 "Atom proceed_flag()"
             ],
-            "0x19314c0": [
+            "0x209d8d0": [
                 "Atom force-statement()"
             ]
         }

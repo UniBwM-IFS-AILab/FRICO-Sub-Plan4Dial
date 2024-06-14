@@ -1,0 +1,315 @@
+{
+    "actions": {
+        "get-initial_help_request": {
+            "condition": [
+                "(not (request_emergency_help))",
+                "(not (force-statement))",
+                "(not (know__request_emergency_help))",
+                "(not (forcing__get-restart_conversation))",
+                "(not (maybe-know__request_emergency_help))"
+            ],
+            "effect": {
+                "get-initial_help_request_DETDUP_get-initial_help_request__set-emergency_help_type-EQ-update-generic_fire_emergency": [
+                    "(request_emergency_help)",
+                    "(know__request_emergency_help)"
+                ],
+                "get-initial_help_request_DETDUP_get-initial_help_request__set-emergency_help_type-EQ-update-reset": [
+                    "(sub_dialog_reset)",
+                    "(forcing__get-restart_conversation)"
+                ],
+                "get-initial_help_request_DETDUP_get-initial_help_request__set-emergency_help_type-EQ-fallback": [
+                    "(force-statement)"
+                ]
+            }
+        },
+        "get-restart_conversation": {
+            "condition": [
+                "(not (force-statement))",
+                "(sub_dialog_reset)"
+            ],
+            "effect": {
+                "get-restart_conversation_DETDUP_get-restart_conversation__set-second_flag-EQ-update-second_flag": [
+                    "(not (forcing__get-restart_conversation))",
+                    "(second_flag)"
+                ],
+                "get-restart_conversation_DETDUP_get-restart_conversation__set-second_flag-EQ-fallback": [
+                    "(force-statement)",
+                    "(not (forcing__get-restart_conversation))"
+                ]
+            }
+        },
+        "get-fire_type": {
+            "condition": [
+                "(know__request_emergency_help)",
+                "(request_emergency_help)",
+                "(not (force-statement))",
+                "(not (forcing__get-restart_conversation))",
+                "(not (maybe-know__request_emergency_help))"
+            ],
+            "effect": {
+                "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-update-engine_fire_emergency": [
+                    "(not (fire_type-value-none))",
+                    "(know__fire_type)",
+                    "(not (fire_type-value-electric))",
+                    "(fire_type-value-engine)"
+                ],
+                "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-update-electric_fire_emergency": [
+                    "(not (fire_type-value-none))",
+                    "(fire_type-value-electric)",
+                    "(not (fire_type-value-engine))",
+                    "(know__fire_type)"
+                ],
+                "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-update-reset": [
+                    "(sub_dialog_reset)"
+                ],
+                "get-fire_type_DETDUP_get-fire_type__set-engine_fire_emergency-EQ-fallback": [
+                    "(force-statement)"
+                ]
+            }
+        },
+        "intermediate-context": {
+            "condition": [
+                "(not (force-statement))",
+                "(not (request_electric_fire_help))",
+                "(not (ctx_two))",
+                "(know__fire_type)",
+                "(not (request_engine_fire_help))",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "intermediate-context_DETDUP_intermediate-context__set-complete-EQ-update-context_two": [
+                    "(request_engine_fire_help)",
+                    "(ctx_two)"
+                ],
+                "intermediate-context_DETDUP_intermediate-context__set-complete-EQ-update-context_one": [
+                    "(ctx_two)",
+                    "(request_electric_fire_help)"
+                ]
+            }
+        },
+        "update-after_slot_fill_engine_fire": {
+            "condition": [
+                "(know__fire_color)",
+                "(not (force-statement))",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "update-after_slot_fill_engine_fire_DETDUP_update-after_slot_fill_engine_fire__update-EQ-update": [
+                    "(fire_type-value-engine)",
+                    "(ctx_three)",
+                    "(know__ctx_three)",
+                    "(not (fire_type-value-none))",
+                    "(know__fire_type)",
+                    "(not (fire_type-value-electric))"
+                ]
+            }
+        },
+        "get-engine_fire_instruction": {
+            "condition": [
+                "(fire_type-value-engine)",
+                "(ctx_three)",
+                "(not (force-statement))",
+                "(know__ctx_three)",
+                "(know__fire_type)",
+                "(not (got_instruction_engine_fire))",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "get-engine_fire_instruction_DETDUP_get-engine_fire_instruction__set-get-engine_fire_instruction-EQ-update-got_engine_fire_instruction": [
+                    "(server_status)",
+                    "(know__server_status)",
+                    "(got_instruction_engine_fire)"
+                ],
+                "get-engine_fire_instruction_DETDUP_get-engine_fire_instruction__set-get-engine_fire_instruction-EQ-update-got_engine_fire_instruction_false": [
+                    "(server_status)",
+                    "(not (know__server_status))"
+                ]
+            }
+        },
+        "get-electric_fire_instruction": {
+            "condition": [
+                "(ctx_three)",
+                "(not (force-statement))",
+                "(know__ctx_three)",
+                "(fire_type-value-electric)",
+                "(know__fire_type)",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "get-electric_fire_instruction_DETDUP_get-electric_fire_instruction__set-get-electric_fire_instruction-EQ-update-got_electric_fire_instruction": [
+                    "(server_status)",
+                    "(got_instruction_electric_fire)",
+                    "(know__server_status)"
+                ],
+                "get-electric_fire_instruction_DETDUP_get-electric_fire_instruction__set-get-electric_fire_instruction-EQ-update-got_electric_fire_instruction_false": [
+                    "(not (server_status))",
+                    "(know__server_status)"
+                ]
+            }
+        },
+        "update-after_slot_fill_electric_fire": {
+            "condition": [
+                "(not (force-statement))",
+                "(not (forcing__get-restart_conversation))",
+                "(know__instrument)"
+            ],
+            "effect": {
+                "update-after_slot_fill_electric_fire_DETDUP_update-after_slot_fill_electric_fire__update-EQ-update": [
+                    "(ctx_three)",
+                    "(not (fire_type-value-engine))",
+                    "(know__ctx_three)",
+                    "(not (fire_type-value-none))",
+                    "(fire_type-value-electric)",
+                    "(know__fire_type)"
+                ]
+            }
+        },
+        "final-context": {
+            "condition": [
+                "(not (know__dummy_code))",
+                "(ctx_three)",
+                "(not (force-statement))",
+                "(know__ctx_three)",
+                "(know__fire_type)",
+                "(know__server_status)",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "final-context_DETDUP_final-context__set-complete-EQ-update-electric_fire": [
+                    "(know__dummy_code)"
+                ],
+                "final-context_DETDUP_final-context__set-complete-EQ-update-engine_fire": [
+                    "(know__dummy_code)"
+                ],
+                "final-context_DETDUP_final-context__set-complete-EQ-update-error": [
+                    "(know__dummy_code)"
+                ]
+            }
+        },
+        "get-need_further_help": {
+            "condition": [
+                "(not (force-statement))",
+                "(know__dummy_code)",
+                "(not (forcing__get-restart_conversation))"
+            ],
+            "effect": {
+                "get-need_further_help_DETDUP_get-need_further_help__set-complete-EQ-update-need_further_help": [
+                    "(need_further_help)"
+                ],
+                "get-need_further_help_DETDUP_get-need_further_help__set-complete-EQ-fallback": [
+                    "(force-statement)"
+                ]
+            }
+        },
+        "complete": {
+            "condition": [
+                "(not (force-statement))",
+                "(not (forcing__get-restart_conversation))",
+                "(need_further_help)"
+            ],
+            "effect": {
+                "complete_DETDUP_complete__finish-EQ-finish": [
+                    "(goal)"
+                ]
+            }
+        },
+        "dialogue_statement": {
+            "condition": [
+                "(force-statement)"
+            ],
+            "effect": {
+                "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock": [
+                    "(not (force-statement))"
+                ]
+            }
+        },
+        "slot-filler__get-fire_color": {
+            "condition": [
+                "(not (forcing__get-restart_conversation))",
+                "(not (know__fire_color))",
+                "(not (force-statement))",
+                "(request_engine_fire_help)"
+            ],
+            "effect": {
+                "slot-filler__get-fire_color_DETDUP_slot-filler__get-fire_color__validate-slot-fill-EQ-fire_color_found": [
+                    "(know__fire_color)",
+                    "(force-statement)"
+                ],
+                "slot-filler__get-fire_color_DETDUP_slot-filler__get-fire_color__validate-slot-fill-EQ-fallback": [
+                    "(force-statement)"
+                ]
+            }
+        },
+        "slot-filler__get-instrument_on_fire": {
+            "condition": [
+                "(not (force-statement))",
+                "(not (forcing__get-restart_conversation))",
+                "(not (know__instrument))",
+                "(request_electric_fire_help)"
+            ],
+            "effect": {
+                "slot-filler__get-instrument_on_fire_DETDUP_slot-filler__get-instrument_on_fire__validate-slot-fill-EQ-instrument_found": [
+                    "(force-statement)",
+                    "(know__instrument)"
+                ],
+                "slot-filler__get-instrument_on_fire_DETDUP_slot-filler__get-instrument_on_fire__validate-slot-fill-EQ-fallback": [
+                    "(force-statement)"
+                ]
+            }
+        }
+    },
+    "initial_state": [
+        "(not (sub_dialog_reset))",
+        "(not (got_instruction))",
+        "(not (request_wing_fire_help))",
+        "(not (server_error))",
+        "(not (know__ctx_three))",
+        "(not (got_instruction_electric_fire))",
+        "(not (know__instructions_type))",
+        "(not (got_status))",
+        "(not (request_engine_fire_help))",
+        "(not (request_emergency_help))",
+        "(not (know__fire_color))",
+        "(not (server_status))",
+        "(not (got_from_server))",
+        "(not (know__dummy_code))",
+        "(not (know__request_wing_fire_help))",
+        "(not (ctx_two))",
+        "(not (goal))",
+        "(not (fire_type-value-none))",
+        "(not (know__request_emergency_help))",
+        "(not (know__server_error))",
+        "(not (got_instruction_engine_fire))",
+        "(not (fire_type-value-electric))",
+        "(not (not_feeling_well))",
+        "(not (know__instrument))",
+        "(not (force-statement))",
+        "(not (fire_type-value-engine))",
+        "(not (request_electric_fire_help))",
+        "(not (know__fire_type))",
+        "(not (ctx_three))",
+        "(not (need_further_help))",
+        "(not (know__goal))",
+        "(not (informed))",
+        "(not (second_flag))",
+        "(not (forcing__get-restart_conversation))",
+        "(not (maybe-know__request_emergency_help))",
+        "(not (know__server_status))"
+    ],
+    "partial": {
+        "get-initial_help_request": [],
+        "get-restart_conversation": [],
+        "get-fire_type": [],
+        "intermediate-context": [],
+        "update-after_slot_fill_engine_fire": [],
+        "get-engine_fire_instruction": [],
+        "get-electric_fire_instruction": [],
+        "update-after_slot_fill_electric_fire": [],
+        "final-context": [],
+        "get-need_further_help": [],
+        "complete": [],
+        "dialogue_statement": [],
+        "slot-filler__get-fire_color": [],
+        "slot-filler__get-instrument_on_fire": []
+    }
+}
