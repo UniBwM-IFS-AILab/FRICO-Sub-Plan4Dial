@@ -1,0 +1,2182 @@
+nlu:
+- examples: '- yes
+
+    - yeah
+
+    - yup
+
+    - affirmative
+
+    - aye'
+  intent: confirm
+- examples: '- no
+
+    - nah
+
+    - negative
+
+    - not at all
+
+    - not really'
+  intent: deny
+- examples: '- undo last request
+
+    - start over
+
+    - Please restart the routine'
+  intent: reset
+- examples: '- There''s a frightening flare of a [red]{"entity": "fire_color", "value":
+    "red"} blaze at my aircraft''s [engine]{"entity": "location", "value": "engine"}.
+
+    - Emitting [red]{"entity": "fire_color", "value": "red"} fire from my aircraft''s
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Noticing a [red]{"entity": "fire_color", "value": "red"} glow in my [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Noticing a [red]{"entity": "fire_color", "value": "red"} glow in my [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Urgent! A wildfire of color [red]{"entity": "fire_color", "value": "red"} in
+    my aircraft''s [wing]{"entity": "location", "value": "wing"} detected.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is burning. I see [orange]{"entity":
+    "fire_color", "value": "orange"} fire
+
+    - Detecting [orange]{"entity": "fire_color", "value": "orange"} flames emanating
+    from the [wing]{"entity": "location", "value": "wing"} part.
+
+    - Alert! My [cabin]{"entity": "location", "value": "cabin"} has sparked into a
+    vivid [orange]{"entity": "fire_color", "value": "orange"} flame.
+
+    - Facing an emergency with a growing [orange]{"entity": "fire_color", "value":
+    "orange"} fire near the [wing]{"entity": "location", "value": "wing"}.
+
+    - My aircraft''s [cabin]{"entity": "location", "value": "cabin"} is aflame with
+    a [red]{"entity": "fire_color", "value": "red"} color.
+
+    - Urgent! A wildfire of color [orange]{"entity": "fire_color", "value": "orange"}
+    in my aircraft''s [engine]{"entity": "location", "value": "engine"} detected.
+
+    - There''s a frightening flare of a [orange]{"entity": "fire_color", "value":
+    "orange"} blaze at my aircraft''s [engine]{"entity": "location", "value": "engine"}.
+
+    - There''s a [red]{"entity": "fire_color", "value": "red"} flame erupting from
+    my [engine]{"entity": "location", "value": "engine"}.
+
+    - My position is compromised due to a [orange]{"entity": "fire_color", "value":
+    "orange"} fire in the [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s a concerning [red]{"entity": "fire_color", "value": "red"} smoke coming
+    from my [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My [engine]{"entity": "location", "value": "engine"} is burning. I see [orange]{"entity":
+    "fire_color", "value": "orange"} fire
+
+    - There''s a frightening flare of a [red]{"entity": "fire_color", "value": "red"}
+    blaze at my aircraft''s [cabin]{"entity": "location", "value": "cabin"}.
+
+    - There''s a concerning [orange]{"entity": "fire_color", "value": "orange"} smoke
+    coming from my [wing]{"entity": "location", "value": "wing"}.
+
+    - I see [orange]{"entity": "fire_color", "value": "orange"} coming out of my [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Noticing a [red]{"entity": "fire_color", "value": "red"} glow in my [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - I see [red]{"entity": "fire_color", "value": "red"} coming out of my [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Immediate attention needed, my [wing]{"entity": "location", "value": "wing"}
+    has a [orange]{"entity": "fire_color", "value": "orange"} fire outbreak.
+
+    - Detecting [orange]{"entity": "fire_color", "value": "orange"} flames emanating
+    from the [engine]{"entity": "location", "value": "engine"} part.
+
+    - Reporting a fire emergency, observing [orange]{"entity": "fire_color", "value":
+    "orange"} flames in the [engine]{"entity": "location", "value": "engine"}.
+
+    - My [wing]{"entity": "location", "value": "wing"} is burning. I see [orange]{"entity":
+    "fire_color", "value": "orange"} fire
+
+    - There''s a frightening flare of a [orange]{"entity": "fire_color", "value":
+    "orange"} blaze at my aircraft''s [wing]{"entity": "location", "value": "wing"}.
+
+    - Sighting a dangerous [orange]{"entity": "fire_color", "value": "orange"} fire
+    originating from the aircraft''s [engine]{"entity": "location", "value": "engine"}.
+
+    - Sighting a dangerous [red]{"entity": "fire_color", "value": "red"} fire originating
+    from the aircraft''s [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I have a [red]{"entity": "fire_color", "value": "red"} fire situation at the
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s a [orange]{"entity": "fire_color", "value": "orange"} flame erupting
+    from my [engine]{"entity": "location", "value": "engine"}.
+
+    - I have a [orange]{"entity": "fire_color", "value": "orange"} fire situation
+    at the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Emitting [orange]{"entity": "fire_color", "value": "orange"} fire from my aircraft''s
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I have a [orange]{"entity": "fire_color", "value": "orange"} fire situation
+    at the [wing]{"entity": "location", "value": "wing"}.
+
+    - Urgent! A wildfire of color [red]{"entity": "fire_color", "value": "red"} in
+    my aircraft''s [engine]{"entity": "location", "value": "engine"} detected.
+
+    - Facing an emergency with a growing [red]{"entity": "fire_color", "value": "red"}
+    fire near the [wing]{"entity": "location", "value": "wing"}.
+
+    - My position is compromised due to a [red]{"entity": "fire_color", "value": "red"}
+    fire in the [wing]{"entity": "location", "value": "wing"}.
+
+    - Detecting [orange]{"entity": "fire_color", "value": "orange"} flames emanating
+    from the [electronics]{"entity": "location", "value": "electronics"} part.
+
+    - Facing an emergency with a growing [red]{"entity": "fire_color", "value": "red"}
+    fire near the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I''ve got a [orange]{"entity": "fire_color", "value": "orange"} fire spotted
+    at my [wing]{"entity": "location", "value": "wing"}.
+
+    - A visible [orange]{"entity": "fire_color", "value": "orange"} fire is affecting
+    my aircraft''s overall [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Emitting [orange]{"entity": "fire_color", "value": "orange"} fire from my aircraft''s
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - Reporting a fire emergency, observing [red]{"entity": "fire_color", "value":
+    "red"} flames in the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My [wing]{"entity": "location", "value": "wing"} is engulfed in [orange]{"entity":
+    "fire_color", "value": "orange"} flames.
+
+    - My aircraft''s [electronics]{"entity": "location", "value": "electronics"} is
+    aflame with a [red]{"entity": "fire_color", "value": "red"} color.
+
+    - I have a [red]{"entity": "fire_color", "value": "red"} fire situation at the
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - Immediate attention needed, my [cabin]{"entity": "location", "value": "cabin"}
+    has a [red]{"entity": "fire_color", "value": "red"} fire outbreak.
+
+    - There''s a frightening flare of a [red]{"entity": "fire_color", "value": "red"}
+    blaze at my aircraft''s [wing]{"entity": "location", "value": "wing"}.
+
+    - Immediate attention needed, my [wing]{"entity": "location", "value": "wing"}
+    has a [red]{"entity": "fire_color", "value": "red"} fire outbreak.
+
+    - My [wing]{"entity": "location", "value": "wing"} is showing signs of a [red]{"entity":
+    "fire_color", "value": "red"} fire emergency.
+
+    - Reporting a fire emergency, observing [orange]{"entity": "fire_color", "value":
+    "orange"} flames in the [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s a [red]{"entity": "fire_color", "value": "red"} flame erupting from
+    my [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Emitting [orange]{"entity": "fire_color", "value": "orange"} fire from my aircraft''s
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My aircraft''s [wing]{"entity": "location", "value": "wing"} is aflame with
+    a [red]{"entity": "fire_color", "value": "red"} color.
+
+    - I see [orange]{"entity": "fire_color", "value": "orange"} coming out of my [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - My position is compromised due to a [orange]{"entity": "fire_color", "value":
+    "orange"} fire in the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Alert! My [cabin]{"entity": "location", "value": "cabin"} has sparked into a
+    vivid [red]{"entity": "fire_color", "value": "red"} flame.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is showing signs
+    of a [red]{"entity": "fire_color", "value": "red"} fire emergency.
+
+    - A visible [red]{"entity": "fire_color", "value": "red"} fire is affecting my
+    aircraft''s overall [engine]{"entity": "location", "value": "engine"}.
+
+    - Emitting [red]{"entity": "fire_color", "value": "red"} fire from my aircraft''s
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - Detecting [red]{"entity": "fire_color", "value": "red"} flames emanating from
+    the [engine]{"entity": "location", "value": "engine"} part.
+
+    - I''ve got a [red]{"entity": "fire_color", "value": "red"} fire spotted at my
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Noticing a [orange]{"entity": "fire_color", "value": "orange"} glow in my [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Alert! My [electronics]{"entity": "location", "value": "electronics"} has sparked
+    into a vivid [red]{"entity": "fire_color", "value": "red"} flame.
+
+    - Facing an emergency with a growing [orange]{"entity": "fire_color", "value":
+    "orange"} fire near the [engine]{"entity": "location", "value": "engine"}.
+
+    - There''s a concerning [orange]{"entity": "fire_color", "value": "orange"} smoke
+    coming from my [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Noticing a [orange]{"entity": "fire_color", "value": "orange"} glow in my [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Noticing a [orange]{"entity": "fire_color", "value": "orange"} glow in my [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Urgent! A wildfire of color [red]{"entity": "fire_color", "value": "red"} in
+    my aircraft''s [cabin]{"entity": "location", "value": "cabin"} detected.
+
+    - My [engine]{"entity": "location", "value": "engine"} is burning. I see [red]{"entity":
+    "fire_color", "value": "red"} fire
+
+    - There''s a concerning [orange]{"entity": "fire_color", "value": "orange"} smoke
+    coming from my [engine]{"entity": "location", "value": "engine"}.
+
+    - Alert! My [wing]{"entity": "location", "value": "wing"} has sparked into a vivid
+    [red]{"entity": "fire_color", "value": "red"} flame.
+
+    - Immediate attention needed, my [cabin]{"entity": "location", "value": "cabin"}
+    has a [orange]{"entity": "fire_color", "value": "orange"} fire outbreak.
+
+    - My position is compromised due to a [red]{"entity": "fire_color", "value": "red"}
+    fire in the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - There''s a concerning [red]{"entity": "fire_color", "value": "red"} smoke coming
+    from my [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Immediate attention needed, my [engine]{"entity": "location", "value": "engine"}
+    has a [red]{"entity": "fire_color", "value": "red"} fire outbreak.
+
+    - My [engine]{"entity": "location", "value": "engine"} is engulfed in [orange]{"entity":
+    "fire_color", "value": "orange"} flames.
+
+    - A visible [red]{"entity": "fire_color", "value": "red"} fire is affecting my
+    aircraft''s overall [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Facing an emergency with a growing [orange]{"entity": "fire_color", "value":
+    "orange"} fire near the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Alert! My [engine]{"entity": "location", "value": "engine"} has sparked into
+    a vivid [red]{"entity": "fire_color", "value": "red"} flame.
+
+    - Sighting a dangerous [red]{"entity": "fire_color", "value": "red"} fire originating
+    from the aircraft''s [engine]{"entity": "location", "value": "engine"}.
+
+    - Detecting [red]{"entity": "fire_color", "value": "red"} flames emanating from
+    the [electronics]{"entity": "location", "value": "electronics"} part.
+
+    - Sighting a dangerous [red]{"entity": "fire_color", "value": "red"} fire originating
+    from the aircraft''s [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A visible [red]{"entity": "fire_color", "value": "red"} fire is affecting my
+    aircraft''s overall [wing]{"entity": "location", "value": "wing"}.
+
+    - Alert! My [electronics]{"entity": "location", "value": "electronics"} has sparked
+    into a vivid [orange]{"entity": "fire_color", "value": "orange"} flame.
+
+    - My [engine]{"entity": "location", "value": "engine"} is showing signs of a [red]{"entity":
+    "fire_color", "value": "red"} fire emergency.
+
+    - There''s a frightening flare of a [red]{"entity": "fire_color", "value": "red"}
+    blaze at my aircraft''s [electronics]{"entity": "location", "value": "electronics"}.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is showing signs of a [red]{"entity":
+    "fire_color", "value": "red"} fire emergency.
+
+    - I''m observing a [red]{"entity": "fire_color", "value": "red"} blaze around
+    the [electronics]{"entity": "location", "value": "electronics"} area.
+
+    - I have a [red]{"entity": "fire_color", "value": "red"} fire situation at the
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Facing an emergency with a growing [red]{"entity": "fire_color", "value": "red"}
+    fire near the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Noticing a [red]{"entity": "fire_color", "value": "red"} glow in my [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Reporting a fire emergency, observing [red]{"entity": "fire_color", "value":
+    "red"} flames in the [engine]{"entity": "location", "value": "engine"}.
+
+    - Immediate attention needed, my [electronics]{"entity": "location", "value":
+    "electronics"} has a [orange]{"entity": "fire_color", "value": "orange"} fire
+    outbreak.
+
+    - I see [orange]{"entity": "fire_color", "value": "orange"} coming out of my [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Immediate attention needed, my [engine]{"entity": "location", "value": "engine"}
+    has a [orange]{"entity": "fire_color", "value": "orange"} fire outbreak.
+
+    - Facing an emergency with a growing [red]{"entity": "fire_color", "value": "red"}
+    fire near the [engine]{"entity": "location", "value": "engine"}.
+
+    - Noticing a [orange]{"entity": "fire_color", "value": "orange"} glow in my [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Sighting a dangerous [orange]{"entity": "fire_color", "value": "orange"} fire
+    originating from the aircraft''s [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is burning. I see [red]{"entity":
+    "fire_color", "value": "red"} fire
+
+    - There''s a concerning [orange]{"entity": "fire_color", "value": "orange"} smoke
+    coming from my [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Urgent! A wildfire of color [orange]{"entity": "fire_color", "value": "orange"}
+    in my aircraft''s [cabin]{"entity": "location", "value": "cabin"} detected.
+
+    - Detecting [red]{"entity": "fire_color", "value": "red"} flames emanating from
+    the [cabin]{"entity": "location", "value": "cabin"} part.
+
+    - Immediate attention needed, my [electronics]{"entity": "location", "value":
+    "electronics"} has a [red]{"entity": "fire_color", "value": "red"} fire outbreak.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is engulfed in [red]{"entity":
+    "fire_color", "value": "red"} flames.
+
+    - My position is compromised due to a [orange]{"entity": "fire_color", "value":
+    "orange"} fire in the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I see [orange]{"entity": "fire_color", "value": "orange"} coming out of my [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - I see [red]{"entity": "fire_color", "value": "red"} coming out of my [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Emitting [orange]{"entity": "fire_color", "value": "orange"} fire from my aircraft''s
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - I''m observing a [orange]{"entity": "fire_color", "value": "orange"} blaze around
+    the [engine]{"entity": "location", "value": "engine"} area.
+
+    - My [engine]{"entity": "location", "value": "engine"} is engulfed in [red]{"entity":
+    "fire_color", "value": "red"} flames.
+
+    - I have a [orange]{"entity": "fire_color", "value": "orange"} fire situation
+    at the [engine]{"entity": "location", "value": "engine"}.
+
+    - I''m observing a [red]{"entity": "fire_color", "value": "red"} blaze around
+    the [wing]{"entity": "location", "value": "wing"} area.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is burning. I
+    see [red]{"entity": "fire_color", "value": "red"} fire
+
+    - My [wing]{"entity": "location", "value": "wing"} is burning. I see [red]{"entity":
+    "fire_color", "value": "red"} fire
+
+    - Detecting [red]{"entity": "fire_color", "value": "red"} flames emanating from
+    the [wing]{"entity": "location", "value": "wing"} part.
+
+    - There''s a [red]{"entity": "fire_color", "value": "red"} flame erupting from
+    my [wing]{"entity": "location", "value": "wing"}.
+
+    - My position is compromised due to a [red]{"entity": "fire_color", "value": "red"}
+    fire in the [engine]{"entity": "location", "value": "engine"}.
+
+    - A visible [orange]{"entity": "fire_color", "value": "orange"} fire is affecting
+    my aircraft''s overall [electronics]{"entity": "location", "value": "electronics"}.
+
+    - My aircraft''s [electronics]{"entity": "location", "value": "electronics"} is
+    aflame with a [orange]{"entity": "fire_color", "value": "orange"} color.
+
+    - I see [red]{"entity": "fire_color", "value": "red"} coming out of my [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Facing an emergency with a growing [orange]{"entity": "fire_color", "value":
+    "orange"} fire near the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Detecting [orange]{"entity": "fire_color", "value": "orange"} flames emanating
+    from the [cabin]{"entity": "location", "value": "cabin"} part.
+
+    - I''m observing a [orange]{"entity": "fire_color", "value": "orange"} blaze around
+    the [cabin]{"entity": "location", "value": "cabin"} area.
+
+    - Reporting a fire emergency, observing [red]{"entity": "fire_color", "value":
+    "red"} flames in the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is burning. I
+    see [orange]{"entity": "fire_color", "value": "orange"} fire
+
+    - My position is compromised due to a [orange]{"entity": "fire_color", "value":
+    "orange"} fire in the [engine]{"entity": "location", "value": "engine"}.
+
+    - Reporting a fire emergency, observing [red]{"entity": "fire_color", "value":
+    "red"} flames in the [wing]{"entity": "location", "value": "wing"}.
+
+    - I''m observing a [orange]{"entity": "fire_color", "value": "orange"} blaze around
+    the [wing]{"entity": "location", "value": "wing"} area.
+
+    - There''s a frightening flare of a [orange]{"entity": "fire_color", "value":
+    "orange"} blaze at my aircraft''s [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - I''m observing a [red]{"entity": "fire_color", "value": "red"} blaze around
+    the [engine]{"entity": "location", "value": "engine"} area.
+
+    - My [wing]{"entity": "location", "value": "wing"} is engulfed in [red]{"entity":
+    "fire_color", "value": "red"} flames.
+
+    - I''ve got a [red]{"entity": "fire_color", "value": "red"} fire spotted at my
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - There''s a frightening flare of a [orange]{"entity": "fire_color", "value":
+    "orange"} blaze at my aircraft''s [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I have a [orange]{"entity": "fire_color", "value": "orange"} fire situation
+    at the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I''ve got a [orange]{"entity": "fire_color", "value": "orange"} fire spotted
+    at my [engine]{"entity": "location", "value": "engine"}.
+
+    - Sighting a dangerous [orange]{"entity": "fire_color", "value": "orange"} fire
+    originating from the aircraft''s [wing]{"entity": "location", "value": "wing"}.
+
+    - Urgent! A wildfire of color [red]{"entity": "fire_color", "value": "red"} in
+    my aircraft''s [electronics]{"entity": "location", "value": "electronics"} detected.
+
+    - Sighting a dangerous [red]{"entity": "fire_color", "value": "red"} fire originating
+    from the aircraft''s [wing]{"entity": "location", "value": "wing"}.
+
+    - I''ve got a [red]{"entity": "fire_color", "value": "red"} fire spotted at my
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - Sighting a dangerous [orange]{"entity": "fire_color", "value": "orange"} fire
+    originating from the aircraft''s [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My aircraft''s [cabin]{"entity": "location", "value": "cabin"} is aflame with
+    a [orange]{"entity": "fire_color", "value": "orange"} color.
+
+    - Emitting [red]{"entity": "fire_color", "value": "red"} fire from my aircraft''s
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I''ve got a [red]{"entity": "fire_color", "value": "red"} fire spotted at my
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - My aircraft''s [engine]{"entity": "location", "value": "engine"} is aflame with
+    a [red]{"entity": "fire_color", "value": "red"} color.
+
+    - Alert! My [engine]{"entity": "location", "value": "engine"} has sparked into
+    a vivid [orange]{"entity": "fire_color", "value": "orange"} flame.
+
+    - I''ve got a [orange]{"entity": "fire_color", "value": "orange"} fire spotted
+    at my [electronics]{"entity": "location", "value": "electronics"}.
+
+    - There''s a [red]{"entity": "fire_color", "value": "red"} flame erupting from
+    my [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I''ve got a [orange]{"entity": "fire_color", "value": "orange"} fire spotted
+    at my [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I''m observing a [red]{"entity": "fire_color", "value": "red"} blaze around
+    the [cabin]{"entity": "location", "value": "cabin"} area.
+
+    - Urgent! A wildfire of color [orange]{"entity": "fire_color", "value": "orange"}
+    in my aircraft''s [electronics]{"entity": "location", "value": "electronics"}
+    detected.
+
+    - Reporting a fire emergency, observing [orange]{"entity": "fire_color", "value":
+    "orange"} flames in the [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Reporting a fire emergency, observing [orange]{"entity": "fire_color", "value":
+    "orange"} flames in the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My [wing]{"entity": "location", "value": "wing"} is showing signs of a [orange]{"entity":
+    "fire_color", "value": "orange"} fire emergency.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is engulfed in
+    [orange]{"entity": "fire_color", "value": "orange"} flames.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is showing signs
+    of a [orange]{"entity": "fire_color", "value": "orange"} fire emergency.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is showing signs of a [orange]{"entity":
+    "fire_color", "value": "orange"} fire emergency.
+
+    - My aircraft''s [engine]{"entity": "location", "value": "engine"} is aflame with
+    a [orange]{"entity": "fire_color", "value": "orange"} color.
+
+    - There''s a concerning [red]{"entity": "fire_color", "value": "red"} smoke coming
+    from my [wing]{"entity": "location", "value": "wing"}.
+
+    - Emitting [red]{"entity": "fire_color", "value": "red"} fire from my aircraft''s
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - My position is compromised due to a [red]{"entity": "fire_color", "value": "red"}
+    fire in the [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A visible [red]{"entity": "fire_color", "value": "red"} fire is affecting my
+    aircraft''s overall [cabin]{"entity": "location", "value": "cabin"}.
+
+    - There''s a concerning [red]{"entity": "fire_color", "value": "red"} smoke coming
+    from my [engine]{"entity": "location", "value": "engine"}.
+
+    - My [engine]{"entity": "location", "value": "engine"} is showing signs of a [orange]{"entity":
+    "fire_color", "value": "orange"} fire emergency.
+
+    - There''s a [orange]{"entity": "fire_color", "value": "orange"} flame erupting
+    from my [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A visible [orange]{"entity": "fire_color", "value": "orange"} fire is affecting
+    my aircraft''s overall [engine]{"entity": "location", "value": "engine"}.
+
+    - My [cabin]{"entity": "location", "value": "cabin"} is engulfed in [orange]{"entity":
+    "fire_color", "value": "orange"} flames.
+
+    - There''s a [orange]{"entity": "fire_color", "value": "orange"} flame erupting
+    from my [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Alert! My [wing]{"entity": "location", "value": "wing"} has sparked into a vivid
+    [orange]{"entity": "fire_color", "value": "orange"} flame.
+
+    - There''s a [orange]{"entity": "fire_color", "value": "orange"} flame erupting
+    from my [wing]{"entity": "location", "value": "wing"}.
+
+    - I have a [red]{"entity": "fire_color", "value": "red"} fire situation at the
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - My aircraft''s [wing]{"entity": "location", "value": "wing"} is aflame with
+    a [orange]{"entity": "fire_color", "value": "orange"} color.
+
+    - Urgent! A wildfire of color [orange]{"entity": "fire_color", "value": "orange"}
+    in my aircraft''s [wing]{"entity": "location", "value": "wing"} detected.
+
+    - My [electronics]{"entity": "location", "value": "electronics"} is engulfed in
+    [red]{"entity": "fire_color", "value": "red"} flames.
+
+    - I''m observing a [orange]{"entity": "fire_color", "value": "orange"} blaze around
+    the [electronics]{"entity": "location", "value": "electronics"} area.
+
+    - A visible [orange]{"entity": "fire_color", "value": "orange"} fire is affecting
+    my aircraft''s overall [wing]{"entity": "location", "value": "wing"}.
+
+    - I see [red]{"entity": "fire_color", "value": "red"} coming out of my [wing]{"entity":
+    "location", "value": "wing"}.'
+  intent: share-fire_emergency_with_location_and_color
+- examples: "- The smoke is [black]{\"entity\": \"smoke_description\", \"value\":\
+    \ \"black\"}\n- [none]{\"entity\": \"smoke_description\", \"value\": \"none\"\
+    } plumes visible in the distance.\n- Sighting [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} smoke clouds.\n- Noticing [black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"black\"}\n- There's a [white]{\"entity\": \"smoke_description\"\
+    , \"value\": \"white\"} hue in the smoke.\n- The smoke is [thick black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"thick black\"}\n- Smoke condition observed\
+    \ it\u2019s [none]{\"entity\": \"smoke_description\", \"value\": \"none\"}.\n\
+    - Detected [white]{\"entity\": \"smoke_description\", \"value\": \"white\"} smoke\
+    \ nearby.\n- The skyline marred by [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"} smoke.\n- The skyline marred by [blue]{\"entity\"\
+    : \"smoke_description\", \"value\": \"blue\"} smoke.\n- Detected [blue]{\"entity\"\
+    : \"smoke_description\", \"value\": \"blue\"} smoke nearby.\n- [black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"black\"}\n- Detected [black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"black\"} smoke nearby.\n- Air quality is\
+    \ [white]{\"entity\": \"smoke_description\", \"value\": \"white\"} due to smoke.\n\
+    - Visual report Smoke transcends into a [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"} state.\n- Smoke appears to be [white]{\"entity\"\
+    : \"smoke_description\", \"value\": \"white\"}.\n- The atmosphere has a [none]{\"\
+    entity\": \"smoke_description\", \"value\": \"none\"} tinge.\n- Visibility impacted\
+    \ by [black]{\"entity\": \"smoke_description\", \"value\": \"black\"} smoke.\n\
+    - Smoke appears to be [none]{\"entity\": \"smoke_description\", \"value\": \"\
+    none\"}.\n- Visibility impacted by [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"} smoke.\n- Air quality is [black]{\"entity\": \"\
+    smoke_description\", \"value\": \"black\"} due to smoke.\n- I see [thick black]{\"\
+    entity\": \"smoke_description\", \"value\": \"thick black\"} smoke\n- Smoke condition\
+    \ observed it\u2019s [white]{\"entity\": \"smoke_description\", \"value\": \"\
+    white\"}.\n- The smoke is [white]{\"entity\": \"smoke_description\", \"value\"\
+    : \"white\"}\n- Air quality is [none]{\"entity\": \"smoke_description\", \"value\"\
+    : \"none\"} due to smoke.\n- Noticing [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"}\n- Visibility impacted by [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} smoke.\n- There's a [none]{\"entity\": \"smoke_description\"\
+    , \"value\": \"none\"} hue in the smoke.\n- Observing [thick black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"thick black\"} in the air.\n- Airborne particles\
+    \ identified as [black]{\"entity\": \"smoke_description\", \"value\": \"black\"\
+    } in nature.\n- The atmosphere has a [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} tinge.\n- Airborne particles identified as [none]{\"entity\"\
+    : \"smoke_description\", \"value\": \"none\"} in nature.\n- [blue]{\"entity\"\
+    : \"smoke_description\", \"value\": \"blue\"}\n- The air is filled with [blue]{\"\
+    entity\": \"smoke_description\", \"value\": \"blue\"} smoke.\n- Visual report\
+    \ Smoke transcends into a [blue]{\"entity\": \"smoke_description\", \"value\"\
+    : \"blue\"} state.\n- Smoke looks quite [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"} today.\n- Smoke appears to be [blue]{\"entity\"\
+    : \"smoke_description\", \"value\": \"blue\"}.\n- Noticing [none]{\"entity\":\
+    \ \"smoke_description\", \"value\": \"none\"}\n- Airborne particles identified\
+    \ as [thick black]{\"entity\": \"smoke_description\", \"value\": \"thick black\"\
+    } in nature.\n- Smoke appears to be [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"}.\n- The smoke is [none]{\"entity\": \"smoke_description\"\
+    , \"value\": \"none\"}\n- Sighting [black]{\"entity\": \"smoke_description\",\
+    \ \"value\": \"black\"} smoke clouds.\n- Smoke condition observed it\u2019s [black]{\"\
+    entity\": \"smoke_description\", \"value\": \"black\"}.\n- The air is filled with\
+    \ [white]{\"entity\": \"smoke_description\", \"value\": \"white\"} smoke.\n- The\
+    \ skyline marred by [none]{\"entity\": \"smoke_description\", \"value\": \"none\"\
+    } smoke.\n- There's a [black]{\"entity\": \"smoke_description\", \"value\": \"\
+    black\"} hue in the smoke.\n- The atmosphere has a [black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"black\"} tinge.\n- The atmosphere has a [white]{\"entity\": \"\
+    smoke_description\", \"value\": \"white\"} tinge.\n- Current  Smoke density has\
+    \ a [white]{\"entity\": \"smoke_description\", \"value\": \"white\"} quality.\n\
+    - Smoke looks quite [black]{\"entity\": \"smoke_description\", \"value\": \"black\"\
+    } today.\n- Detected [thick black]{\"entity\": \"smoke_description\", \"value\"\
+    : \"thick black\"} smoke nearby.\n- Smoke condition observed it\u2019s [thick\
+    \ black]{\"entity\": \"smoke_description\", \"value\": \"thick black\"}.\n- Current\
+    \  Smoke density has a [thick black]{\"entity\": \"smoke_description\", \"value\"\
+    : \"thick black\"} quality.\n- Visual report Smoke transcends into a [none]{\"\
+    entity\": \"smoke_description\", \"value\": \"none\"} state.\n- The atmosphere\
+    \ has a [thick black]{\"entity\": \"smoke_description\", \"value\": \"thick black\"\
+    } tinge.\n- Observing [none]{\"entity\": \"smoke_description\", \"value\": \"\
+    none\"} in the air.\n- There's a [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"} hue in the smoke.\n- Air quality is [blue]{\"entity\"\
+    : \"smoke_description\", \"value\": \"blue\"} due to smoke.\n- I see [none]{\"\
+    entity\": \"smoke_description\", \"value\": \"none\"} smoke\n- Visual report Smoke\
+    \ transcends into a [black]{\"entity\": \"smoke_description\", \"value\": \"black\"\
+    } state.\n- Airborne particles identified as [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} in nature.\n- The air is filled with [black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"black\"} smoke.\n- The smoke is [blue]{\"\
+    entity\": \"smoke_description\", \"value\": \"blue\"}\n- Encountering [black]{\"\
+    entity\": \"smoke_description\", \"value\": \"black\"} smoke ahead.\n- Smoke looks\
+    \ quite [blue]{\"entity\": \"smoke_description\", \"value\": \"blue\"} today.\n\
+    - Encountering [thick black]{\"entity\": \"smoke_description\", \"value\": \"\
+    thick black\"} smoke ahead.\n- Current  Smoke density has a [black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"black\"} quality.\n- Visibility impacted\
+    \ by [white]{\"entity\": \"smoke_description\", \"value\": \"white\"} smoke.\n\
+    - Visibility impacted by [none]{\"entity\": \"smoke_description\", \"value\":\
+    \ \"none\"} smoke.\n- Sighting [white]{\"entity\": \"smoke_description\", \"value\"\
+    : \"white\"} smoke clouds.\n- Observing [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} in the air.\n- I see [white]{\"entity\": \"smoke_description\"\
+    , \"value\": \"white\"} smoke\n- Airborne particles identified as [white]{\"entity\"\
+    : \"smoke_description\", \"value\": \"white\"} in nature.\n- Smoke condition observed\
+    \ it\u2019s [blue]{\"entity\": \"smoke_description\", \"value\": \"blue\"}.\n\
+    - Air quality is [thick black]{\"entity\": \"smoke_description\", \"value\": \"\
+    thick black\"} due to smoke.\n- [none]{\"entity\": \"smoke_description\", \"value\"\
+    : \"none\"}\n- Smoke looks quite [white]{\"entity\": \"smoke_description\", \"\
+    value\": \"white\"} today.\n- [white]{\"entity\": \"smoke_description\", \"value\"\
+    : \"white\"}\n- Encountering [blue]{\"entity\": \"smoke_description\", \"value\"\
+    : \"blue\"} smoke ahead.\n- There's a [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} hue in the smoke.\n- Detected [none]{\"entity\": \"smoke_description\"\
+    , \"value\": \"none\"} smoke nearby.\n- The air is filled with [none]{\"entity\"\
+    : \"smoke_description\", \"value\": \"none\"} smoke.\n- Noticing [thick black]{\"\
+    entity\": \"smoke_description\", \"value\": \"thick black\"}\n- [black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"black\"} plumes visible in the distance.\n\
+    - Sighting [none]{\"entity\": \"smoke_description\", \"value\": \"none\"} smoke\
+    \ clouds.\n- Observing [black]{\"entity\": \"smoke_description\", \"value\": \"\
+    black\"} in the air.\n- [thick black]{\"entity\": \"smoke_description\", \"value\"\
+    : \"thick black\"} plumes visible in the distance.\n- [blue]{\"entity\": \"smoke_description\"\
+    , \"value\": \"blue\"} plumes visible in the distance.\n- Current  Smoke density\
+    \ has a [blue]{\"entity\": \"smoke_description\", \"value\": \"blue\"} quality.\n\
+    - I see [blue]{\"entity\": \"smoke_description\", \"value\": \"blue\"} smoke\n\
+    - Encountering [white]{\"entity\": \"smoke_description\", \"value\": \"white\"\
+    } smoke ahead.\n- The skyline marred by [white]{\"entity\": \"smoke_description\"\
+    , \"value\": \"white\"} smoke.\n- The air is filled with [thick black]{\"entity\"\
+    : \"smoke_description\", \"value\": \"thick black\"} smoke.\n- I see [black]{\"\
+    entity\": \"smoke_description\", \"value\": \"black\"} smoke\n- Sighting [thick\
+    \ black]{\"entity\": \"smoke_description\", \"value\": \"thick black\"} smoke\
+    \ clouds.\n- The skyline marred by [black]{\"entity\": \"smoke_description\",\
+    \ \"value\": \"black\"} smoke.\n- Current  Smoke density has a [none]{\"entity\"\
+    : \"smoke_description\", \"value\": \"none\"} quality.\n- Noticing [white]{\"\
+    entity\": \"smoke_description\", \"value\": \"white\"}\n- Smoke looks quite [none]{\"\
+    entity\": \"smoke_description\", \"value\": \"none\"} today.\n- Visual report\
+    \ Smoke transcends into a [white]{\"entity\": \"smoke_description\", \"value\"\
+    : \"white\"} state.\n- Smoke appears to be [black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"black\"}.\n- [white]{\"entity\": \"smoke_description\", \"value\"\
+    : \"white\"} plumes visible in the distance.\n- [thick black]{\"entity\": \"smoke_description\"\
+    , \"value\": \"thick black\"}\n- Encountering [none]{\"entity\": \"smoke_description\"\
+    , \"value\": \"none\"} smoke ahead.\n- Observing [white]{\"entity\": \"smoke_description\"\
+    , \"value\": \"white\"} in the air."
+  intent: share-smoke_description
+- examples: '- Hovering above [engine]{"entity": "location", "value": "engine"}.
+
+    - On [electronics]{"entity": "location", "value": "electronics"}
+
+    - fault identified in [engine]{"entity": "location", "value": "engine"}
+
+    - I think [engine]{"entity": "location", "value": "engine"}!
+
+    - Positioned at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - detected around [wing]{"entity": "location", "value": "wing"}
+
+    - I think [cabin]{"entity": "location", "value": "cabin"}!
+
+    - Hovering above [electronics]{"entity": "location", "value": "electronics"}.
+
+    - detected around [engine]{"entity": "location", "value": "engine"}
+
+    - Hovering above [wing]{"entity": "location", "value": "wing"}.
+
+    - On the exterior of [wing]{"entity": "location", "value": "wing"}
+
+    - Hovering above [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Coming from [engine]{"entity": "location", "value": "engine"}
+
+    - from  [engine]{"entity": "location", "value": "engine"}.
+
+    - in the vicnit of [engine]{"entity": "location", "value": "engine"}
+
+    - Positioned at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - At [cabin]{"entity": "location", "value": "cabin"}
+
+    - Located in [engine]{"entity": "location", "value": "engine"}.
+
+    - [cabin]{"entity": "location", "value": "cabin"}!
+
+    - [electronics]{"entity": "location", "value": "electronics"}!
+
+    - Issue coming out of [cabin]{"entity": "location", "value": "cabin"}
+
+    - coming out of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Residing within [engine]{"entity": "location", "value": "engine"}.
+
+    - triggered at [engine]{"entity": "location", "value": "engine"}
+
+    - On the intereior of [wing]{"entity": "location", "value": "wing"}
+
+    - On [cabin]{"entity": "location", "value": "cabin"}
+
+    - in the vicnit of [electronics]{"entity": "location", "value": "electronics"}
+
+    - At [electronics]{"entity": "location", "value": "electronics"}
+
+    - Coming from [electronics]{"entity": "location", "value": "electronics"}
+
+    - in the vicnit of [wing]{"entity": "location", "value": "wing"}
+
+    - Linked to [electronics]{"entity": "location", "value": "electronics"}
+
+    - I think [wing]{"entity": "location", "value": "wing"}!
+
+    - Within the area of [engine]{"entity": "location", "value": "engine"}
+
+    - Issue coming out of [engine]{"entity": "location", "value": "engine"}
+
+    - Exploring around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Linked to [wing]{"entity": "location", "value": "wing"}
+
+    - On [engine]{"entity": "location", "value": "engine"}
+
+    - Positioned at [engine]{"entity": "location", "value": "engine"}.
+
+    - At [engine]{"entity": "location", "value": "engine"}
+
+    - On the exterior of [engine]{"entity": "location", "value": "engine"}
+
+    - Within the area of [electronics]{"entity": "location", "value": "electronics"}
+
+    - Located in [electronics]{"entity": "location", "value": "electronics"}.
+
+    - detected around [electronics]{"entity": "location", "value": "electronics"}
+
+    - Located in [cabin]{"entity": "location", "value": "cabin"}.
+
+    - At [wing]{"entity": "location", "value": "wing"}
+
+    - Coming from [cabin]{"entity": "location", "value": "cabin"}
+
+    - On the exterior of [cabin]{"entity": "location", "value": "cabin"}
+
+    - Located in [wing]{"entity": "location", "value": "wing"}.
+
+    - from  [wing]{"entity": "location", "value": "wing"}.
+
+    - fault identified in [cabin]{"entity": "location", "value": "cabin"}
+
+    - Coming from [wing]{"entity": "location", "value": "wing"}
+
+    - triggered at [cabin]{"entity": "location", "value": "cabin"}
+
+    - from  [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Issue coming out of [wing]{"entity": "location", "value": "wing"}
+
+    - Within the area of [wing]{"entity": "location", "value": "wing"}
+
+    - Residing within [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Exploring around [wing]{"entity": "location", "value": "wing"}.
+
+    - On the exterior of [electronics]{"entity": "location", "value": "electronics"}
+
+    - Residing within [wing]{"entity": "location", "value": "wing"}.
+
+    - fault identified in [electronics]{"entity": "location", "value": "electronics"}
+
+    - coming out of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - On the intereior of [engine]{"entity": "location", "value": "engine"}
+
+    - [wing]{"entity": "location", "value": "wing"}!
+
+    - in the vicnit of [cabin]{"entity": "location", "value": "cabin"}
+
+    - from  [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Exploring around [engine]{"entity": "location", "value": "engine"}.
+
+    - triggered at [wing]{"entity": "location", "value": "wing"}
+
+    - Positioned at [wing]{"entity": "location", "value": "wing"}.
+
+    - I think [electronics]{"entity": "location", "value": "electronics"}!
+
+    - [engine]{"entity": "location", "value": "engine"}!
+
+    - Linked to [cabin]{"entity": "location", "value": "cabin"}
+
+    - On the intereior of [cabin]{"entity": "location", "value": "cabin"}
+
+    - On the intereior of [electronics]{"entity": "location", "value": "electronics"}
+
+    - coming out of [engine]{"entity": "location", "value": "engine"}.
+
+    - On [wing]{"entity": "location", "value": "wing"}
+
+    - Residing within [cabin]{"entity": "location", "value": "cabin"}.
+
+    - detected around [cabin]{"entity": "location", "value": "cabin"}
+
+    - triggered at [electronics]{"entity": "location", "value": "electronics"}
+
+    - coming out of [wing]{"entity": "location", "value": "wing"}.
+
+    - Issue coming out of [electronics]{"entity": "location", "value": "electronics"}
+
+    - Linked to [engine]{"entity": "location", "value": "engine"}
+
+    - Within the area of [cabin]{"entity": "location", "value": "cabin"}
+
+    - Exploring around [electronics]{"entity": "location", "value": "electronics"}.
+
+    - fault identified in [wing]{"entity": "location", "value": "wing"}'
+  intent: share-location
+- examples: '- We are witnessing [orange]{"entity": "fire_color", "value": "orange"}
+    flames.
+
+    - Fire alert the color is [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - Flames have [orange]{"entity": "fire_color", "value": "orange"}
+
+    - The flame exhibits [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The flame''s essence is [red]{"entity": "fire_color", "value": "red"}.
+
+    - Observing a fire that''s [red]{"entity": "fire_color", "value": "red"}.
+
+    - Encountering fire with a vivid [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - Fire situation it''s showing [red]{"entity": "fire_color", "value": "red"}.
+
+    - Observing a fire that''s [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The conflagration is distinctly [red]{"entity": "fire_color", "value": "red"}.
+
+    - Situation update fire is [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - Immediate notice flames appear [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The phenomena of the fire shows [red]{"entity": "fire_color", "value": "red"}
+    aesthetics.
+
+    - The blaze is characterized by [red]{"entity": "fire_color", "value": "red"}.
+
+    - Immediate notice flames appear [red]{"entity": "fire_color", "value": "red"}.
+
+    - Fire with [red]{"entity": "fire_color", "value": "red"}
+
+    - Encountering fire with a vivid [red]{"entity": "fire_color", "value": "red"}.
+
+    - Flames clearly demonstrating [orange]{"entity": "fire_color", "value": "orange"}
+    characteristics.
+
+    - We are witnessing [red]{"entity": "fire_color", "value": "red"} flames.
+
+    - The phenomena of the fire shows [orange]{"entity": "fire_color", "value": "orange"}
+    aesthetics.
+
+    - The conflagration is distinctly [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The fire is [red]{"entity": "fire_color", "value": "red"}
+
+    - Flames clearly demonstrating [red]{"entity": "fire_color", "value": "red"} characteristics.
+
+    - The blaze is characterized by [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The fire''s hue is notably [red]{"entity": "fire_color", "value": "red"}.
+
+    - The flame exhibits [red]{"entity": "fire_color", "value": "red"}.
+
+    - Fire with [orange]{"entity": "fire_color", "value": "orange"}
+
+    - The inferno presents [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The inferno presents [red]{"entity": "fire_color", "value": "red"}.
+
+    - The flame''s essence is [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - Situation update fire is [red]{"entity": "fire_color", "value": "red"}.
+
+    - Fire situation it''s showing [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The fire is [orange]{"entity": "fire_color", "value": "orange"}
+
+    - Reporting a fire situation with [orange]{"entity": "fire_color", "value": "orange"}
+    coloring.
+
+    - Flames have [red]{"entity": "fire_color", "value": "red"}
+
+    - Visual on fire, appears [red]{"entity": "fire_color", "value": "red"}.
+
+    - Reporting a fire situation with [red]{"entity": "fire_color", "value": "red"}
+    coloring.
+
+    - Fire alert the color is [red]{"entity": "fire_color", "value": "red"}.
+
+    - Visual on fire, appears [orange]{"entity": "fire_color", "value": "orange"}.
+
+    - The fire''s hue is notably [orange]{"entity": "fire_color", "value": "orange"}.'
+  intent: share-fire_color
+- examples: '- There''s a scent of [burning]{"entity": "fire_smell", "value": "burning"}
+    around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A [burning]{"entity": "fire_smell", "value": "burning"} is coming from [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Experiencing a strong [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    in the area of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Picking up a trace of [burning]{"entity": "fire_smell", "value": "burning"}
+    near [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Warning The presence of a noticeable [burning]{"entity": "fire_smell", "value":
+    "burning"} in proximity to [engine]{"entity": "location", "value": "engine"}.
+
+    - Observation a clear odor of [burning]{"entity": "fire_smell", "value": "burning"}
+    found at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Detected [sulpher]{"entity": "fire_smell", "value": "sulpher"} near [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Experiencing a strong [burning]{"entity": "fire_smell", "value": "burning"}
+    in the area of [wing]{"entity": "location", "value": "wing"}.
+
+    - Observation a clear odor of [burning]{"entity": "fire_smell", "value": "burning"}
+    found at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - A [burning]{"entity": "fire_smell", "value": "burning"} is coming from [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Noticing [sulpher]{"entity": "fire_smell", "value": "sulpher"} at [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [wing]{"entity":
+    "location", "value": "wing"}
+
+    - There''s a scent of [sulpher]{"entity": "fire_smell", "value": "sulpher"} around
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - There''s a scent of [sulpher]{"entity": "fire_smell", "value": "sulpher"} around
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - There''s an unmistakable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} emanating from [engine]{"entity": "location", "value": "engine"}.
+
+    - A distinct [burning]{"entity": "fire_smell", "value": "burning"} noticeable
+    in [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Slight detection of a strong scent of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} circulating around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Detected [sulpher]{"entity": "fire_smell", "value": "sulpher"} near [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Capturing a whiff of [burning]{"entity": "fire_smell", "value": "burning"} in
+    the vicinity of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Warning The presence of a noticeable [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} in proximity to [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Encounter with [burning]{"entity": "fire_smell", "value": "burning"} detected
+    around [wing]{"entity": "location", "value": "wing"}.
+
+    - With an undeniable presence of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [wing]{"entity": "location", "value": "wing"}.
+
+    - Experiencing a strong [burning]{"entity": "fire_smell", "value": "burning"}
+    in the area of [engine]{"entity": "location", "value": "engine"}.
+
+    - Picking up a trace of [burning]{"entity": "fire_smell", "value": "burning"}
+    near [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Slight detection of a strong scent of [burning]{"entity": "fire_smell", "value":
+    "burning"} circulating around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Reports indicate a notable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} approaching the area of [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [engine]{"entity":
+    "location", "value": "engine"}
+
+    - There''s an unmistakable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} emanating from [wing]{"entity": "location", "value": "wing"}.
+
+    - Experiencing a strong [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    in the area of [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s an unmistakable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} emanating from [wing]{"entity": "location", "value": "wing"}.
+
+    - Picking up a trace of [burning]{"entity": "fire_smell", "value": "burning"}
+    near [wing]{"entity": "location", "value": "wing"}.
+
+    - Identifying a [sulpher]{"entity": "fire_smell", "value": "sulpher"} within [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - with [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [electronics]{"entity":
+    "location", "value": "electronics"}
+
+    - Encounter with [sulpher]{"entity": "fire_smell", "value": "sulpher"} detected
+    around [engine]{"entity": "location", "value": "engine"}.
+
+    - Identifying a [burning]{"entity": "fire_smell", "value": "burning"} within [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Slight detection of a strong scent of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} circulating around [wing]{"entity": "location", "value": "wing"}.
+
+    - A distinct [sulpher]{"entity": "fire_smell", "value": "sulpher"} noticeable
+    in [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Experiencing a strong [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    in the area of [engine]{"entity": "location", "value": "engine"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [sulpher]{"entity": "fire_smell", "value": "sulpher"}, in the environment surrounding
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Capturing a whiff of [sulpher]{"entity": "fire_smell", "value": "sulpher"} in
+    the vicinity of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Detected [burning]{"entity": "fire_smell", "value": "burning"} near [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Alert Smelling [burning]{"entity": "fire_smell", "value": "burning"} in the
+    sector of [engine]{"entity": "location", "value": "engine"}.
+
+    - Slight detection of a strong scent of [burning]{"entity": "fire_smell", "value":
+    "burning"} circulating around [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Observation a clear odor of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    found at [wing]{"entity": "location", "value": "wing"}.
+
+    - Alert Smelling [burning]{"entity": "fire_smell", "value": "burning"} in the
+    sector of [wing]{"entity": "location", "value": "wing"}.
+
+    - Picking up a trace of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    near [electronics]{"entity": "location", "value": "electronics"}.
+
+    - A [burning]{"entity": "fire_smell", "value": "burning"} is coming from [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Capturing a whiff of [sulpher]{"entity": "fire_smell", "value": "sulpher"} in
+    the vicinity of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A [sulpher]{"entity": "fire_smell", "value": "sulpher"} is coming from [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Warning The presence of a noticeable [burning]{"entity": "fire_smell", "value":
+    "burning"} in proximity to [wing]{"entity": "location", "value": "wing"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [cabin]{"entity":
+    "location", "value": "cabin"}
+
+    - with [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [engine]{"entity":
+    "location", "value": "engine"}
+
+    - with [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [cabin]{"entity":
+    "location", "value": "cabin"}
+
+    - with [burning]{"entity": "fire_smell", "value": "burning"} in [wing]{"entity":
+    "location", "value": "wing"}
+
+    - Experiencing a strong [burning]{"entity": "fire_smell", "value": "burning"}
+    in the area of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [engine]{"entity":
+    "location", "value": "engine"}
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [cabin]{"entity":
+    "location", "value": "cabin"}
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [sulpher]{"entity": "fire_smell", "value": "sulpher"}, in the environment surrounding
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Observation a clear odor of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    found at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Picking up a trace of [burning]{"entity": "fire_smell", "value": "burning"}
+    near [engine]{"entity": "location", "value": "engine"}.
+
+    - Encounter with [burning]{"entity": "fire_smell", "value": "burning"} detected
+    around [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Noticing [burning]{"entity": "fire_smell", "value": "burning"} at [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Capturing a whiff of [burning]{"entity": "fire_smell", "value": "burning"} in
+    the vicinity of [engine]{"entity": "location", "value": "engine"}.
+
+    - Noticing [sulpher]{"entity": "fire_smell", "value": "sulpher"} at [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [electronics]{"entity":
+    "location", "value": "electronics"}
+
+    - Capturing a whiff of [burning]{"entity": "fire_smell", "value": "burning"} in
+    the vicinity of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Sensing [sulpher]{"entity": "fire_smell", "value": "sulpher"} close to [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Reports indicate a notable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} approaching the area of [engine]{"entity": "location", "value": "engine"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - The air has a hint of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Slight detection of a strong scent of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} circulating around [engine]{"entity": "location", "value": "engine"}.
+
+    - There''s an unmistakable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} emanating from [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Slight detection of a strong scent of [burning]{"entity": "fire_smell", "value":
+    "burning"} circulating around [wing]{"entity": "location", "value": "wing"}.
+
+    - Detected [sulpher]{"entity": "fire_smell", "value": "sulpher"} near [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - with [burning]{"entity": "fire_smell", "value": "burning"} in [engine]{"entity":
+    "location", "value": "engine"}
+
+    - A [sulpher]{"entity": "fire_smell", "value": "sulpher"} is coming from [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Warning The presence of a noticeable [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} in proximity to [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Slight detection of a strong scent of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} circulating around [electronics]{"entity": "location", "value": "electronics"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [electronics]{"entity":
+    "location", "value": "electronics"}
+
+    - Warning The presence of a noticeable [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} in proximity to [engine]{"entity": "location", "value": "engine"}.
+
+    - Noticing [burning]{"entity": "fire_smell", "value": "burning"} at [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Identifying a [sulpher]{"entity": "fire_smell", "value": "sulpher"} within [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Alert Smelling [sulpher]{"entity": "fire_smell", "value": "sulpher"} in the
+    sector of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - A distinct [burning]{"entity": "fire_smell", "value": "burning"} noticeable
+    in [wing]{"entity": "location", "value": "wing"}.
+
+    - with [burning]{"entity": "fire_smell", "value": "burning"} in [electronics]{"entity":
+    "location", "value": "electronics"}
+
+    - A distinct [sulpher]{"entity": "fire_smell", "value": "sulpher"} noticeable
+    in [wing]{"entity": "location", "value": "wing"}.
+
+    - Encounter with [sulpher]{"entity": "fire_smell", "value": "sulpher"} detected
+    around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - A [sulpher]{"entity": "fire_smell", "value": "sulpher"} is coming from [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - with [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [wing]{"entity":
+    "location", "value": "wing"}
+
+    - Observation a clear odor of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    found at [engine]{"entity": "location", "value": "engine"}.
+
+    - With an undeniable presence of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [wing]{"entity": "location", "value": "wing"}.
+
+    - Capturing a whiff of [sulpher]{"entity": "fire_smell", "value": "sulpher"} in
+    the vicinity of [wing]{"entity": "location", "value": "wing"}.
+
+    - Encounter with [burning]{"entity": "fire_smell", "value": "burning"} detected
+    around [cabin]{"entity": "location", "value": "cabin"}.
+
+    - There''s an unmistakable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} emanating from [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Experiencing a strong [burning]{"entity": "fire_smell", "value": "burning"}
+    in the area of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Acknowledging a prevalent and striking smell of [burning]{"entity": "fire_smell",
+    "value": "burning"} near the premises of [wing]{"entity": "location", "value":
+    "wing"}.
+
+    - The air has a hint of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [wing]{"entity": "location", "value": "wing"}.
+
+    - Acknowledging a prevalent and striking smell of [sulpher]{"entity": "fire_smell",
+    "value": "sulpher"} near the premises of [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - Identifying a [sulpher]{"entity": "fire_smell", "value": "sulpher"} within [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - A distinct [burning]{"entity": "fire_smell", "value": "burning"} noticeable
+    in [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Reports indicate a notable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} approaching the area of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Identifying a [burning]{"entity": "fire_smell", "value": "burning"} within [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Noticing [sulpher]{"entity": "fire_smell", "value": "sulpher"} at [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - The air has a hint of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [engine]{"entity": "location", "value": "engine"}.
+
+    - Reports indicate a notable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} approaching the area of [wing]{"entity": "location", "value": "wing"}.
+
+    - The air has a hint of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - There''s a scent of [burning]{"entity": "fire_smell", "value": "burning"} around
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - With an undeniable presence of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Capturing a whiff of [sulpher]{"entity": "fire_smell", "value": "sulpher"} in
+    the vicinity of [engine]{"entity": "location", "value": "engine"}.
+
+    - With an undeniable presence of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [engine]{"entity": "location", "value": "engine"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [sulpher]{"entity": "fire_smell", "value": "sulpher"}, in the environment surrounding
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - Acknowledging a prevalent and striking smell of [sulpher]{"entity": "fire_smell",
+    "value": "sulpher"} near the premises of [engine]{"entity": "location", "value":
+    "engine"}.
+
+    - Slight detection of a strong scent of [burning]{"entity": "fire_smell", "value":
+    "burning"} circulating around [engine]{"entity": "location", "value": "engine"}.
+
+    - Noticing [burning]{"entity": "fire_smell", "value": "burning"} at [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Warning The presence of a noticeable [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} in proximity to [wing]{"entity": "location", "value": "wing"}.
+
+    - Detected [sulpher]{"entity": "fire_smell", "value": "sulpher"} near [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Noticing [sulpher]{"entity": "fire_smell", "value": "sulpher"} at [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Acknowledging a prevalent and striking smell of [burning]{"entity": "fire_smell",
+    "value": "burning"} near the premises of [cabin]{"entity": "location", "value":
+    "cabin"}.
+
+    - Reports indicate a notable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} approaching the area of [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - There''s an unmistakable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} emanating from [engine]{"entity": "location", "value": "engine"}.
+
+    - Picking up a trace of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    near [engine]{"entity": "location", "value": "engine"}.
+
+    - Identifying a [burning]{"entity": "fire_smell", "value": "burning"} within [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Sensing [sulpher]{"entity": "fire_smell", "value": "sulpher"} close to [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - With an undeniable presence of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Acknowledging a prevalent and striking smell of [burning]{"entity": "fire_smell",
+    "value": "burning"} near the premises of [electronics]{"entity": "location", "value":
+    "electronics"}.
+
+    - With an undeniable presence of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - The air has a hint of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Alert Smelling [sulpher]{"entity": "fire_smell", "value": "sulpher"} in the
+    sector of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Reports indicate a notable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} approaching the area of [engine]{"entity": "location", "value": "engine"}.
+
+    - There''s an unmistakable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} emanating from [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Sensing [burning]{"entity": "fire_smell", "value": "burning"} close to [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - There''s a scent of [burning]{"entity": "fire_smell", "value": "burning"} around
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - A distinct [sulpher]{"entity": "fire_smell", "value": "sulpher"} noticeable
+    in [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Sensing [burning]{"entity": "fire_smell", "value": "burning"} close to [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Observation a clear odor of [burning]{"entity": "fire_smell", "value": "burning"}
+    found at [engine]{"entity": "location", "value": "engine"}.
+
+    - Acknowledging a prevalent and striking smell of [sulpher]{"entity": "fire_smell",
+    "value": "sulpher"} near the premises of [cabin]{"entity": "location", "value":
+    "cabin"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Picking up a trace of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    near [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Detected [burning]{"entity": "fire_smell", "value": "burning"} near [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - There''s a scent of [burning]{"entity": "fire_smell", "value": "burning"} around
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - There''s a scent of [sulpher]{"entity": "fire_smell", "value": "sulpher"} around
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - A [sulpher]{"entity": "fire_smell", "value": "sulpher"} is coming from [wing]{"entity":
+    "location", "value": "wing"}.
+
+    - Alert Smelling [sulpher]{"entity": "fire_smell", "value": "sulpher"} in the
+    sector of [wing]{"entity": "location", "value": "wing"}.
+
+    - Reports indicate a notable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} approaching the area of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [burning]{"entity": "fire_smell", "value": "burning"}, in the environment surrounding
+    [cabin]{"entity": "location", "value": "cabin"}.
+
+    - With an undeniable presence of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [engine]{"entity": "location", "value": "engine"}.
+
+    - Detected [burning]{"entity": "fire_smell", "value": "burning"} near [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Encounter with [burning]{"entity": "fire_smell", "value": "burning"} detected
+    around [engine]{"entity": "location", "value": "engine"}.
+
+    - Capturing a whiff of [burning]{"entity": "fire_smell", "value": "burning"} in
+    the vicinity of [wing]{"entity": "location", "value": "wing"}.
+
+    - A distinct [burning]{"entity": "fire_smell", "value": "burning"} noticeable
+    in [engine]{"entity": "location", "value": "engine"}.
+
+    - Noticing [burning]{"entity": "fire_smell", "value": "burning"} at [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - with [burning]{"entity": "fire_smell", "value": "burning"} in [cabin]{"entity":
+    "location", "value": "cabin"}
+
+    - Warning The presence of a noticeable [burning]{"entity": "fire_smell", "value":
+    "burning"} in proximity to [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Encounter with [sulpher]{"entity": "fire_smell", "value": "sulpher"} detected
+    around [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Alert Smelling [sulpher]{"entity": "fire_smell", "value": "sulpher"} in the
+    sector of [engine]{"entity": "location", "value": "engine"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [burning]{"entity": "fire_smell", "value": "burning"}, in the environment surrounding
+    [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s a scent of [sulpher]{"entity": "fire_smell", "value": "sulpher"} around
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Reports indicate a notable smell of [sulpher]{"entity": "fire_smell", "value":
+    "sulpher"} approaching the area of [wing]{"entity": "location", "value": "wing"}.
+
+    - The air has a hint of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [wing]{"entity": "location", "value": "wing"}.
+
+    - With an undeniable presence of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I smell [burning]{"entity": "fire_smell", "value": "burning"} in [wing]{"entity":
+    "location", "value": "wing"}
+
+    - Warning The presence of a noticeable [burning]{"entity": "fire_smell", "value":
+    "burning"} in proximity to [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Sensing [burning]{"entity": "fire_smell", "value": "burning"} close to [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Encounter with [sulpher]{"entity": "fire_smell", "value": "sulpher"} detected
+    around [wing]{"entity": "location", "value": "wing"}.
+
+    - Acknowledging a prevalent and striking smell of [burning]{"entity": "fire_smell",
+    "value": "burning"} near the premises of [engine]{"entity": "location", "value":
+    "engine"}.
+
+    - Detected [burning]{"entity": "fire_smell", "value": "burning"} near [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Experiencing a strong [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    in the area of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [burning]{"entity": "fire_smell", "value": "burning"}, in the environment surrounding
+    [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Picking up a trace of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    near [wing]{"entity": "location", "value": "wing"}.
+
+    - There''s an unmistakable smell of [burning]{"entity": "fire_smell", "value":
+    "burning"} emanating from [cabin]{"entity": "location", "value": "cabin"}.
+
+    - I smell [sulpher]{"entity": "fire_smell", "value": "sulpher"} in [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - A distinct [sulpher]{"entity": "fire_smell", "value": "sulpher"} noticeable
+    in [engine]{"entity": "location", "value": "engine"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [sulpher]{"entity": "fire_smell", "value": "sulpher"}, in the environment surrounding
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - A [burning]{"entity": "fire_smell", "value": "burning"} is coming from [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Acknowledging a prevalent and striking smell of [sulpher]{"entity": "fire_smell",
+    "value": "sulpher"} near the premises of [wing]{"entity": "location", "value":
+    "wing"}.
+
+    - Observation a clear odor of [burning]{"entity": "fire_smell", "value": "burning"}
+    found at [wing]{"entity": "location", "value": "wing"}.
+
+    - Identifying a [sulpher]{"entity": "fire_smell", "value": "sulpher"} within [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - The air has a hint of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    at [engine]{"entity": "location", "value": "engine"}.
+
+    - Alert Smelling [burning]{"entity": "fire_smell", "value": "burning"} in the
+    sector of [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Alert Smelling [burning]{"entity": "fire_smell", "value": "burning"} in the
+    sector of [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Identifying a [burning]{"entity": "fire_smell", "value": "burning"} within [electronics]{"entity":
+    "location", "value": "electronics"}.
+
+    - Sensing [sulpher]{"entity": "fire_smell", "value": "sulpher"} close to [engine]{"entity":
+    "location", "value": "engine"}.
+
+    - Sensing [burning]{"entity": "fire_smell", "value": "burning"} close to [cabin]{"entity":
+    "location", "value": "cabin"}.
+
+    - Confirming the inhalation of a certain kind of a pungent smell, identified as
+    [burning]{"entity": "fire_smell", "value": "burning"}, in the environment surrounding
+    [engine]{"entity": "location", "value": "engine"}.
+
+    - The air has a hint of [burning]{"entity": "fire_smell", "value": "burning"}
+    at [electronics]{"entity": "location", "value": "electronics"}.
+
+    - Observation a clear odor of [sulpher]{"entity": "fire_smell", "value": "sulpher"}
+    found at [cabin]{"entity": "location", "value": "cabin"}.
+
+    - Sensing [sulpher]{"entity": "fire_smell", "value": "sulpher"} close to [wing]{"entity":
+    "location", "value": "wing"}.'
+  intent: share-fire_emergency_smell_and_location
+- examples: "- There's a strong [burning]{\"entity\": \"fire_smell\", \"value\": \"\
+    burning\"} present.\n- Whiff of [burning]{\"entity\": \"fire_smell\", \"value\"\
+    : \"burning\"} in the air\n- Whiff of [burning]{\"entity\": \"fire_smell\", \"\
+    value\": \"burning\"} in the air.\n- Detecting a scent of [sulpher]{\"entity\"\
+    : \"fire_smell\", \"value\": \"sulpher\"}.\n- [burning]{\"entity\": \"fire_smell\"\
+    , \"value\": \"burning\"}.\n- An aroma of [burning]{\"entity\": \"fire_smell\"\
+    , \"value\": \"burning\"} is in the vicinity.\n- Detecting a scent of [burning]{\"\
+    entity\": \"fire_smell\", \"value\": \"burning\"}.\n- A clear scent of [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"} exists.\n- There\u2019s an undeniable\
+    \ smell of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}.\n- Catching\
+    \ hints of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}.\n- I\
+    \ sense [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}\n- Noticing\
+    \ an odor of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}.\n\
+    - I sense [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}.\n- Got\
+    \ a noseful of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"} here.\n\
+    - The atmosphere is laden with [burning]{\"entity\": \"fire_smell\", \"value\"\
+    : \"burning\"}.\n- Can detect the [burning]{\"entity\": \"fire_smell\", \"value\"\
+    : \"burning\"} around.\n- Recognizing the distinct smell of [burning]{\"entity\"\
+    : \"fire_smell\", \"value\": \"burning\"}.\n- Catching hints of [sulpher]{\"entity\"\
+    : \"fire_smell\", \"value\": \"sulpher\"}.\n- There\u2019s an undeniable smell\
+    \ of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n- I sense\
+    \ [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}\n- The essence\
+    \ of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"} is noticeable.\n\
+    - I sense [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n- [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"}\n- There's a strong [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"} present.\n- Whiff of [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"} in the air\n- Noticing an odor\
+    \ of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n- I smell\
+    \ [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}\n- I'm picking\
+    \ up on some [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}.\n\
+    - Sniffing out a bit of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"\
+    }.\n- Got a noseful of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"\
+    } here.\n- I smell [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"\
+    }.\n- A palpable sense of [burning]{\"entity\": \"fire_smell\", \"value\": \"\
+    burning\"} in the environment.\n- I'm picking up on some [sulpher]{\"entity\"\
+    : \"fire_smell\", \"value\": \"sulpher\"}.\n- Can detect the [sulpher]{\"entity\"\
+    : \"fire_smell\", \"value\": \"sulpher\"} around.\n- The atmosphere is laden with\
+    \ [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n- I smell [burning]{\"\
+    entity\": \"fire_smell\", \"value\": \"burning\"}.\n- Sniffing out a bit of [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n- Experiencing the smell of\
+    \ [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"} strongly.\n- A\
+    \ clear scent of [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"\
+    } exists.\n- [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"}.\n\
+    - Whiff of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"} in the\
+    \ air.\n- [burning]{\"entity\": \"fire_smell\", \"value\": \"burning\"}\n- The\
+    \ air has traces of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"\
+    }.\n- An aroma of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"\
+    } is in the vicinity.\n- A palpable sense of [sulpher]{\"entity\": \"fire_smell\"\
+    , \"value\": \"sulpher\"} in the environment.\n- Experiencing the smell of [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"} strongly.\n- I smell [sulpher]{\"\
+    entity\": \"fire_smell\", \"value\": \"sulpher\"}\n- The air has traces of [burning]{\"\
+    entity\": \"fire_smell\", \"value\": \"burning\"}.\n- The essence of [burning]{\"\
+    entity\": \"fire_smell\", \"value\": \"burning\"} is noticeable.\n- Recognizing\
+    \ the distinct smell of [sulpher]{\"entity\": \"fire_smell\", \"value\": \"sulpher\"\
+    }."
+  intent: share-fire_smell
+- examples: "- The [side]{\"entity\": \"landing_gear_specifier\", \"value\": \"side\"\
+    } landing gear seems jammed.\n- [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear refusing to open.\n- My [side]{\"entity\"\
+    : \"landing_gear_specifier\", \"value\": \"side\"} landing gear is stuck\n- Warning\
+    \ signal for [side]{\"entity\": \"landing_gear_specifier\", \"value\": \"side\"\
+    } landing gear.\n- Unexpected issue with the [side]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"side\"} landing gear.\n- Trouble with the [nose]{\"entity\": \"\
+    landing_gear_specifier\", \"value\": \"nose\"} landing gear operation.\n- Possible\
+    \ jam in the mechanism of [nose]{\"entity\": \"landing_gear_specifier\", \"value\"\
+    : \"nose\"} landing gear.\n- [nose]{\"entity\": \"landing_gear_specifier\", \"\
+    value\": \"nose\"} landing gear gear issue\n- The [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear seems jammed.\n- Problematic [nose]{\"entity\"\
+    : \"landing_gear_specifier\", \"value\": \"nose\"} landing gear at this moment.\n\
+    - Technical trouble impacting the [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear efficiency.\n- [side]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"side\"} landing gear malfunction\n- My [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear is stuck\n- Difficulty in operating [nose]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing gear.\n- Warning\
+    \ signal for [nose]{\"entity\": \"landing_gear_specifier\", \"value\": \"nose\"\
+    } landing gear.\n- Alert malfunction within the [side]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"side\"} landing gear system.\n- Facing a glitch with [nose]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing gear.\n- Problematic\
+    \ [side]{\"entity\": \"landing_gear_specifier\", \"value\": \"side\"} landing\
+    \ gear at this moment.\n- Complications with retracting [nose]{\"entity\": \"\
+    landing_gear_specifier\", \"value\": \"nose\"} landing gear.\n- [side]{\"entity\"\
+    : \"landing_gear_specifier\", \"value\": \"side\"} landing gear not retracting\n\
+    - malfunction in [side]{\"entity\": \"landing_gear_specifier\", \"value\": \"\
+    side\"} landing gear\n- [nose]{\"entity\": \"landing_gear_specifier\", \"value\"\
+    : \"nose\"} landing gear malfunction\n- Trouble with the [side]{\"entity\": \"\
+    landing_gear_specifier\", \"value\": \"side\"} landing gear operation.\n- [nose]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing gear not retracting\n\
+    - Unexpected issue with the [nose]{\"entity\": \"landing_gear_specifier\", \"\
+    value\": \"nose\"} landing gear.\n- Alert malfunction within the [nose]{\"entity\"\
+    : \"landing_gear_specifier\", \"value\": \"nose\"} landing gear system.\n- [side]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"side\"} landing gear failure\
+    \ detected.\n- Difficulty in operating [side]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"side\"} landing gear.\n- Cannot engage [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear.\n- Possible jam in the mechanism of [side]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"side\"} landing gear.\n- Technical\
+    \ trouble impacting the [side]{\"entity\": \"landing_gear_specifier\", \"value\"\
+    : \"side\"} landing gear efficiency.\n- malfunction in [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear\n- [nose]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"nose\"} landing gear won't deploy.\n- Experiencing a problem with\
+    \ [nose]{\"entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing\
+    \ gear.\n- Cannot engage [side]{\"entity\": \"landing_gear_specifier\", \"value\"\
+    : \"side\"} landing gear.\n- Complications with retracting [side]{\"entity\":\
+    \ \"landing_gear_specifier\", \"value\": \"side\"} landing gear.\n- Experiencing\
+    \ a problem with [side]{\"entity\": \"landing_gear_specifier\", \"value\": \"\
+    side\"} landing gear.\n- The [side]{\"entity\": \"landing_gear_specifier\", \"\
+    value\": \"side\"} landing gear isn\u2019t functioning correctly.\n- The [nose]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing gear isn\u2019\
+    t functioning correctly.\n- [side]{\"entity\": \"landing_gear_specifier\", \"\
+    value\": \"side\"} landing gear gear issue\n- Facing a glitch with [side]{\"entity\"\
+    : \"landing_gear_specifier\", \"value\": \"side\"} landing gear.\n- Detected anomaly\
+    \ in [nose]{\"entity\": \"landing_gear_specifier\", \"value\": \"nose\"} landing\
+    \ gear\u2019s functioning.\n- [side]{\"entity\": \"landing_gear_specifier\", \"\
+    value\": \"side\"} landing gear refusing to open.\n- Detected anomaly in [side]{\"\
+    entity\": \"landing_gear_specifier\", \"value\": \"side\"} landing gear\u2019\
+    s functioning.\n- [nose]{\"entity\": \"landing_gear_specifier\", \"value\": \"\
+    nose\"} landing gear failure detected.\n- [side]{\"entity\": \"landing_gear_specifier\"\
+    , \"value\": \"side\"} landing gear won't deploy."
+  intent: share-landing_gear_malfunction
+- examples: '- Request emergency services near the runway
+
+    - Request emergency services on standby
+
+    - Request rescue equipment for our landing
+
+    - Request emergency service for landing with no landing_gear
+
+    - Need immediate emergency services at the landing site.
+
+    - Prepare emergency medical teams by the runway.
+
+    - Alert fire brigade and medical support for arrival.
+
+    - Coordination requested for emergency response upon touchdown.
+
+    - Emergency crews needed due to potential landing complications.
+
+    - Call for standby emergency teams alongside the runway.
+
+    - Require immediate deployment of emergency services post-landing.
+
+    - Mobilize all necessary rescue and fire fighting units for the landing.
+
+    - Immediate readiness of emergency services requested upon our approach.
+
+    - Summon rapid response teams to aid in possible landing contingencies.
+
+    - Emergency assistance required immediately after landing attempt.
+
+    - Activate on-ground emergency units in preparation for our arrival.
+
+    - Operational readiness of emergency squads imperative for safe landing.
+
+    - Ensure comprehensive readiness of all emergency services at landing zone.
+
+    - Essential that ground emergencies are readied for any eventuality at landing.
+
+    - Escort from firefighting and medical units demanded at runway proximity.
+
+    - Solicit airport-wide alert for readiness of all emergency personnel.'
+  intent: share-emergency_service_standby
+- examples: '- Request runway foam
+
+    - Request foam on the runway
+
+    - Is it possible to foam the runway?
+
+    - Is it possible to foam the runway within the available flight time?
+
+    - Request to prepare the runway 07 with foam for landing with landing gear
+
+    - Can we get foam coverage on the designated landing strip?
+
+    - Need foam deployment on the runway for an emergency landing.
+
+    - Urgently asking for the runway to be foamed prior to our landing.
+
+    - Please cover the runway with foam as a precautionary measure.
+
+    - Asking for foam spray over the runway to mitigate fire risk at landing.
+
+    - Could you apply foam on the runway surface to assist in our arrival?
+
+    - Considering our situation, please ensure foaming of the runway is done.
+
+    - For crash landing preparation, apply foam all over the intended runway.
+
+    - Immediate requirement runway foaming for emergency actions during landing.
+
+    - Foam requirement alert Please have the runway foamed for a belly landing.
+
+    - Safety request  overlay the landing area with foam due to gear malfunction.
+
+    - Affirmative action needed Full-scale foaming of runway to support our descent.
+
+    - Operational request  Initiate foaming protocol on our expected landing strip
+    ASAP.
+
+    - Emergency protocol activation Require foaming of our landing trajectory immediately.
+
+    - Provision request Layering of firefighting foam across runway surface pre-landing
+    required.
+
+    - How quickly can we get a layer of safety foam on our proposed landing strip?'
+  intent: share-foam_request
+- examples: '- Request to switch to runway
+
+    - landing on gras runway
+
+    - prefer to land on gras
+
+    - going for the gras runway to reduce fire risk
+
+    - request for emergency landing left of runway on grass
+
+    - Request to prepare the runway 07 with foam for landing with landing gear.
+
+    - Opting for grass strip landing due to technical issues.
+
+    - Is the grass landing strip available for emergency use?
+
+    - Need clearance for an immediate grass strip landing.
+
+    - Diverting to grass strip for a safer emergency landing.
+
+    - Considering grass runway for touchdown, please confirm availability.
+
+    - Initiating approach towards grass field adjacent to main runway.
+
+    - Seeking permission for unscheduled landing on grass strip.
+
+    - Grass strip preferred for landing, awaiting go-ahead.
+
+    - Planning on utilizing grass strip for unexpected landing scenario.
+
+    - Coordinating for a rapid diversion to nearest grass landing area.
+
+    - Grass runway option being considered for imminent touchdown.
+
+    - Implementing immediate descent towards alternative grass strip.
+
+    - Final approach directed towards secondary grass landing venue.
+
+    - Preparing for contingency landing on designated grass zone.
+
+    - Announcing intent to execute landing procedure on grass strip due to urgency.'
+  intent: share-grass_strip
+- examples: '- It appears I have a [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"}.
+
+    - I''m in a state of [headache]{"entity": "physical_state_description", "value":
+    "headache"}.
+
+    - Having a [stomachache]{"entity": "physical_state_description", "value": "stomachache"}
+
+    - Enduring a [stomachache]{"entity": "physical_state_description", "value": "stomachache"}.
+
+    - My condition is a bit [stomachache]{"entity": "physical_state_description",
+    "value": "stomachache"} at the moment.
+
+    - Encountering some [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"} symptoms.
+
+    - Encountering some [headache]{"entity": "physical_state_description", "value":
+    "headache"} symptoms.
+
+    - It feels like a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"} has hit me.
+
+    - I am currently [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - Noticed I''ve been quite [headache]{"entity": "physical_state_description",
+    "value": "headache"} lately.
+
+    - My condition is a bit [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"} at the moment.
+
+    - My overall health is somewhat [headache]{"entity": "physical_state_description",
+    "value": "headache"} currently.
+
+    - My condition is a bit [headache]{"entity": "physical_state_description", "value":
+    "headache"} at the moment.
+
+    - My overall health is somewhat [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"} currently.
+
+    - It feels like a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"} has hit me.
+
+    - I''ve been diagnosed with a [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"}.
+
+    - Enduring a [eye pain]{"entity": "physical_state_description", "value": "eye
+    pain"}.
+
+    - Suffering from a [headache]{"entity": "physical_state_description", "value":
+    "headache"}.
+
+    - I''ve been diagnosed with a [headache]{"entity": "physical_state_description",
+    "value": "headache"}.
+
+    - I''m in a state of [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - Suffering from a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Dealing with a [eye pain]{"entity": "physical_state_description", "value": "eye
+    pain"}.
+
+    - Noticed I''ve been quite [eye pain]{"entity": "physical_state_description",
+    "value": "eye pain"} lately.
+
+    - Encountering some [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"} symptoms.
+
+    - Noticed I''ve been quite [stomachache]{"entity": "physical_state_description",
+    "value": "stomachache"} lately.
+
+    - Dealing with a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - I''ve been diagnosed with a [eye pain]{"entity": "physical_state_description",
+    "value": "eye pain"}.
+
+    - I got [stomach pain]{"entity": "physical_state_description", "value": "stomach
+    pain"}
+
+    - I''m in a state of [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Having a [stomach pain]{"entity": "physical_state_description", "value": "stomach
+    pain"}
+
+    - Suffering from a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"}.
+
+    - Currently facing a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - I have a [eye pain]{"entity": "physical_state_description", "value": "eye pain"}
+
+    - I have a [headache]{"entity": "physical_state_description", "value": "headache"}
+
+    - It appears I have a [headache]{"entity": "physical_state_description", "value":
+    "headache"}.
+
+    - Suffering from a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - I got [eye pain]{"entity": "physical_state_description", "value": "eye pain"}
+
+    - My overall health is somewhat [stomachache]{"entity": "physical_state_description",
+    "value": "stomachache"} currently.
+
+    - Experiencing a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - Battling against a [headache]{"entity": "physical_state_description", "value":
+    "headache"} right now.
+
+    - Currently facing a [headache]{"entity": "physical_state_description", "value":
+    "headache"}.
+
+    - Noticed I''ve been quite [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"} lately.
+
+    - I am currently [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Enduring a [stomach pain]{"entity": "physical_state_description", "value": "stomach
+    pain"}.
+
+    - I got [headache]{"entity": "physical_state_description", "value": "headache"}
+
+    - It appears I have a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"}.
+
+    - I am currently [headache]{"entity": "physical_state_description", "value": "headache"}.
+
+    - I have a [stomachache]{"entity": "physical_state_description", "value": "stomachache"}
+
+    - Feeling a bit [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Struggling with a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"} today.
+
+    - Having a [eye pain]{"entity": "physical_state_description", "value": "eye pain"}
+
+    - I''ve been diagnosed with a [stomachache]{"entity": "physical_state_description",
+    "value": "stomachache"}.
+
+    - Struggling with a [headache]{"entity": "physical_state_description", "value":
+    "headache"} today.
+
+    - I''m in a state of [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"}.
+
+    - I find myself with a [headache]{"entity": "physical_state_description", "value":
+    "headache"}.
+
+    - Experiencing a [headache]{"entity": "physical_state_description", "value": "headache"}.
+
+    - I got [stomachache]{"entity": "physical_state_description", "value": "stomachache"}
+
+    - Having a [headache]{"entity": "physical_state_description", "value": "headache"}
+
+    - I have a [stomach pain]{"entity": "physical_state_description", "value": "stomach
+    pain"}
+
+    - I am currently [eye pain]{"entity": "physical_state_description", "value": "eye
+    pain"}.
+
+    - It feels like a [headache]{"entity": "physical_state_description", "value":
+    "headache"} has hit me.
+
+    - Dealing with a [headache]{"entity": "physical_state_description", "value": "headache"}.
+
+    - My overall health is somewhat [eye pain]{"entity": "physical_state_description",
+    "value": "eye pain"} currently.
+
+    - Struggling with a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"} today.
+
+    - Enduring a [headache]{"entity": "physical_state_description", "value": "headache"}.
+
+    - It appears I have a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Battling against a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"} right now.
+
+    - Struggling with a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"} today.
+
+    - Battling against a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"} right now.
+
+    - Experiencing a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Currently facing a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - I find myself with a [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"}.
+
+    - Encountering some [stomachache]{"entity": "physical_state_description", "value":
+    "stomachache"} symptoms.
+
+    - It feels like a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"} has hit me.
+
+    - Feeling a bit [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - I find myself with a [stomach pain]{"entity": "physical_state_description",
+    "value": "stomach pain"}.
+
+    - Currently facing a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"}.
+
+    - Experiencing a [eye pain]{"entity": "physical_state_description", "value": "eye
+    pain"}.
+
+    - Battling against a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"} right now.
+
+    - My condition is a bit [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"} at the moment.
+
+    - Feeling a bit [headache]{"entity": "physical_state_description", "value": "headache"}.
+
+    - Dealing with a [stomach pain]{"entity": "physical_state_description", "value":
+    "stomach pain"}.
+
+    - Feeling a bit [eye pain]{"entity": "physical_state_description", "value": "eye
+    pain"}.
+
+    - I find myself with a [eye pain]{"entity": "physical_state_description", "value":
+    "eye pain"}.'
+  intent: share-physical_health_status
+- examples: '- Suffering from a [overloaded]{"entity": "mental_state_description",
+    "value": "overloaded"}.
+
+    - Encountering some [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"} symptoms.
+
+    - I have [incapacitated]{"entity": "mental_state_description", "value": "incapacitated"}
+
+    - It appears I have a [normal]{"entity": "mental_state_description", "value":
+    "normal"}.
+
+    - Currently facing a [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - Enduring a [incapacitated]{"entity": "mental_state_description", "value": "incapacitated"}.
+
+    - Currently facing a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - I''ve been diagnosed with a [incapacitated]{"entity": "mental_state_description",
+    "value": "incapacitated"}.
+
+    - Struggling with a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"} today.
+
+    - I''ve been diagnosed with a [overloaded]{"entity": "mental_state_description",
+    "value": "overloaded"}.
+
+    - I have [normal]{"entity": "mental_state_description", "value": "normal"}
+
+    - I''m in a state of [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - I feel [normal]{"entity": "mental_state_description", "value": "normal"}
+
+    - It appears I have a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - Having a [incapacitated]{"entity": "mental_state_description", "value": "incapacitated"}
+
+    - Enduring a [overloaded]{"entity": "mental_state_description", "value": "overloaded"}.
+
+    - Having a [normal]{"entity": "mental_state_description", "value": "normal"}
+
+    - Suffering from a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - Struggling with a [normal]{"entity": "mental_state_description", "value": "normal"}
+    today.
+
+    - I am currently [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - Currently facing a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"}.
+
+    - Suffering from a [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - Feeling a bit [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - I find myself with a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"}.
+
+    - It feels like a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"} has hit me.
+
+    - Encountering some [normal]{"entity": "mental_state_description", "value": "normal"}
+    symptoms.
+
+    - Having a [overloaded]{"entity": "mental_state_description", "value": "overloaded"}
+
+    - I find myself with a [normal]{"entity": "mental_state_description", "value":
+    "normal"}.
+
+    - It appears I have a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"}.
+
+    - Noticed I''ve been quite [normal]{"entity": "mental_state_description", "value":
+    "normal"} lately.
+
+    - Dealing with a [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - I am currently [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - Noticed I''ve been quite [incapacitated]{"entity": "mental_state_description",
+    "value": "incapacitated"} lately.
+
+    - Noticed I''ve been quite [overloaded]{"entity": "mental_state_description",
+    "value": "overloaded"} lately.
+
+    - I''ve been diagnosed with a [normal]{"entity": "mental_state_description", "value":
+    "normal"}.
+
+    - My overall health is somewhat [overloaded]{"entity": "mental_state_description",
+    "value": "overloaded"} currently.
+
+    - Dealing with a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - Feeling a bit [overloaded]{"entity": "mental_state_description", "value": "overloaded"}.
+
+    - I''m in a state of [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - My overall health is somewhat [normal]{"entity": "mental_state_description",
+    "value": "normal"} currently.
+
+    - I feel [overloaded]{"entity": "mental_state_description", "value": "overloaded"}
+
+    - My overall health is somewhat [incapacitated]{"entity": "mental_state_description",
+    "value": "incapacitated"} currently.
+
+    - It feels like a [normal]{"entity": "mental_state_description", "value": "normal"}
+    has hit me.
+
+    - It feels like a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"} has hit me.
+
+    - Experiencing a [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - Enduring a [normal]{"entity": "mental_state_description", "value": "normal"}.
+
+    - I have [overloaded]{"entity": "mental_state_description", "value": "overloaded"}
+
+    - My condition is a bit [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"} at the moment.
+
+    - I feel [incapacitated]{"entity": "mental_state_description", "value": "incapacitated"}
+
+    - Encountering some [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"} symptoms.
+
+    - Struggling with a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"} today.
+
+    - Battling against a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"} right now.
+
+    - My condition is a bit [incapacitated]{"entity": "mental_state_description",
+    "value": "incapacitated"} at the moment.
+
+    - Battling against a [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"} right now.
+
+    - Battling against a [normal]{"entity": "mental_state_description", "value": "normal"}
+    right now.
+
+    - Dealing with a [overloaded]{"entity": "mental_state_description", "value": "overloaded"}.
+
+    - I am currently [overloaded]{"entity": "mental_state_description", "value": "overloaded"}.
+
+    - Experiencing a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - Feeling a bit [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - I''m in a state of [overloaded]{"entity": "mental_state_description", "value":
+    "overloaded"}.
+
+    - Experiencing a [overloaded]{"entity": "mental_state_description", "value": "overloaded"}.
+
+    - I find myself with a [incapacitated]{"entity": "mental_state_description", "value":
+    "incapacitated"}.
+
+    - My condition is a bit [normal]{"entity": "mental_state_description", "value":
+    "normal"} at the moment.'
+  intent: share-mental_health_status

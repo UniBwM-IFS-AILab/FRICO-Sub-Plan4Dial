@@ -50,20 +50,20 @@
         :parameters()
         :precondition
             (and
-                (know__location)
-                (know__fire_color)
                 (not (force-statement))
+                (know__fire_color)
+                (know__location)
             )
         :effect
             (labeled-oneof determine_emergency_s_u__update
                 (outcome update
                     (and
-                        (not (emergency_type-value-physical_health_emergency))
-                        (not (emergency_type-value-smell_known_location_required))
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (emergency_type-value-smoke_unknown_location_and_fire_known)
                         (not (emergency_type-value-smoke_known_location_required))
+                        (not (emergency_type-value-physical_health_emergency))
+                        (not (emergency_type-value-smell_known_location_required))
                         (not (emergency_type-value-mental_health_emergency))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (know__emergency_type)
                     )
                 )
@@ -80,12 +80,12 @@
             (labeled-oneof determine_emergency_l_r__update
                 (outcome update
                     (and
-                        (not (emergency_type-value-physical_health_emergency))
                         (emergency_type-value-smell_known_location_required)
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-smoke_known_location_required))
+                        (not (emergency_type-value-physical_health_emergency))
                         (not (emergency_type-value-mental_health_emergency))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (know__emergency_type)
                     )
                 )
@@ -102,11 +102,11 @@
             (labeled-oneof determine_emergency_s_k__update
                 (outcome update
                     (and
+                        (emergency_type-value-smoke_known_location_required)
+                        (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-physical_health_emergency))
                         (not (emergency_type-value-smell_known_location_required))
-                        (emergency_type-value-smoke_known_location_required)
                         (not (emergency_type-value-landing_gear_malfunction_emergency))
-                        (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-mental_health_emergency))
                         (know__emergency_type)
                     )
@@ -124,11 +124,11 @@
             (labeled-oneof determine_emergency_l_g__update
                 (outcome update
                     (and
-                        (not (emergency_type-value-physical_health_emergency))
-                        (not (emergency_type-value-smell_known_location_required))
-                        (emergency_type-value-landing_gear_malfunction_emergency)
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-smoke_known_location_required))
+                        (emergency_type-value-landing_gear_malfunction_emergency)
+                        (not (emergency_type-value-physical_health_emergency))
+                        (not (emergency_type-value-smell_known_location_required))
                         (not (emergency_type-value-mental_health_emergency))
                         (know__emergency_type)
                     )
@@ -146,12 +146,12 @@
             (labeled-oneof determine_emergency_p_h__update
                 (outcome update
                     (and
-                        (emergency_type-value-physical_health_emergency)
-                        (not (emergency_type-value-smell_known_location_required))
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-smoke_known_location_required))
+                        (not (emergency_type-value-smell_known_location_required))
+                        (emergency_type-value-physical_health_emergency)
                         (not (emergency_type-value-mental_health_emergency))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (know__emergency_type)
                     )
                 )
@@ -168,13 +168,13 @@
             (labeled-oneof determine_emergency_m_h__update
                 (outcome update
                     (and
+                        (not (emergency_type-value-smoke_unknown_location_and_fire_known))
+                        (not (emergency_type-value-smoke_known_location_required))
                         (not (emergency_type-value-physical_health_emergency))
                         (not (emergency_type-value-smell_known_location_required))
                         (not (emergency_type-value-landing_gear_malfunction_emergency))
-                        (not (emergency_type-value-smoke_unknown_location_and_fire_known))
-                        (emergency_type-value-mental_health_emergency)
-                        (not (emergency_type-value-smoke_known_location_required))
                         (know__emergency_type)
+                        (emergency_type-value-mental_health_emergency)
                     )
                 )
             )
@@ -183,9 +183,9 @@
         :parameters()
         :precondition
             (and
+                (not (force-statement))
                 (not (mental_health_emergency))
                 (not (physical_health_emergency))
-                (not (force-statement))
                 (know__emergency_type)
             )
         :effect
@@ -208,19 +208,19 @@
             (and
                 (not (force-statement))
                 (not (know_all_context_for_health))
-                (emergency_type-value-mental_health_emergency)
                 (know__emergency_type)
+                (emergency_type-value-mental_health_emergency)
             )
         :effect
             (labeled-oneof get-info_mental__set-smoke
                 (outcome indicate_no_addition
                     (and
-                        (emergency_type-value-physical_health_emergency)
-                        (not (emergency_type-value-smell_known_location_required))
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (not (emergency_type-value-smoke_known_location_required))
+                        (not (emergency_type-value-smell_known_location_required))
+                        (emergency_type-value-physical_health_emergency)
                         (not (emergency_type-value-mental_health_emergency))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                     )
                 )
                 (outcome fallback
@@ -235,9 +235,9 @@
         :precondition
             (and
                 (not (force-statement))
-                (emergency_type-value-physical_health_emergency)
                 (not (know_all_context_for_health))
                 (know__emergency_type)
+                (emergency_type-value-physical_health_emergency)
             )
         :effect
             (labeled-oneof get-info_physical__set-smoke
@@ -257,9 +257,9 @@
         :parameters()
         :precondition
             (and
+                (emergency_type-value-smoke_unknown_location_and_fire_known)
                 (not (know_all_context_for_fire))
                 (not (know__seen_smoke))
-                (emergency_type-value-smoke_unknown_location_and_fire_known)
                 (not (force-statement))
                 (know__emergency_type)
             )
@@ -267,15 +267,15 @@
             (labeled-oneof get-smoke_from_fire__set-smoke
                 (outcome indicate_smoke_not_seen
                     (and
-                        (know_all_context_for_fire)
                         (not (seen_smoke))
                         (know__seen_smoke)
+                        (know_all_context_for_fire)
                     )
                 )
                 (outcome indicate_smoke_seen
                     (and
-                        (seen_smoke)
                         (know__seen_smoke)
+                        (seen_smoke)
                     )
                 )
                 (outcome fallback
@@ -290,9 +290,9 @@
         :precondition
             (and
                 (not (force-statement))
-                (emergency_type-value-smoke_unknown_location_and_fire_known)
                 (know__smoke_description)
                 (know__emergency_type)
+                (emergency_type-value-smoke_unknown_location_and_fire_known)
             )
         :effect
             (labeled-oneof smoke_from_dialog_location_color_known__set-context_known
@@ -307,10 +307,10 @@
         :parameters()
         :precondition
             (and
-                (know__location)
                 (not (force-statement))
                 (emergency_type-value-smell_known_location_required)
                 (know__emergency_type)
+                (know__location)
             )
         :effect
             (labeled-oneof smell_with_location_guess__set-context_known
@@ -325,10 +325,10 @@
         :parameters()
         :precondition
             (and
-                (know__location)
                 (not (force-statement))
                 (emergency_type-value-smoke_known_location_required)
                 (know__emergency_type)
+                (know__location)
             )
         :effect
             (labeled-oneof smoke_with_location_guess__set-context_known
@@ -343,11 +343,11 @@
         :parameters()
         :precondition
             (and
-                (not (grass_request))
                 (not (foam_request))
+                (not (grass_request))
+                (know__landing_gear_specifier)
                 (not (reset_condition))
                 (not (force-statement))
-                (know__landing_gear_specifier)
             )
         :effect
             (labeled-oneof landing_gear_malfunction_get_landing_type__set-context_known
@@ -374,10 +374,10 @@
         :parameters()
         :precondition
             (and
-                (know_all_context_for_fire)
                 (not (force-statement))
-                (not (know__reached_server))
                 (not (got_fire_instruction))
+                (not (know__reached_server))
+                (know_all_context_for_fire)
             )
         :effect
             (labeled-oneof get-fire_instruction__set-get-fire_instruction
@@ -399,9 +399,9 @@
         :precondition
             (and
                 (not (force-statement))
-                (not (know__reached_server))
-                (know_all_context_for_landing_gear_malfunction)
                 (not (got_fire_instruction))
+                (know_all_context_for_landing_gear_malfunction)
+                (not (know__reached_server))
             )
         :effect
             (labeled-oneof get-landing_gear_instruction__set-get-fire_instruction
@@ -413,8 +413,8 @@
                 )
                 (outcome got_engine_fire_instruction_false
                     (and
-                        (not (got_landing_gear_instruction))
                         (know__reached_server)
+                        (not (got_landing_gear_instruction))
                     )
                 )
             )
@@ -423,17 +423,17 @@
         :parameters()
         :precondition
             (and
-                (know_all_context_for_health)
-                (not (force-statement))
                 (not (got_health_instruction))
+                (not (force-statement))
+                (know_all_context_for_health)
                 (not (know__reached_server))
             )
         :effect
             (labeled-oneof get-health_instruction__set-get-fire_instruction
                 (outcome got_engine_fire_instruction
                     (and
-                        (got_health_instruction)
                         (know__reached_server)
+                        (got_health_instruction)
                     )
                 )
                 (outcome got_engine_fire_instruction_false
@@ -496,10 +496,10 @@
         :precondition
             (and
                 (not (got_fire_instruction))
-                (not (force-statement))
-                (not (got_health_instruction))
                 (know__reached_server)
                 (not (got_landing_gear_instruction))
+                (not (got_health_instruction))
+                (not (force-statement))
             )
         :effect
             (labeled-oneof complete_error__finish
@@ -529,16 +529,16 @@
         :parameters()
         :precondition
             (and
-                (allow_single_slot_location)
                 (not (force-statement))
                 (not (know__location))
+                (allow_single_slot_location)
             )
         :effect
             (labeled-oneof single_slot__location__validate-slot-fill
                 (outcome fill-slot
                     (and
-                        (know__location)
                         (force-statement)
+                        (know__location)
                     )
                 )
                 (outcome fallback
@@ -552,9 +552,9 @@
         :parameters()
         :precondition
             (and
-                (not (force-statement))
-                (allow_single_slot_fire_color)
                 (not (know__fire_color))
+                (allow_single_slot_fire_color)
+                (not (force-statement))
             )
         :effect
             (labeled-oneof single_slot__fire_color__validate-slot-fill
@@ -575,59 +575,59 @@
         :parameters()
         :precondition
             (and
-                (not (know__smoke_description))
-                (not (know__physical_state_description))
+                (not (know__fire_color))
+                (not (know__landing_gear_specifier))
                 (not (know__location))
                 (not (know__fire_smell))
-                (not (know__landing_gear_specifier))
-                (not (know__mental_state_description))
+                (not (know__physical_state_description))
                 (not (force-statement))
-                (not (know__fire_color))
+                (not (know__smoke_description))
+                (not (know__mental_state_description))
             )
         :effect
             (labeled-oneof fire_emergency_location_color_driven__validate-slot-fill-more
                 (outcome fire_color_found-location_found
                     (and
-                        (know__location)
                         (know__fire_color)
+                        (know__location)
                     )
                 )
                 (outcome fire_color_found
                     (and
                         (know__fire_color)
-                        (allow_single_slot_location)
                         (force-statement)
+                        (allow_single_slot_location)
                     )
                 )
                 (outcome location_found
                     (and
-                        (know__location)
                         (allow_single_slot_fire_color)
+                        (know__location)
                         (force-statement)
                     )
                 )
                 (outcome fire_smell_found
                     (and
-                        (not (emergency_type-value-physical_health_emergency))
                         (emergency_type-value-smell_known_location_required)
                         (force-statement)
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
-                        (not (emergency_type-value-smoke_known_location_required))
                         (know__fire_smell)
+                        (not (emergency_type-value-smoke_known_location_required))
+                        (not (emergency_type-value-physical_health_emergency))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-mental_health_emergency))
                         (know__emergency_type)
                     )
                 )
                 (outcome smoke_description_found
                     (and
-                        (not (emergency_type-value-physical_health_emergency))
-                        (not (emergency_type-value-smell_known_location_required))
-                        (emergency_type-value-smoke_known_location_required)
                         (force-statement)
-                        (not (emergency_type-value-landing_gear_malfunction_emergency))
+                        (emergency_type-value-smoke_known_location_required)
                         (not (emergency_type-value-smoke_unknown_location_and_fire_known))
                         (know__smoke_description)
+                        (not (emergency_type-value-physical_health_emergency))
+                        (not (emergency_type-value-smell_known_location_required))
+                        (not (emergency_type-value-landing_gear_malfunction_emergency))
                         (not (emergency_type-value-mental_health_emergency))
                         (know__emergency_type)
                     )
@@ -639,14 +639,14 @@
                 )
                 (outcome physical_state_description_found
                     (and
-                        (force-statement)
                         (know__physical_state_description)
+                        (force-statement)
                     )
                 )
                 (outcome mental_state_description_found
                     (and
-                        (force-statement)
                         (know__mental_state_description)
+                        (force-statement)
                     )
                 )
                 (outcome fallback
@@ -660,16 +660,16 @@
         :parameters()
         :precondition
             (and
-                (emergency_type-value-smell_known_location_required)
                 (not (force-statement))
+                (emergency_type-value-smell_known_location_required)
                 (not (know__location))
             )
         :effect
             (labeled-oneof slot-fill__get-location_for_smell_driven__validate-slot-fill
                 (outcome location_found
                     (and
-                        (know__location)
                         (force-statement)
+                        (know__location)
                     )
                 )
                 (outcome fallback
@@ -684,15 +684,15 @@
         :precondition
             (and
                 (not (force-statement))
-                (not (know__location))
                 (emergency_type-value-smoke_known_location_required)
+                (not (know__location))
             )
         :effect
             (labeled-oneof slot-fill__get-location_for_smoke_driven__validate-slot-fill
                 (outcome location_found
                     (and
-                        (know__location)
                         (force-statement)
+                        (know__location)
                     )
                 )
                 (outcome fallback
@@ -706,17 +706,17 @@
         :parameters()
         :precondition
             (and
+                (know__seen_smoke)
                 (not (know__smoke_description))
                 (not (force-statement))
                 (seen_smoke)
-                (know__seen_smoke)
             )
         :effect
             (labeled-oneof slot-fill__get-smoke_description__validate-slot-fill
                 (outcome smoke_description_found
                     (and
-                        (force-statement)
                         (know__smoke_description)
+                        (force-statement)
                     )
                 )
                 (outcome fallback
