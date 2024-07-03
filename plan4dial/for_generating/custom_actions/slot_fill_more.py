@@ -58,7 +58,7 @@ def slot_fill_more(
                     )
                 if list(additional_updates[i]["outcome"].keys())[0] not in config_entities.keys(): 
                 
-                    non_entities_updates.update(additional_updates_copy[i]) # this is ugly but it should work 
+                    non_entities_updates.update(additional_updates_copy[i]) # I abandoned this for now.  this is ugly but it should work 
                 # we don't want to consider when entities are NOT found because 1) it's a
                 # lot more ambiguous and 2) when extracting entities, we only have
                 # knowledge of what we DID extract and not what we DIDN'T. (yes, we could
@@ -157,7 +157,7 @@ def slot_fill_more(
             config_entities,
             loaded_yaml["context_variables"],
             updates_filtered,
-            non_entities_updates
+          #  non_entities_updates
         )
         #actions.update(new_actions)
         loaded_yaml["actions"].update(new_actions)

@@ -1,12 +1,12 @@
 {
     "plan": {
-        "init": "46",
+        "init": "27",
         "goal": "0",
         "nodes": {
             "0": {
                 "expected_successor": false,
                 "action": "---",
-                "state": "0xb872e0",
+                "state": "0x1d7a220",
                 "distance": 0,
                 "is_relevant": 1,
                 "is_goal": 1,
@@ -16,7 +16,7 @@
             "1": {
                 "expected_successor": "0",
                 "action": "complete",
-                "state": "0xb9e450",
+                "state": "0x1d87670",
                 "distance": 1,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -28,25 +28,29 @@
                     }
                 ]
             },
-            "10": {
-                "expected_successor": "0",
-                "action": "complete-fire",
-                "state": "0xba2de0",
-                "distance": 1,
+            "6": {
+                "expected_successor": "1",
+                "action": "get-landing_gear_instruction",
+                "state": "0x1d98300",
+                "distance": 2,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "complete-fire_DETDUP_complete-fire__finish-EQ-finish",
-                        "successor_id": "0"
+                        "outcome_label": "get-landing_gear_instruction_DETDUP_get-landing_gear_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction",
+                        "successor_id": "1"
+                    },
+                    {
+                        "outcome_label": "get-landing_gear_instruction_DETDUP_get-landing_gear_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction_false",
+                        "successor_id": "5"
                     }
                 ]
             },
             "7": {
                 "expected_successor": "6",
                 "action": "landing_gear_malfunction_get_landing_type",
-                "state": "0xbac670",
+                "state": "0x1d99890",
                 "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -66,48 +70,106 @@
                     }
                 ]
             },
-            "28": {
-                "expected_successor": "22",
-                "action": "get-health_instruction",
-                "state": "0xba8c40",
-                "distance": 2,
+            "10": {
+                "expected_successor": "0",
+                "action": "complete-fire",
+                "state": "0x1d910e0",
+                "distance": 1,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "get-health_instruction_DETDUP_get-health_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction",
-                        "successor_id": "22"
-                    },
-                    {
-                        "outcome_label": "get-health_instruction_DETDUP_get-health_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction_false",
-                        "successor_id": "5"
+                        "outcome_label": "complete-fire_DETDUP_complete-fire__finish-EQ-finish",
+                        "successor_id": "0"
                     }
                 ]
             },
-            "6": {
-                "expected_successor": "1",
-                "action": "get-landing_gear_instruction",
-                "state": "0xba2ec0",
-                "distance": 2,
+            "37": {
+                "expected_successor": "28",
+                "action": "get-info_physical",
+                "state": "0x1d9d910",
+                "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "get-landing_gear_instruction_DETDUP_get-landing_gear_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction",
-                        "successor_id": "1"
+                        "outcome_label": "get-info_physical_DETDUP_get-info_physical__set-smoke-EQ-fallback",
+                        "successor_id": "39"
                     },
                     {
-                        "outcome_label": "get-landing_gear_instruction_DETDUP_get-landing_gear_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction_false",
-                        "successor_id": "5"
+                        "outcome_label": "get-info_physical_DETDUP_get-info_physical__set-smoke-EQ-indicate_no_addition",
+                        "successor_id": "28"
+                    }
+                ]
+            },
+            "27": {
+                "expected_successor": "7",
+                "action": "fire_emergency_location_color_driven",
+                "state": "0x1d963a0",
+                "distance": 4,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fallback",
+                        "successor_id": "46"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_color_found",
+                        "successor_id": "46"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_color_found-location_found",
+                        "successor_id": "43"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_smell_found",
+                        "successor_id": "46"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-landing_gear_specifier_found",
+                        "successor_id": "7"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-location_found",
+                        "successor_id": "44"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-mental_state_description_found",
+                        "successor_id": "36"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-physical_state_description_found",
+                        "successor_id": "31"
+                    },
+                    {
+                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-smoke_description_found",
+                        "successor_id": "20"
+                    }
+                ]
+            },
+            "22": {
+                "expected_successor": "0",
+                "action": "complete_health",
+                "state": "0x1da17f0",
+                "distance": 1,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "complete_health_DETDUP_complete_health__finish-EQ-finish",
+                        "successor_id": "0"
                     }
                 ]
             },
             "9": {
                 "expected_successor": "7",
                 "action": "dialogue_statement",
-                "state": "0xba5650",
+                "state": "0x1d92ab0",
                 "distance": 4,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -122,7 +184,7 @@
             "5": {
                 "expected_successor": "0",
                 "action": "complete_error",
-                "state": "0xbabfe0",
+                "state": "0x1d99750",
                 "distance": 1,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -137,7 +199,7 @@
             "16": {
                 "expected_successor": "10",
                 "action": "get-fire_instruction",
-                "state": "0xbad590",
+                "state": "0x1d9af00",
                 "distance": 2,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -156,7 +218,7 @@
             "17": {
                 "expected_successor": "16",
                 "action": "smoke_with_location_guess",
-                "state": "0xbad4a0",
+                "state": "0x1d9ae10",
                 "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -171,7 +233,7 @@
             "18": {
                 "expected_successor": "17",
                 "action": "dialogue_statement",
-                "state": "0xbadd70",
+                "state": "0x1d9b6e0",
                 "distance": 4,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -185,19 +247,19 @@
             },
             "19": {
                 "expected_successor": "18",
-                "action": "slot-fill__get-location_for_smoke_driven",
-                "state": "0xbadf70",
+                "action": "slot-fill__get-location_for_smell_driven",
+                "state": "0x1d9b8e0",
                 "distance": 5,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "slot-fill__get-location_for_smoke_driven_DETDUP_slot-fill__get-location_for_smoke_driven__validate-slot-fill-EQ-fallback",
+                        "outcome_label": "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-fallback",
                         "successor_id": "20"
                     },
                     {
-                        "outcome_label": "slot-fill__get-location_for_smoke_driven_DETDUP_slot-fill__get-location_for_smoke_driven__validate-slot-fill-EQ-location_found",
+                        "outcome_label": "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-location_found",
                         "successor_id": "18"
                     }
                 ]
@@ -205,7 +267,7 @@
             "20": {
                 "expected_successor": "19",
                 "action": "dialogue_statement",
-                "state": "0xbae170",
+                "state": "0x1d9bae0",
                 "distance": 6,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -217,10 +279,29 @@
                     }
                 ]
             },
+            "28": {
+                "expected_successor": "22",
+                "action": "get-health_instruction",
+                "state": "0x1d967e0",
+                "distance": 2,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "get-health_instruction_DETDUP_get-health_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction",
+                        "successor_id": "22"
+                    },
+                    {
+                        "outcome_label": "get-health_instruction_DETDUP_get-health_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction_false",
+                        "successor_id": "5"
+                    }
+                ]
+            },
             "30": {
                 "expected_successor": "32",
                 "action": "determine_emergency_p_h",
-                "state": "0xba8cb0",
+                "state": "0x1d96860",
                 "distance": 4,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -235,7 +316,7 @@
             "31": {
                 "expected_successor": "30",
                 "action": "dialogue_statement",
-                "state": "0xba7250",
+                "state": "0x1d94c80",
                 "distance": 5,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -250,7 +331,7 @@
             "32": {
                 "expected_successor": "28",
                 "action": "get-info_physical",
-                "state": "0xbaf3f0",
+                "state": "0x1d9ccc0",
                 "distance": 3,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -269,7 +350,7 @@
             "33": {
                 "expected_successor": "32",
                 "action": "dialogue_statement",
-                "state": "0xba6bf0",
+                "state": "0x1d95550",
                 "distance": 5,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -281,29 +362,10 @@
                     }
                 ]
             },
-            "37": {
-                "expected_successor": "28",
-                "action": "get-info_physical",
-                "state": "0xbb98d0",
-                "distance": 3,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "get-info_physical_DETDUP_get-info_physical__set-smoke-EQ-fallback",
-                        "successor_id": "39"
-                    },
-                    {
-                        "outcome_label": "get-info_physical_DETDUP_get-info_physical__set-smoke-EQ-indicate_no_addition",
-                        "successor_id": "28"
-                    }
-                ]
-            },
             "38": {
                 "expected_successor": "37",
                 "action": "get-info_mental",
-                "state": "0xbb17f0",
+                "state": "0x1da1040",
                 "distance": 4,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -319,25 +381,10 @@
                     }
                 ]
             },
-            "35": {
-                "expected_successor": "38",
-                "action": "determine_emergency_m_h",
-                "state": "0xbb9200",
-                "distance": 5,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "determine_emergency_m_h_DETDUP_determine_emergency_m_h__update-EQ-update",
-                        "successor_id": "38"
-                    }
-                ]
-            },
             "36": {
                 "expected_successor": "35",
                 "action": "dialogue_statement",
-                "state": "0xbb9580",
+                "state": "0x1da6c90",
                 "distance": 6,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -349,25 +396,25 @@
                     }
                 ]
             },
-            "22": {
-                "expected_successor": "0",
-                "action": "complete_health",
-                "state": "0xbb4000",
-                "distance": 1,
+            "35": {
+                "expected_successor": "38",
+                "action": "determine_emergency_m_h",
+                "state": "0x1d9cc80",
+                "distance": 5,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
-                        "outcome_label": "complete_health_DETDUP_complete_health__finish-EQ-finish",
-                        "successor_id": "0"
+                        "outcome_label": "determine_emergency_m_h_DETDUP_determine_emergency_m_h__update-EQ-update",
+                        "successor_id": "38"
                     }
                 ]
             },
             "39": {
                 "expected_successor": "37",
                 "action": "dialogue_statement",
-                "state": "0xbb39e0",
+                "state": "0x1da0e00",
                 "distance": 6,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -382,7 +429,7 @@
             "40": {
                 "expected_successor": "38",
                 "action": "dialogue_statement",
-                "state": "0xbaf730",
+                "state": "0x1da6a10",
                 "distance": 6,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -394,155 +441,74 @@
                     }
                 ]
             },
+            "41": {
+                "expected_successor": "17",
+                "action": "determine_emergency_s_k",
+                "state": "0x1d93ae0",
+                "distance": 4,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "determine_emergency_s_k_DETDUP_determine_emergency_s_k__update-EQ-update",
+                        "successor_id": "17"
+                    }
+                ]
+            },
             "46": {
-                "expected_successor": "7",
-                "action": "fire_emergency_location_color_driven",
-                "state": "0xbb8870",
-                "distance": 4,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fallback",
-                        "successor_id": "64"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_color_found",
-                        "successor_id": "63"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_color_found-location_found",
-                        "successor_id": "51"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_smell_found",
-                        "successor_id": "61"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-landing_gear_specifier_found",
-                        "successor_id": "7"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-location_found",
-                        "successor_id": "54"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-mental_state_description_found",
-                        "successor_id": "36"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-physical_state_description_found",
-                        "successor_id": "31"
-                    },
-                    {
-                        "outcome_label": "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-smoke_description_found",
-                        "successor_id": "20"
-                    }
-                ]
-            },
-            "47": {
-                "expected_successor": "16",
-                "action": "smoke_from_dialog_location_color_known",
-                "state": "0xbb88d0",
-                "distance": 3,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "smoke_from_dialog_location_color_known_DETDUP_smoke_from_dialog_location_color_known__set-context_known-EQ-set-all_context_known",
-                        "successor_id": "16"
-                    }
-                ]
-            },
-            "48": {
-                "expected_successor": "47",
+                "expected_successor": "45",
                 "action": "dialogue_statement",
-                "state": "0xbb65a0",
-                "distance": 4,
+                "state": "0x1da63c0",
+                "distance": 9,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
                         "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "47"
+                        "successor_id": "45"
                     }
                 ]
             },
-            "49": {
-                "expected_successor": "48",
-                "action": "slot-fill__get-smoke_description",
-                "state": "0xbb8a60",
+            "42": {
+                "expected_successor": "41",
+                "action": "dialogue_statement",
+                "state": "0x1d910a0",
                 "distance": 5,
+                "is_relevant": 0,
+                "is_goal": 0,
+                "is_sc": 1,
+                "successors": [
+                    {
+                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
+                        "successor_id": "41"
+                    }
+                ]
+            },
+            "43": {
+                "expected_successor": "42",
+                "action": "slot-fill__get-smoke_description",
+                "state": "0x1da52b0",
+                "distance": 6,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
                         "outcome_label": "slot-fill__get-smoke_description_DETDUP_slot-fill__get-smoke_description__validate-slot-fill-EQ-fallback",
-                        "successor_id": "55"
+                        "successor_id": "44"
                     },
                     {
                         "outcome_label": "slot-fill__get-smoke_description_DETDUP_slot-fill__get-smoke_description__validate-slot-fill-EQ-smoke_description_found",
-                        "successor_id": "48"
+                        "successor_id": "42"
                     }
                 ]
             },
-            "51": {
-                "expected_successor": "56",
-                "action": "determine_emergency_s_u",
-                "state": "0xbb9a20",
-                "distance": 4,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "determine_emergency_s_u_DETDUP_determine_emergency_s_u__update-EQ-update",
-                        "successor_id": "56"
-                    }
-                ]
-            },
-            "52": {
-                "expected_successor": "51",
+            "44": {
+                "expected_successor": "43",
                 "action": "dialogue_statement",
-                "state": "0xbb9ed0",
-                "distance": 5,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "51"
-                    }
-                ]
-            },
-            "53": {
-                "expected_successor": "52",
-                "action": "single_slot__fire_color",
-                "state": "0xbb9eb0",
-                "distance": 6,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "single_slot__fire_color_DETDUP_single_slot__fire_color__validate-slot-fill-EQ-fallback",
-                        "successor_id": "54"
-                    },
-                    {
-                        "outcome_label": "single_slot__fire_color_DETDUP_single_slot__fire_color__validate-slot-fill-EQ-fill-slot",
-                        "successor_id": "52"
-                    }
-                ]
-            },
-            "54": {
-                "expected_successor": "53",
-                "action": "dialogue_statement",
-                "state": "0xbbac00",
+                "state": "0x1da6800",
                 "distance": 7,
                 "is_relevant": 0,
                 "is_goal": 0,
@@ -550,173 +516,26 @@
                 "successors": [
                     {
                         "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "53"
+                        "successor_id": "43"
                     }
                 ]
             },
-            "55": {
-                "expected_successor": "49",
-                "action": "dialogue_statement",
-                "state": "0xbbbc30",
-                "distance": 6,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "49"
-                    }
-                ]
-            },
-            "56": {
-                "expected_successor": "16",
-                "action": "get-smoke_from_fire",
-                "state": "0xbbadc0",
-                "distance": 3,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-fallback",
-                        "successor_id": "57"
-                    },
-                    {
-                        "outcome_label": "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-indicate_smoke_not_seen",
-                        "successor_id": "16"
-                    },
-                    {
-                        "outcome_label": "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-indicate_smoke_seen",
-                        "successor_id": "49"
-                    }
-                ]
-            },
-            "57": {
-                "expected_successor": "56",
-                "action": "dialogue_statement",
-                "state": "0xbb3b90",
-                "distance": 5,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "56"
-                    }
-                ]
-            },
-            "58": {
-                "expected_successor": "16",
-                "action": "smell_with_location_guess",
-                "state": "0xbbb080",
-                "distance": 3,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "smell_with_location_guess_DETDUP_smell_with_location_guess__set-context_known-EQ-set-all_context_known",
-                        "successor_id": "16"
-                    }
-                ]
-            },
-            "62": {
-                "expected_successor": "52",
-                "action": "single_slot__location",
-                "state": "0xbc38e0",
-                "distance": 6,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "single_slot__location_DETDUP_single_slot__location__validate-slot-fill-EQ-fallback",
-                        "successor_id": "63"
-                    },
-                    {
-                        "outcome_label": "single_slot__location_DETDUP_single_slot__location__validate-slot-fill-EQ-fill-slot",
-                        "successor_id": "52"
-                    }
-                ]
-            },
-            "64": {
-                "expected_successor": "46",
-                "action": "dialogue_statement",
-                "state": "0xbc40d0",
-                "distance": 5,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "46"
-                    }
-                ]
-            },
-            "59": {
-                "expected_successor": "58",
-                "action": "dialogue_statement",
-                "state": "0xbc5d90",
-                "distance": 4,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "58"
-                    }
-                ]
-            },
-            "63": {
-                "expected_successor": "62",
-                "action": "dialogue_statement",
-                "state": "0xbc5e20",
-                "distance": 7,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "62"
-                    }
-                ]
-            },
-            "61": {
-                "expected_successor": "60",
-                "action": "dialogue_statement",
-                "state": "0xbbc1e0",
-                "distance": 6,
-                "is_relevant": 0,
-                "is_goal": 0,
-                "is_sc": 1,
-                "successors": [
-                    {
-                        "outcome_label": "dialogue_statement_DETDUP_dialogue_statement__reset-EQ-lock",
-                        "successor_id": "60"
-                    }
-                ]
-            },
-            "60": {
-                "expected_successor": "59",
+            "45": {
+                "expected_successor": "44",
                 "action": "slot-fill__get-location_for_smell_driven",
-                "state": "0xbbc200",
-                "distance": 5,
+                "state": "0x1da5270",
+                "distance": 8,
                 "is_relevant": 0,
                 "is_goal": 0,
                 "is_sc": 1,
                 "successors": [
                     {
                         "outcome_label": "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-fallback",
-                        "successor_id": "61"
+                        "successor_id": "46"
                     },
                     {
                         "outcome_label": "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-location_found",
-                        "successor_id": "59"
+                        "successor_id": "44"
                     }
                 ]
             }
@@ -728,9 +547,14 @@
                 "0"
             ],
             [
-                "10",
+                "6",
                 ">",
-                "0"
+                "1"
+            ],
+            [
+                "6",
+                ">",
+                "5"
             ],
             [
                 "7",
@@ -748,24 +572,69 @@
                 "6"
             ],
             [
-                "28",
+                "10",
                 ">",
-                "22"
+                "0"
             ],
             [
-                "28",
+                "37",
                 ">",
-                "5"
+                "39"
             ],
             [
-                "6",
+                "37",
                 ">",
-                "1"
+                "28"
             ],
             [
-                "6",
+                "27",
                 ">",
-                "5"
+                "46"
+            ],
+            [
+                "27",
+                ">",
+                "46"
+            ],
+            [
+                "27",
+                ">",
+                "43"
+            ],
+            [
+                "27",
+                ">",
+                "46"
+            ],
+            [
+                "27",
+                ">",
+                "7"
+            ],
+            [
+                "27",
+                ">",
+                "44"
+            ],
+            [
+                "27",
+                ">",
+                "36"
+            ],
+            [
+                "27",
+                ">",
+                "31"
+            ],
+            [
+                "27",
+                ">",
+                "20"
+            ],
+            [
+                "22",
+                ">",
+                "0"
             ],
             [
                 "9",
@@ -813,6 +682,16 @@
                 "19"
             ],
             [
+                "28",
+                ">",
+                "22"
+            ],
+            [
+                "28",
+                ">",
+                "5"
+            ],
+            [
                 "30",
                 ">",
                 "32"
@@ -838,16 +717,6 @@
                 "32"
             ],
             [
-                "37",
-                ">",
-                "39"
-            ],
-            [
-                "37",
-                ">",
-                "28"
-            ],
-            [
                 "38",
                 ">",
                 "40"
@@ -858,19 +727,14 @@
                 "37"
             ],
             [
-                "35",
-                ">",
-                "38"
-            ],
-            [
                 "36",
                 ">",
                 "35"
             ],
             [
-                "22",
+                "35",
                 ">",
-                "0"
+                "38"
             ],
             [
                 "39",
@@ -883,179 +747,62 @@
                 "38"
             ],
             [
-                "46",
+                "41",
                 ">",
-                "64"
+                "17"
             ],
             [
                 "46",
                 ">",
-                "63"
+                "45"
             ],
             [
-                "46",
+                "42",
                 ">",
-                "51"
+                "41"
             ],
             [
-                "46",
+                "43",
                 ">",
-                "61"
+                "44"
             ],
             [
-                "46",
+                "43",
                 ">",
-                "7"
+                "42"
             ],
             [
-                "46",
+                "44",
                 ">",
-                "54"
+                "43"
             ],
             [
-                "46",
-                ">",
-                "36"
-            ],
-            [
-                "46",
-                ">",
-                "31"
-            ],
-            [
-                "46",
-                ">",
-                "20"
-            ],
-            [
-                "47",
-                ">",
-                "16"
-            ],
-            [
-                "48",
-                ">",
-                "47"
-            ],
-            [
-                "49",
-                ">",
-                "55"
-            ],
-            [
-                "49",
-                ">",
-                "48"
-            ],
-            [
-                "51",
-                ">",
-                "56"
-            ],
-            [
-                "52",
-                ">",
-                "51"
-            ],
-            [
-                "53",
-                ">",
-                "54"
-            ],
-            [
-                "53",
-                ">",
-                "52"
-            ],
-            [
-                "54",
-                ">",
-                "53"
-            ],
-            [
-                "55",
-                ">",
-                "49"
-            ],
-            [
-                "56",
-                ">",
-                "57"
-            ],
-            [
-                "56",
-                ">",
-                "16"
-            ],
-            [
-                "56",
-                ">",
-                "49"
-            ],
-            [
-                "57",
-                ">",
-                "56"
-            ],
-            [
-                "58",
-                ">",
-                "16"
-            ],
-            [
-                "62",
-                ">",
-                "63"
-            ],
-            [
-                "62",
-                ">",
-                "52"
-            ],
-            [
-                "64",
+                "45",
                 ">",
                 "46"
             ],
             [
-                "59",
+                "45",
                 ">",
-                "58"
-            ],
-            [
-                "63",
-                ">",
-                "62"
-            ],
-            [
-                "61",
-                ">",
-                "60"
-            ],
-            [
-                "60",
-                ">",
-                "61"
-            ],
-            [
-                "60",
-                ">",
-                "59"
+                "44"
             ]
         ],
         "states": {
-            "0xb872e0": [
+            "0x1d7a220": [
                 "Atom goal()"
             ],
-            "0xb9e450": [
+            "0x1d87670": [
                 "NegatedAtom force-statement()",
                 "Atom got_landing_gear_instruction()"
             ],
-            "0xba2de0": [
+            "0x1d98300": [
                 "NegatedAtom force-statement()",
-                "Atom got_fire_instruction()"
+                "Atom know_all_context_for_landing_gear_malfunction()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()"
             ],
-            "0xbac670": [
+            "0x1d99890": [
                 "NegatedAtom foam_request()",
                 "NegatedAtom grass_request()",
                 "Atom know__landing_gear_specifier()",
@@ -1064,7 +811,107 @@
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()"
             ],
-            "0xba8c40": [
+            "0x1d910e0": [
+                "NegatedAtom force-statement()",
+                "Atom got_fire_instruction()"
+            ],
+            "0x1d9d910": [
+                "NegatedAtom know_all_context_for_health()",
+                "Atom know__mental_state_description()",
+                "NegatedAtom force-statement()",
+                "Atom know__emergency_type()",
+                "Atom emergency_type-value-physical_health_emergency()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d963a0": [
+                "NegatedAtom know_all_context_for_health()",
+                "NegatedAtom foam_request()",
+                "NegatedAtom grass_request()",
+                "NegatedAtom know__fire_smell()",
+                "NegatedAtom know__landing_gear_specifier()",
+                "NegatedAtom know__mental_state_description()",
+                "NegatedAtom know__physical_state_description()",
+                "NegatedAtom know__smoke_description()",
+                "NegatedAtom know__fire_color()",
+                "NegatedAtom know__location()",
+                "NegatedAtom force-statement()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1da17f0": [
+                "NegatedAtom force-statement()",
+                "Atom got_health_instruction()"
+            ],
+            "0x1d92ab0": [
+                "NegatedAtom foam_request()",
+                "NegatedAtom grass_request()",
+                "Atom know__landing_gear_specifier()",
+                "Atom force-statement()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()"
+            ],
+            "0x1d99750": [
+                "NegatedAtom force-statement()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "Atom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d9af00": [
+                "NegatedAtom force-statement()",
+                "Atom know_all_context_for_fire()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d9ae10": [
+                "Atom know__location()",
+                "NegatedAtom force-statement()",
+                "Atom know__emergency_type()",
+                "Atom emergency_type-value-smoke_known_location_required()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d9b6e0": [
+                "Atom know__location()",
+                "Atom force-statement()",
+                "Atom know__emergency_type()",
+                "Atom emergency_type-value-smoke_known_location_required()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d9b8e0": [
+                "NegatedAtom know__location()",
+                "NegatedAtom force-statement()",
+                "Atom know__emergency_type()",
+                "Atom emergency_type-value-smoke_known_location_required()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d9bae0": [
+                "NegatedAtom know__location()",
+                "Atom force-statement()",
+                "Atom know__emergency_type()",
+                "Atom emergency_type-value-smoke_known_location_required()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d967e0": [
                 "Atom know_all_context_for_health()",
                 "NegatedAtom force-statement()",
                 "NegatedAtom got_fire_instruction()",
@@ -1072,78 +919,7 @@
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xba2ec0": [
-                "NegatedAtom force-statement()",
-                "Atom know_all_context_for_landing_gear_malfunction()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()"
-            ],
-            "0xba5650": [
-                "NegatedAtom foam_request()",
-                "NegatedAtom grass_request()",
-                "Atom know__landing_gear_specifier()",
-                "Atom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()"
-            ],
-            "0xbabfe0": [
-                "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "Atom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbad590": [
-                "Atom know_all_context_for_fire()",
-                "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbad4a0": [
-                "Atom know__location()",
-                "Atom know__emergency_type()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smoke_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbadd70": [
-                "Atom know__location()",
-                "Atom know__emergency_type()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smoke_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbadf70": [
-                "NegatedAtom know__location()",
-                "Atom know__emergency_type()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smoke_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbae170": [
-                "NegatedAtom know__location()",
-                "Atom know__emergency_type()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smoke_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xba8cb0": [
+            "0x1d96860": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__physical_state_description()",
                 "NegatedAtom force-statement()",
@@ -1152,7 +928,7 @@
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xba7250": [
+            "0x1d94c80": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__physical_state_description()",
                 "Atom force-statement()",
@@ -1161,60 +937,40 @@
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbaf3f0": [
+            "0x1d9ccc0": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__physical_state_description()",
-                "Atom know__emergency_type()",
                 "NegatedAtom force-statement()",
+                "Atom know__emergency_type()",
                 "Atom emergency_type-value-physical_health_emergency()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xba6bf0": [
+            "0x1d95550": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__physical_state_description()",
-                "Atom know__emergency_type()",
                 "Atom force-statement()",
+                "Atom know__emergency_type()",
                 "Atom emergency_type-value-physical_health_emergency()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb98d0": [
+            "0x1da1040": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__mental_state_description()",
-                "Atom know__emergency_type()",
                 "NegatedAtom force-statement()",
-                "Atom emergency_type-value-physical_health_emergency()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb17f0": [
-                "NegatedAtom know_all_context_for_health()",
-                "Atom know__mental_state_description()",
                 "Atom know__emergency_type()",
-                "NegatedAtom force-statement()",
                 "Atom emergency_type-value-mental_health_emergency()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb9200": [
-                "NegatedAtom know_all_context_for_health()",
-                "Atom know__mental_state_description()",
-                "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb9580": [
+            "0x1da6c90": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__mental_state_description()",
                 "Atom force-statement()",
@@ -1223,253 +979,86 @@
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb4000": [
-                "NegatedAtom force-statement()",
-                "Atom got_health_instruction()"
-            ],
-            "0xbb39e0": [
+            "0x1d9cc80": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__mental_state_description()",
+                "NegatedAtom force-statement()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1da0e00": [
+                "NegatedAtom know_all_context_for_health()",
+                "Atom know__mental_state_description()",
+                "Atom force-statement()",
                 "Atom know__emergency_type()",
-                "Atom force-statement()",
                 "Atom emergency_type-value-physical_health_emergency()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbaf730": [
+            "0x1da6a10": [
                 "NegatedAtom know_all_context_for_health()",
                 "Atom know__mental_state_description()",
-                "Atom know__emergency_type()",
                 "Atom force-statement()",
+                "Atom know__emergency_type()",
                 "Atom emergency_type-value-mental_health_emergency()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb8870": [
-                "NegatedAtom know_all_context_for_health()",
-                "NegatedAtom foam_request()",
-                "NegatedAtom grass_request()",
-                "NegatedAtom know__fire_smell()",
-                "NegatedAtom know__landing_gear_specifier()",
-                "NegatedAtom know__mental_state_description()",
-                "NegatedAtom know__physical_state_description()",
-                "NegatedAtom know__smoke_description()",
-                "NegatedAtom know__fire_color()",
-                "NegatedAtom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
-                "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb88d0": [
+            "0x1d93ae0": [
                 "Atom know__smoke_description()",
-                "Atom know__emergency_type()",
+                "Atom know__location()",
                 "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb65a0": [
+            "0x1da63c0": [
+                "NegatedAtom know__smoke_description()",
+                "NegatedAtom know__location()",
+                "Atom force-statement()",
+                "NegatedAtom got_fire_instruction()",
+                "NegatedAtom got_health_instruction()",
+                "NegatedAtom know__reached_server()",
+                "NegatedAtom got_landing_gear_instruction()"
+            ],
+            "0x1d910a0": [
                 "Atom know__smoke_description()",
-                "Atom know__emergency_type()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb8a60": [
-                "NegatedAtom know__smoke_description()",
-                "Atom know__seen_smoke()",
-                "Atom know__emergency_type()",
-                "Atom seen_smoke()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb9a20": [
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
                 "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
-                "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb9ed0": [
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
-                "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
                 "Atom force-statement()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbb9eb0": [
-                "Atom allow_single_slot_fire_color()",
+            "0x1da52b0": [
                 "NegatedAtom know__smoke_description()",
-                "NegatedAtom know__fire_color()",
                 "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
                 "NegatedAtom force-statement()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbbac00": [
-                "Atom allow_single_slot_fire_color()",
+            "0x1da6800": [
                 "NegatedAtom know__smoke_description()",
-                "NegatedAtom know__fire_color()",
                 "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
                 "Atom force-statement()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",
                 "NegatedAtom got_landing_gear_instruction()"
             ],
-            "0xbbbc30": [
+            "0x1da5270": [
                 "NegatedAtom know__smoke_description()",
-                "Atom know__seen_smoke()",
-                "Atom know__emergency_type()",
-                "Atom seen_smoke()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbbadc0": [
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
-                "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "Atom know__emergency_type()",
-                "NegatedAtom know_all_context_for_fire()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbb3b90": [
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
-                "Atom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "Atom know__emergency_type()",
-                "NegatedAtom know_all_context_for_fire()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smoke_unknown_location_and_fire_known()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbbb080": [
-                "Atom know__location()",
-                "Atom know__emergency_type()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smell_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbc38e0": [
-                "Atom allow_single_slot_location()",
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
                 "NegatedAtom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
                 "NegatedAtom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbc40d0": [
-                "NegatedAtom know_all_context_for_health()",
-                "NegatedAtom foam_request()",
-                "NegatedAtom grass_request()",
-                "NegatedAtom know__fire_smell()",
-                "NegatedAtom know__landing_gear_specifier()",
-                "NegatedAtom know__mental_state_description()",
-                "NegatedAtom know__physical_state_description()",
-                "NegatedAtom know__smoke_description()",
-                "NegatedAtom know__fire_color()",
-                "NegatedAtom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
-                "Atom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbc5d90": [
-                "Atom know__location()",
-                "Atom know__emergency_type()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smell_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbc5e20": [
-                "Atom allow_single_slot_location()",
-                "NegatedAtom know__smoke_description()",
-                "Atom know__fire_color()",
-                "NegatedAtom know__location()",
-                "NegatedAtom know__seen_smoke()",
-                "NegatedAtom know_all_context_for_fire()",
-                "Atom force-statement()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbbc1e0": [
-                "NegatedAtom know__location()",
-                "Atom know__emergency_type()",
-                "Atom force-statement()",
-                "Atom emergency_type-value-smell_known_location_required()",
-                "NegatedAtom got_fire_instruction()",
-                "NegatedAtom got_health_instruction()",
-                "NegatedAtom know__reached_server()",
-                "NegatedAtom got_landing_gear_instruction()"
-            ],
-            "0xbbc200": [
-                "NegatedAtom know__location()",
-                "Atom know__emergency_type()",
-                "NegatedAtom force-statement()",
-                "Atom emergency_type-value-smell_known_location_required()",
                 "NegatedAtom got_fire_instruction()",
                 "NegatedAtom got_health_instruction()",
                 "NegatedAtom know__reached_server()",

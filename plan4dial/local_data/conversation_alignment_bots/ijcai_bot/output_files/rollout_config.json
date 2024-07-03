@@ -2,68 +2,68 @@
     "actions": {
         "determine_emergency_s_u": {
             "condition": [
-                "(not (force-statement))",
                 "(know__fire_color)",
-                "(know__location)"
+                "(know__location)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_s_u_DETDUP_determine_emergency_s_u__update-EQ-update": [
-                    "(emergency_type-value-smoke_unknown_location_and_fire_known)",
                     "(not (emergency_type-value-smoke_known_location_required))",
-                    "(not (emergency_type-value-physical_health_emergency))",
+                    "(emergency_type-value-smoke_unknown_location_and_fire_known)",
                     "(not (emergency_type-value-smell_known_location_required))",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
+                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(know__emergency_type)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ]
             }
         },
         "determine_emergency_l_r": {
             "condition": [
-                "(not (force-statement))",
-                "(know__fire_smell)"
+                "(know__fire_smell)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_l_r_DETDUP_determine_emergency_l_r__update-EQ-update": [
+                    "(not (emergency_type-value-smoke_known_location_required))",
                     "(emergency_type-value-smell_known_location_required)",
                     "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
-                    "(not (emergency_type-value-smoke_known_location_required))",
                     "(not (emergency_type-value-physical_health_emergency))",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(know__emergency_type)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ]
             }
         },
         "determine_emergency_s_k": {
             "condition": [
-                "(not (force-statement))",
-                "(know__smoke_description)"
+                "(know__smoke_description)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_s_k_DETDUP_determine_emergency_s_k__update-EQ-update": [
                     "(emergency_type-value-smoke_known_location_required)",
                     "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
-                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-smell_known_location_required))",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
+                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(know__emergency_type)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ]
             }
         },
         "determine_emergency_l_g": {
             "condition": [
-                "(not (force-statement))",
-                "(know__landing_gear_specifier)"
+                "(know__landing_gear_specifier)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_l_g_DETDUP_determine_emergency_l_g__update-EQ-update": [
-                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smoke_known_location_required))",
                     "(emergency_type-value-landing_gear_malfunction_emergency)",
-                    "(not (emergency_type-value-physical_health_emergency))",
+                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smell_known_location_required))",
+                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
                     "(know__emergency_type)"
                 ]
@@ -71,44 +71,44 @@
         },
         "determine_emergency_p_h": {
             "condition": [
-                "(not (force-statement))",
-                "(know__physical_state_description)"
+                "(know__physical_state_description)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_p_h_DETDUP_determine_emergency_p_h__update-EQ-update": [
-                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smoke_known_location_required))",
+                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smell_known_location_required))",
-                    "(emergency_type-value-physical_health_emergency)",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
+                    "(know__emergency_type)",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(emergency_type-value-physical_health_emergency)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ]
             }
         },
         "determine_emergency_m_h": {
             "condition": [
-                "(not (force-statement))",
-                "(know__mental_state_description)"
+                "(know__mental_state_description)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "determine_emergency_m_h_DETDUP_determine_emergency_m_h__update-EQ-update": [
-                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smoke_known_location_required))",
-                    "(not (emergency_type-value-physical_health_emergency))",
+                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smell_known_location_required))",
+                    "(emergency_type-value-mental_health_emergency)",
+                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-landing_gear_malfunction_emergency))",
-                    "(know__emergency_type)",
-                    "(emergency_type-value-mental_health_emergency)"
+                    "(know__emergency_type)"
                 ]
             }
         },
         "inital_health_context": {
             "condition": [
-                "(not (force-statement))",
                 "(not (mental_health_emergency))",
+                "(know__emergency_type)",
                 "(not (physical_health_emergency))",
-                "(know__emergency_type)"
+                "(not (force-statement))"
             ],
             "effect": {
                 "inital_health_context_DETDUP_inital_health_context__health_type-EQ-physical": [
@@ -121,19 +121,19 @@
         },
         "get-info_mental": {
             "condition": [
-                "(not (force-statement))",
                 "(not (know_all_context_for_health))",
                 "(know__emergency_type)",
-                "(emergency_type-value-mental_health_emergency)"
+                "(emergency_type-value-mental_health_emergency)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-info_mental_DETDUP_get-info_mental__set-smoke-EQ-indicate_no_addition": [
-                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smoke_known_location_required))",
+                    "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(not (emergency_type-value-smell_known_location_required))",
+                    "(not (emergency_type-value-mental_health_emergency))",
                     "(emergency_type-value-physical_health_emergency)",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
-                    "(not (emergency_type-value-mental_health_emergency))"
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ],
                 "get-info_mental_DETDUP_get-info_mental__set-smoke-EQ-fallback": [
                     "(force-statement)"
@@ -142,10 +142,10 @@
         },
         "get-info_physical": {
             "condition": [
-                "(not (force-statement))",
                 "(not (know_all_context_for_health))",
+                "(emergency_type-value-physical_health_emergency)",
                 "(know__emergency_type)",
-                "(emergency_type-value-physical_health_emergency)"
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-info_physical_DETDUP_get-info_physical__set-smoke-EQ-indicate_no_addition": [
@@ -160,19 +160,19 @@
             "condition": [
                 "(emergency_type-value-smoke_unknown_location_and_fire_known)",
                 "(not (know_all_context_for_fire))",
-                "(not (know__seen_smoke))",
                 "(not (force-statement))",
+                "(not (know__seen_smoke))",
                 "(know__emergency_type)"
             ],
             "effect": {
                 "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-indicate_smoke_not_seen": [
-                    "(not (seen_smoke))",
+                    "(know_all_context_for_fire)",
                     "(know__seen_smoke)",
-                    "(know_all_context_for_fire)"
+                    "(not (seen_smoke))"
                 ],
                 "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-indicate_smoke_seen": [
-                    "(know__seen_smoke)",
-                    "(seen_smoke)"
+                    "(seen_smoke)",
+                    "(know__seen_smoke)"
                 ],
                 "get-smoke_from_fire_DETDUP_get-smoke_from_fire__set-smoke-EQ-fallback": [
                     "(force-statement)"
@@ -181,10 +181,10 @@
         },
         "smoke_from_dialog_location_color_known": {
             "condition": [
-                "(not (force-statement))",
+                "(emergency_type-value-smoke_unknown_location_and_fire_known)",
                 "(know__smoke_description)",
                 "(know__emergency_type)",
-                "(emergency_type-value-smoke_unknown_location_and_fire_known)"
+                "(not (force-statement))"
             ],
             "effect": {
                 "smoke_from_dialog_location_color_known_DETDUP_smoke_from_dialog_location_color_known__set-context_known-EQ-set-all_context_known": [
@@ -194,10 +194,10 @@
         },
         "smell_with_location_guess": {
             "condition": [
-                "(not (force-statement))",
-                "(emergency_type-value-smell_known_location_required)",
                 "(know__emergency_type)",
-                "(know__location)"
+                "(know__location)",
+                "(emergency_type-value-smell_known_location_required)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "smell_with_location_guess_DETDUP_smell_with_location_guess__set-context_known-EQ-set-all_context_known": [
@@ -207,10 +207,10 @@
         },
         "smoke_with_location_guess": {
             "condition": [
-                "(not (force-statement))",
                 "(emergency_type-value-smoke_known_location_required)",
                 "(know__emergency_type)",
-                "(know__location)"
+                "(know__location)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "smoke_with_location_guess_DETDUP_smoke_with_location_guess__set-context_known-EQ-set-all_context_known": [
@@ -220,16 +220,16 @@
         },
         "landing_gear_malfunction_get_landing_type": {
             "condition": [
-                "(not (foam_request))",
                 "(not (grass_request))",
-                "(know__landing_gear_specifier)",
+                "(not (foam_request))",
+                "(not (force-statement))",
                 "(not (reset_condition))",
-                "(not (force-statement))"
+                "(know__landing_gear_specifier)"
             ],
             "effect": {
                 "landing_gear_malfunction_get_landing_type_DETDUP_landing_gear_malfunction_get_landing_type__set-context_known-EQ-set-all_context_known_foam": [
-                    "(foam_request)",
-                    "(know_all_context_for_landing_gear_malfunction)"
+                    "(know_all_context_for_landing_gear_malfunction)",
+                    "(foam_request)"
                 ],
                 "landing_gear_malfunction_get_landing_type_DETDUP_landing_gear_malfunction_get_landing_type__set-context_known-EQ-set-all_context_known_grass": [
                     "(know_all_context_for_landing_gear_malfunction)",
@@ -242,15 +242,15 @@
         },
         "get-fire_instruction": {
             "condition": [
-                "(not (force-statement))",
+                "(know_all_context_for_fire)",
                 "(not (got_fire_instruction))",
                 "(not (know__reached_server))",
-                "(know_all_context_for_fire)"
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-fire_instruction_DETDUP_get-fire_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction": [
-                    "(got_fire_instruction)",
-                    "(know__reached_server)"
+                    "(know__reached_server)",
+                    "(got_fire_instruction)"
                 ],
                 "get-fire_instruction_DETDUP_get-fire_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction_false": [
                     "(know__reached_server)"
@@ -259,10 +259,10 @@
         },
         "get-landing_gear_instruction": {
             "condition": [
-                "(not (force-statement))",
-                "(not (got_fire_instruction))",
                 "(know_all_context_for_landing_gear_malfunction)",
-                "(not (know__reached_server))"
+                "(not (got_fire_instruction))",
+                "(not (know__reached_server))",
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-landing_gear_instruction_DETDUP_get-landing_gear_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction": [
@@ -277,10 +277,10 @@
         },
         "get-health_instruction": {
             "condition": [
-                "(not (got_health_instruction))",
-                "(not (force-statement))",
                 "(know_all_context_for_health)",
-                "(not (know__reached_server))"
+                "(not (know__reached_server))",
+                "(not (got_health_instruction))",
+                "(not (force-statement))"
             ],
             "effect": {
                 "get-health_instruction_DETDUP_get-health_instruction__set-get-fire_instruction-EQ-got_engine_fire_instruction": [
@@ -294,8 +294,8 @@
         },
         "complete-fire": {
             "condition": [
-                "(not (force-statement))",
-                "(got_fire_instruction)"
+                "(got_fire_instruction)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "complete-fire_DETDUP_complete-fire__finish-EQ-finish": [
@@ -305,8 +305,8 @@
         },
         "complete": {
             "condition": [
-                "(not (force-statement))",
-                "(got_landing_gear_instruction)"
+                "(got_landing_gear_instruction)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "complete_DETDUP_complete__finish-EQ-finish": [
@@ -316,8 +316,8 @@
         },
         "complete_health": {
             "condition": [
-                "(not (force-statement))",
-                "(got_health_instruction)"
+                "(got_health_instruction)",
+                "(not (force-statement))"
             ],
             "effect": {
                 "complete_health_DETDUP_complete_health__finish-EQ-finish": [
@@ -327,11 +327,11 @@
         },
         "complete_error": {
             "condition": [
-                "(not (got_fire_instruction))",
-                "(know__reached_server)",
                 "(not (got_landing_gear_instruction))",
+                "(not (force-statement))",
                 "(not (got_health_instruction))",
-                "(not (force-statement))"
+                "(not (got_fire_instruction))",
+                "(know__reached_server)"
             ],
             "effect": {
                 "complete_error_DETDUP_complete_error__finish-EQ-finish": [
@@ -351,14 +351,14 @@
         },
         "single_slot__location": {
             "condition": [
-                "(not (force-statement))",
                 "(not (know__location))",
+                "(not (force-statement))",
                 "(allow_single_slot_location)"
             ],
             "effect": {
                 "single_slot__location_DETDUP_single_slot__location__validate-slot-fill-EQ-fill-slot": [
-                    "(force-statement)",
-                    "(know__location)"
+                    "(know__location)",
+                    "(force-statement)"
                 ],
                 "single_slot__location_DETDUP_single_slot__location__validate-slot-fill-EQ-fallback": [
                     "(force-statement)"
@@ -383,14 +383,14 @@
         },
         "fire_emergency_location_color_driven": {
             "condition": [
-                "(not (know__fire_color))",
+                "(not (force-statement))",
+                "(not (know__mental_state_description))",
+                "(not (know__physical_state_description))",
+                "(not (know__smoke_description))",
+                "(not (know__fire_smell))",
                 "(not (know__landing_gear_specifier))",
                 "(not (know__location))",
-                "(not (know__fire_smell))",
-                "(not (know__physical_state_description))",
-                "(not (force-statement))",
-                "(not (know__smoke_description))",
-                "(not (know__mental_state_description))"
+                "(not (know__fire_color))"
             ],
             "effect": {
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_color_found-location_found": [
@@ -403,38 +403,38 @@
                     "(allow_single_slot_location)"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-location_found": [
-                    "(allow_single_slot_fire_color)",
                     "(know__location)",
-                    "(force-statement)"
+                    "(force-statement)",
+                    "(allow_single_slot_fire_color)"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-fire_smell_found": [
+                    "(not (emergency_type-value-smoke_known_location_required))",
                     "(emergency_type-value-smell_known_location_required)",
-                    "(force-statement)",
                     "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
                     "(know__fire_smell)",
-                    "(not (emergency_type-value-smoke_known_location_required))",
                     "(not (emergency_type-value-physical_health_emergency))",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(know__emergency_type)",
+                    "(force-statement)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-smoke_description_found": [
-                    "(force-statement)",
                     "(emergency_type-value-smoke_known_location_required)",
                     "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
-                    "(know__smoke_description)",
-                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-smell_known_location_required))",
-                    "(not (emergency_type-value-landing_gear_malfunction_emergency))",
+                    "(know__emergency_type)",
+                    "(not (emergency_type-value-physical_health_emergency))",
                     "(not (emergency_type-value-mental_health_emergency))",
-                    "(know__emergency_type)"
+                    "(know__smoke_description)",
+                    "(force-statement)",
+                    "(not (emergency_type-value-landing_gear_malfunction_emergency))"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-landing_gear_specifier_found": [
                     "(know__landing_gear_specifier)"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-physical_state_description_found": [
-                    "(know__physical_state_description)",
-                    "(force-statement)"
+                    "(force-statement)",
+                    "(know__physical_state_description)"
                 ],
                 "fire_emergency_location_color_driven_DETDUP_fire_emergency_location_color_driven__validate-slot-fill-more-EQ-mental_state_description_found": [
                     "(know__mental_state_description)",
@@ -447,14 +447,13 @@
         },
         "slot-fill__get-location_for_smell_driven": {
             "condition": [
-                "(not (force-statement))",
-                "(emergency_type-value-smell_known_location_required)",
-                "(not (know__location))"
+                "(not (know__location))",
+                "(not (force-statement))"
             ],
             "effect": {
                 "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-location_found": [
-                    "(force-statement)",
-                    "(know__location)"
+                    "(know__location)",
+                    "(force-statement)"
                 ],
                 "slot-fill__get-location_for_smell_driven_DETDUP_slot-fill__get-location_for_smell_driven__validate-slot-fill-EQ-fallback": [
                     "(force-statement)"
@@ -463,14 +462,13 @@
         },
         "slot-fill__get-location_for_smoke_driven": {
             "condition": [
-                "(not (force-statement))",
-                "(emergency_type-value-smoke_known_location_required)",
-                "(not (know__location))"
+                "(not (know__location))",
+                "(not (force-statement))"
             ],
             "effect": {
                 "slot-fill__get-location_for_smoke_driven_DETDUP_slot-fill__get-location_for_smoke_driven__validate-slot-fill-EQ-location_found": [
-                    "(force-statement)",
-                    "(know__location)"
+                    "(know__location)",
+                    "(force-statement)"
                 ],
                 "slot-fill__get-location_for_smoke_driven_DETDUP_slot-fill__get-location_for_smoke_driven__validate-slot-fill-EQ-fallback": [
                     "(force-statement)"
@@ -479,10 +477,8 @@
         },
         "slot-fill__get-smoke_description": {
             "condition": [
-                "(know__seen_smoke)",
                 "(not (know__smoke_description))",
-                "(not (force-statement))",
-                "(seen_smoke)"
+                "(not (force-statement))"
             ],
             "effect": {
                 "slot-fill__get-smoke_description_DETDUP_slot-fill__get-smoke_description__validate-slot-fill-EQ-smoke_description_found": [
@@ -496,47 +492,47 @@
         }
     },
     "initial_state": [
-        "(not (know__fire_color))",
+        "(not (mental_health_emergency))",
+        "(not (server_status))",
+        "(not (foam_request))",
+        "(not (allow_single_slot_location))",
+        "(not (no_instructions))",
+        "(not (know_all_context_for_health))",
+        "(not (seen_smoke))",
+        "(not (know__server_status))",
+        "(not (know__reached_server))",
+        "(not (know_all_context_for_landing_gear_malfunction))",
+        "(not (fire_context))",
+        "(not (got_health_instruction))",
+        "(not (emergency_type-value-mental_health_emergency))",
+        "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
+        "(not (reset_condition))",
+        "(not (goal))",
+        "(not (physical_health_emergency))",
+        "(not (emergency_type-value-physical_health_emergency))",
+        "(not (server_error))",
+        "(not (know__instrument))",
+        "(not (know__fire_context))",
         "(not (know__emergency_type))",
-        "(not (got_fire_instruction))",
+        "(not (emergency_type-value-smoke_known_location_required))",
         "(not (know_all_context_for_fire))",
         "(not (got_landing_gear_instruction))",
-        "(not (know__physical_state_description))",
-        "(not (emergency_type-value-physical_health_emergency))",
-        "(not (know__fire_context))",
-        "(not (know__landing_gear_specifier))",
-        "(not (seen_smoke))",
-        "(not (know__reached_server))",
-        "(not (goal))",
-        "(not (emergency_type-value-smoke_known_location_required))",
-        "(not (server_error))",
         "(not (know__mental_state_description))",
+        "(not (know__physical_state_description))",
         "(not (allow_single_slot_fire_color))",
-        "(not (no_instructions))",
-        "(not (know__goal))",
-        "(not (allow_single_slot_location))",
-        "(not (physical_health_emergency))",
-        "(not (got_health_instruction))",
-        "(not (know__server_status))",
-        "(not (force-statement))",
-        "(not (know_all_context_for_health))",
-        "(not (emergency_type-value-smell_known_location_required))",
-        "(not (server_status))",
-        "(not (emergency_type-value-mental_health_emergency))",
-        "(not (know__server_error))",
-        "(not (know__instrument))",
-        "(not (fire_context))",
-        "(not (mental_health_emergency))",
-        "(not (foam_request))",
-        "(not (know__location))",
-        "(not (grass_request))",
-        "(not (emergency_type-value-smoke_unknown_location_and_fire_known))",
-        "(not (know__fire_smell))",
-        "(not (reset_condition))",
-        "(not (know__seen_smoke))",
+        "(not (got_fire_instruction))",
         "(not (know__smoke_description))",
+        "(not (know__fire_smell))",
+        "(not (know__location))",
+        "(not (know__goal))",
         "(not (emergency_type-value-landing_gear_malfunction_emergency))",
-        "(not (know_all_context_for_landing_gear_malfunction))"
+        "(not (grass_request))",
+        "(not (force-statement))",
+        "(not (emergency_type-value-smell_known_location_required))",
+        "(not (know__landing_gear_specifier))",
+        "(not (know__seen_smoke))",
+        "(not (know__server_error))",
+        "(not (know__fire_color))"
     ],
     "partial": {
         "determine_emergency_s_u": [],

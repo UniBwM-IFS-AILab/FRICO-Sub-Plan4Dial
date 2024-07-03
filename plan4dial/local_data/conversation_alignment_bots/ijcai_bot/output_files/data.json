@@ -2860,10 +2860,6 @@
                 [
                     "force-statement",
                     false
-                ],
-                [
-                    "emergency_type-value-smell_known_location_required",
-                    true
                 ]
             ],
             "effect": {
@@ -2964,10 +2960,6 @@
                 [
                     "force-statement",
                     false
-                ],
-                [
-                    "emergency_type-value-smoke_known_location_required",
-                    true
                 ]
             ],
             "effect": {
@@ -3057,14 +3049,6 @@
                 "Specify wether smoke is black or white?"
             ],
             "condition": [
-                [
-                    "seen_smoke",
-                    true
-                ],
-                [
-                    "seen_smoke",
-                    "Known"
-                ],
                 [
                     "smoke_description",
                     null
