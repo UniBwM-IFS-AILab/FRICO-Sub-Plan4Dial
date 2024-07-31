@@ -5,6 +5,6 @@
 
 
 While creating a resetable dialog, 
-you have to specifiy the second outcome. We select the second outcome, if the intents do not match to any expected inputs. 
+you have to specify the second outcome. We select the second outcome, if the intents do not match to any expected inputs. 
 
-THE SAME APPLIES FOR Slot_fill more type action.  DONOT put additional outcomes not related to the task there. 
+THE SAME APPLIES FOR Slot_fill more type action.  DO NOT put additional outcomes not related to the task there. 
