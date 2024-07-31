@@ -24,6 +24,6 @@ See [here](https://dialogue-planning.github.io/plan4dial/tutorial.html) for the 
 Coming soon!
 
 
-# What is different from the main branch: 
+# 🚧 What is different from the main branch:🚧 
 For more details look into README-Mods.md file. 
     1. Essentially, we only define a `slot_fill_more` action type, that concatenates different `slot_fill` type of actions together in the beginning of the conversation.   
