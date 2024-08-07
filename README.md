@@ -1,5 +1,7 @@
 # Plan4Dial
 
+This is a direct fork from this [repo](https://github.com/dialogue-planning/plan4dial)
+
 Generates a chatbot given a simple YAML configuration using automated planning for conversation navigation and machine learning for NLU.
 
 ## Documentation
